@@ -11,7 +11,7 @@ This draft IG is intended for Connectathon testing and piloting.
 
 ## FHIR Foundation Project Statement
 
-* **Maintainers:** GitHub user [lturi-onc](https://github.com/lturi-onc), supported by Kahuina Consulting, LLC on contract with the Office of the National Coordinator for Health IT (ONC).
+* **Maintainers:** Kahuina Consulting, LLC on contract with the Office of the National Coordinator for Health IT (ONC).
 * **Issues / Discussion:** There are no anticipated issues at this time. The draft IG is intended for Connectathon testing and piloting and uses existing US Core FHIR resources and profiles. Issues and suggestions may be submitted via [GitHub Issues](https://github.com/FHIR/us-cdi-scd/issues).
 * **License:** [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
 * **Contribution Policy:** This initial draft was developed with input from patients, clinicians, researchers, and the FHIR community. Contributions are welcome from any community that may benefit or be affected by this work. The testing team will collect issues and suggestions via GitHub Issues, and from the testing partners during the Connectathon. All contributions will be reviewed by the maintainers for alignment with project goals and ONC requirements and triaged appropriately.
