@@ -1,0 +1,161 @@
+# ==============================================================================
+# SUSHI Configuration for USCDI + Sickle Cell Disease Implementation Guide
+# ==============================================================================
+# This file configures the FHIR Shorthand (FSH) project for the
+# USCDI-SCD Implementation Guide.
+#
+# Reference: https://fshschool.org/docs/sushi/configuration/
+# Modeled on: US Core Behavioral Health Profiles IG
+# FHIR Version: 4.0.1
+# US Core Version: 8.0.1
+# ==============================================================================
+
+id: hl7.fhir.us.uscdi-scd
+canonical: http://hl7.org/fhir/us/uscdi-scd
+name: USCDISickleCellDiseaseIG
+title: "USCDI + Sickle Cell Disease Implementation Guide"
+description: >
+  The USCDI + Sickle Cell Disease Implementation Guide (USCDI-SCD) defines
+  FHIR profiles, extensions, value sets, and code systems to support the
+  exchange of clinical data for patients with Sickle Cell Disease (SCD)
+  in alignment with the United States Core Data for Interoperability (USCDI)
+  and US Core 8.0.1.
+status: draft              # draft | active | retired | unknown
+version: 0.1
+fhirVersion: 4.0.1
+copyrightYear: 2025+
+releaseLabel: draft         # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+
+# -----------------------------------------------------------------------
+# Publisher & Contact Information
+# -----------------------------------------------------------------------
+
+publisher:
+  name: HL7 International / Public Health
+  url: https://www.hl7.org/Special/committees/pher
+  email: pher@lists.HL7.org
+
+contact:
+  - name: HL7 Public Health Work Group
+    telecom:
+      - system: url
+        value: http://www.hl7.org/Special/committees/pher
+      - system: email
+        value: pher@lists.HL7.org
+
+# -----------------------------------------------------------------------
+# Jurisdiction
+# -----------------------------------------------------------------------
+jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+
+# -----------------------------------------------------------------------
+# License
+# -----------------------------------------------------------------------
+license: CC0-1.0
+
+# -----------------------------------------------------------------------
+# Package Dependencies
+# -----------------------------------------------------------------------
+dependencies:
+  hl7.fhir.us.core:
+    version: 8.0.1
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+  hl7.fhir.uv.extensions.r4:
+    version: 5.1.0
+    uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
+  us.nlm.vsac:
+    version: 0.19.0
+    uri: https://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac
+
+# -----------------------------------------------------------------------
+# Pages / Navigation Structure
+# -----------------------------------------------------------------------
+# Each page corresponds to a Markdown (.md) file in input/pagecontent/
+pages:
+  index.md:
+    title: Home
+  introduction.md:
+    title: Introduction
+  background.md:
+    title: Background
+  scope_and_usage.md:
+    title: Scope and Usage
+  overview.md:
+    title: Overview
+  audience.md:
+    title: Audience
+  conformance.md:
+    title: Conformance Requirements
+  profiles.md:
+    title: Profiles
+  extensions.md:
+    title: Extensions
+  terminology.md:
+    title: Terminology
+  security.md:
+    title: Security and Privacy
+  downloads.md:
+    title: Downloads
+  changes.md:
+    title: Change Log
+
+# -----------------------------------------------------------------------
+# Menu (Navigation Bar)
+# -----------------------------------------------------------------------
+menu:
+  Home: index.html
+  Introduction:
+    Introduction: introduction.html
+    Background: background.html
+    Scope and Usage: scope_and_usage.html
+    Overview: overview.html
+    Audience: audience.html
+  Guidance:
+    Conformance Requirements: conformance.html
+    Security and Privacy: security.html
+  Artifacts:
+    Profiles: profiles.html
+    Extensions: extensions.html
+    Terminology: terminology.html
+  Downloads: downloads.html
+  Change Log: changes.html
+
+# -----------------------------------------------------------------------
+# SUSHI Global Parameters
+# -----------------------------------------------------------------------
+parameters:
+  path-resource:
+    - input/resources
+    - fsh-generated/resources
+  path-pages:
+    - input/pagecontent
+    - fsh-generated/includes
+  path-expansion-params: '../../input/terminology-settings.json'
+  active-tables: 'false'
+  apply-contact: 'true'
+  apply-jurisdiction: 'true'
+  apply-publisher: 'true'
+  apply-version: 'true'
+  show-inherited-invariants: 'false'
+  usage-stats-opt-out: 'false'
+  # Suppress certain known warnings from dependencies
+  excludettl: 'true'
+  validation: 'allow-any-extensions'
+
+# -----------------------------------------------------------------------
+# Resources — explicitly listed artifacts
+# -----------------------------------------------------------------------
+# These are auto-discovered from the FSH files; listing here for clarity.
+# Uncomment and adjust if manual resource paths are needed.
+# resources:
+#   StructureDefinition/uscdi-scd-patient: {}
+
+# -----------------------------------------------------------------------
+# IG Specific Flags
+# -----------------------------------------------------------------------
+FSHOnly: false
+applyExtensionMetadataToRoot: false
+instanceOptions:
+  setMetaProfile: always
+  setId: always
+  manualSliceOrdering: true

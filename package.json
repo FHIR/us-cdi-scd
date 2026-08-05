@@ -1,0 +1,38 @@
+{
+  "name": "hl7.fhir.us.uscdi-scd",
+  "version": "1.0.0",
+  "tools-version": 3,
+  "type": "fhir.ig",
+  "date": "20250101",
+  "license": "CC0-1.0",
+  "canonical": "http://hl7.org/fhir/us/uscdi-scd",
+  "url": "http://hl7.org/fhir/us/uscdi-scd/ImplementationGuide/hl7.fhir.us.uscdi-scd",
+  "title": "USCDI + Sickle Cell Disease Implementation Guide",
+  "description": "FHIR Implementation Guide for Sickle Cell Disease data exchange, based on US Core 8.0.1 and FHIR R4.",
+  "fhirVersions": ["4.0.1"],
+  "dependencies": {
+    "hl7.fhir.r4.core": "4.0.1",
+    "hl7.fhir.us.core": "8.0.1",
+    "hl7.fhir.uv.extensions.r4": "5.1.0",
+    "us.nlm.vsac": "0.19.0"
+  },
+  "author": "HL7 International / Patient Care",
+  "maintainers": [
+    {
+      "name": "HL7 Patient Care Work Group",
+      "email": "patientcare@lists.HL7.org",
+      "url": "http://www.hl7.org/Special/committees/patientcare"
+    }
+  ],
+  "jurisdiction": "urn:iso:std:iso:3166#US",
+  "keywords": [
+    "sickle cell disease",
+    "SCD",
+    "USCDI",
+    "hematology",
+    "transfusion",
+    "biologically derived product",
+    "US Core",
+    "FHIR R4"
+  ]
+}
