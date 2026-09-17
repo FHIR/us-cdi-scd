@@ -347,11 +347,11 @@ Usage: #example
 * code.text = "Hydroxyurea 1000 mg oral tablet (Siklos)"
 * form.coding[+] = $sct#421026006 "Oral tablet (dose form)"
 
-
+/* Block commented out for debug puropses.
 // ==============================================================================
 // Example: Procedure — Automated Red Cell Exchange Transfusion
 // ==============================================================================
-/*
+
 Instance: maya-johnson-exchange-transfusion
 InstanceOf: SCDProcedure
 Title: "Example Procedure — Automated Red Cell Exchange Transfusion"

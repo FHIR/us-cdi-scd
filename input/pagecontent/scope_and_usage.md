@@ -20,7 +20,7 @@ Emergency Department: An SCD patient presents at an Emergency Department (ED) fo
 
 This diagram illustrates the data exchange process flow tested for these use cases. When the SCD patient presents to a new provider for care, a query is initiated to locate the patient's EMR.  Once located, the necessary medical reord data is queried for and returned by the identified EHR.
 
-![USCDI-SCD Exchange Process-data flow](USCDI-SCD Exchange Process-data flow.jpg)
+! USCDI-SCD Exchange Process-data flow.jpg
 ---
  
 ### Out of Scope

@@ -1,4 +1,4 @@
-//
+// ==============================================================================
 // USCDI-SCD FSH Profiles — Procedure, Observations, and Biologically Derived Product
 // File: input/fsh/profiles/SCD_ClinicalData.fsh
 //
@@ -7,12 +7,12 @@
 //   - SCDObservationLaboratoryResult
 //   - SCDObservationVitalSigns
 //   - SCDBiologicallyDerivedProduct
-//
+// ==============================================================================
 
 
-//
+// ==============================================================================
 // SCDProcedure
-//
+// ==============================================================================
 // Extends: US Core Procedure Profile
 // Purpose: Represents procedures performed in the context of SCD care.
 //
@@ -25,7 +25,7 @@
 //   - Central venous access / implantable port placement
 //   - Transcranial Doppler (TCD) ultrasound
 //   - Hydroxyurea dose escalation (clinical act, not procedure per se)
-//
+// ==============================================================================
 
 Profile: SCDProcedure
 Parent: us-core-procedure
@@ -93,10 +93,12 @@ Description: """
   element SHALL reference the SCDBiologicallyDerivedProduct instance(s)
   documenting the specific blood product(s) administered.
 """
-* usedReference only Reference(SCDMedication or Device)
-// SCDBiologicallyDerivedProduct or
+* usedReference only Reference (SCDMedication or Device )
+// or SCDBiologicallyDerivedProduct 
+
+// ============================================================================== 
 // SCDObservationLaboratoryResult
-//
+// ==============================================================================
 // Extends: US Core Laboratory Result Observation Profile
 // Purpose: Represents laboratory results relevant to SCD monitoring.
 //
@@ -129,7 +131,7 @@ Description: """
 //     - Extended red cell antigen phenotype (Rh, Kell, Duffy, Kidd, MNS)
 //     - Red cell antibody screen and identification (alloantibodies)
 //     - Pre-transfusion crossmatch result
-//
+// ==============================================================================
 
 Profile: SCDObservationLaboratoryResult
 Parent: us-core-observation-lab
@@ -212,8 +214,9 @@ Description: """
 * component.code MS
 * component.value[x] MS
 
+// ============================================================================== 
 // SCDObservationVitalSigns
-//
+// ==============================================================================
 // Extends: US Core Vital Signs Profile
 // Purpose: Represents vital signs relevant to SCD monitoring.
 //
@@ -228,7 +231,7 @@ Description: """
 //   - Respiratory rate: elevated in ACS; used for sepsis screening
 //   - Heart rate: tachycardia in anemia, infection, or pain
 //   - Body weight: important for hydroxyurea and crizanlizumab dosing
-//
+// ==============================================================================
 
 Profile: SCDObservationVitalSigns
 Parent: us-core-vital-signs
@@ -306,9 +309,9 @@ Description: """
 """
 
 
-//
+// ==============================================================================
 // SCDBiologicallyDerivedProduct
-//
+// ==============================================================================
 // Base: FHIR R4 BiologicallyDerivedProduct (NO US Core parent profile)
 // Purpose: Represents blood products used in SCD care, primarily:
 //   - Packed red blood cells (pRBCs) — simple transfusion
@@ -326,7 +329,7 @@ Description: """
 //     antigen-matched (extended phenotype matching)
 //   - storage: ABO/Rh-compatible, antigen-matched unit
 //   - request: links back to the ServiceRequest (transfusion order)
-//
+// ==============================================================================
 
 Profile: SCDBiologicallyDerivedProduct
 Parent: BiologicallyDerivedProduct

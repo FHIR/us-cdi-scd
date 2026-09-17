@@ -24,28 +24,9 @@ Each box represents an information concept or class, and generally corresponds t
 Each connecting line represents a relationship between the concepts. The text on the line describes the relationship represented and should be interpreted fron the line start to the arrowhead (e.g.: A Problem/Condition is evidenced by a Lab Result). 
 NOTE: There is no cardinality of the relationship represented in this model.  Actual manifestation within the FHIR resources (using resource references) may/may not follow the direction of the arrows.
 
-![UCSDI-SCD Info Model](UCSDI-SCD Info Model 20260330.jpg)
+! UCSDI-SCD Info Model 20260330.jpg
 The table below maps known USCDI+ Sickle Cell Disease data elements to the
 corresponding FHIR profiles and elements in this IG.
-
-<!-- TODO: Complete the mapping table below based on the published USCDI+
-     SCD data element list from HRSA/ONC. Add rows for each data element.
-
-| USCDI+ SCD Data Element | FHIR Profile | FHIR Element |
-|---|---|---|
-| SCD Diagnosis | SCD Condition (Problems) | Condition.code (SNOMED/ICD-10) |
-| SCD Genotype / Subtype | SCD Condition (Problems) | Condition.code |
-| Hemoglobin Electrophoresis / Fractionation | SCD Laboratory Result | Observation.code + Observation.value |
-| HbS % | SCD Laboratory Result | Observation.code (LOINC) + value |
-| Hydroxyurea Use | SCD Medication | MedicationRequest.medication |
-| Transfusion History | SCD Procedure + BiologicallyDerivedProduct | Procedure.code + product reference |
-| Pain Score | SCD Vital Signs (Pain) | Observation.code (LOINC 38208-5) |
-| Oxygen Saturation | US Core Vital Signs | Observation.code (LOINC 59408-5) |
-| Acute Pain Episode (VOC) | SCD Encounter Diagnosis | Condition.code |
-| Red Cell Antigen Phenotype | SCD Laboratory Result | Observation (panel) |
-| Ferritin | SCD Laboratory Result | Observation.code (LOINC 2276-4) |
-
--->
 
 ---
 
@@ -76,11 +57,3 @@ The following profiles are defined or used in this IG:
 
 ### Conventions
 
-<!-- TODO: Describe the conventions used throughout this IG:
-       - How "Must Support" is defined (reference US Core definition)
-       - Cardinality notation (0..1, 1..*, etc.)
-       - Terminology binding strengths (required, extensible, preferred, example)
-       - How invariants and constraints are expressed
-       - Versioning conventions
-       - How examples are provided
--->
