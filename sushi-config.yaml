@@ -21,7 +21,7 @@ description: >
   in alignment with the United States Core Data for Interoperability (USCDI)
   and US Core 8.0.1.
 status: draft              # draft | active | retired | unknown
-version: 0.1
+version: 0.1.0
 fhirVersion: 4.0.1
 copyrightYear: 2025+
 releaseLabel: draft         # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
