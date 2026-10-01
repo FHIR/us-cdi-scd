@@ -32,7 +32,7 @@ Description: """
   TODO: Review against LOINC Part codes and US Core observation categories
   before finalizing. Consider submitting concepts to HL7 THO or LOINC.
 """
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
@@ -89,7 +89,7 @@ Description: """
   exist. Consider ISBT 128 as the primary coding system and use this only
   for concepts not yet covered.
 """
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
@@ -107,19 +107,21 @@ Description: """
     "Irradiated"
     "Blood product that has been exposed to gamma radiation or X-ray irradiation
      to inactivate T-lymphocytes, preventing transfusion-associated graft-vs-host
-     disease (TA-GvHD). Required for immunocompromised SCD patients and those
-     post-HSCT."
+     disease (TA-GvHD). Indicated for specific groups, such as HSCT candidates
+     and recipients and patients with congenital cellular immunodeficiency;
+     not routinely required for SCD."
 
 * #cmv-negative
     "CMV Seronegative"
     "Blood product collected from a donor who tested negative for cytomegalovirus
-     (CMV) antibodies. Required for CMV-seronegative immunocompromised patients."
+     (CMV) antibodies. Used for selected patients per institutional policy;
+     leukoreduced products are widely accepted as CMV-safe."
 
 * #sickle-cell-negative
     "Sickle Cell Trait Negative (HbS Negative)"
     "Blood product confirmed to be from a donor who does not carry the sickle
-     hemoglobin trait (HbAS) or disease (HbSS). Required for exchange transfusion
-     in SCD patients to ensure post-transfusion HbS reduction is effective."
+     hemoglobin trait (HbAS). HbS-negative units are standard for transfusions
+     in SCD patients so that HbS% can be monitored after transfusion."
 
 // Extended Antigen Matching
 * #antigen-matched-C-neg
@@ -138,7 +140,7 @@ Description: """
     "K Antigen Negative (Kell system)"
     "Blood product confirmed negative for the K antigen (KEL1) in the Kell
      blood group system. Used in antigen-matched transfusion for SCD patients
-     who are K antigen negative (the majority of Black donors are K-negative)."
+     who are K antigen negative."
 
 * #antigen-matched-Fya-neg
     "Fya Antigen Negative (Duffy system)"
@@ -155,11 +157,12 @@ Description: """
 * #extended-phenotype-matched
     "Extended Phenotype Matched"
     "Blood product matched for an extended panel of red cell antigens beyond
-     ABO/Rh D, typically including C, E, K, Fya, and Jkb at minimum,
-     per the prescribing institution's SCD transfusion protocol."
+     ABO/Rh D and the Rh (C, E) and K antigens recommended for all SCD
+     transfusions (ASH 2020), such as Fy, Jk and S antigens for alloimmunized
+     patients, per the prescribing institution's SCD transfusion protocol."
 
 * #fresh-blood
     "Fresh Blood (≤7 days)"
-    "Blood product collected within 7 days of planned transfusion date.
-     Preferred for automated red cell exchange in SCD to optimize post-exchange
-     HbS% reduction and 2,3-DPG levels."
+    "Blood product collected within 7 days of planned transfusion date. Some
+     institutional protocols prefer fresher units for automated red cell
+     exchange; national guidelines do not set a storage-age requirement."

@@ -54,6 +54,15 @@ jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 license: CC0-1.0
 
 # -----------------------------------------------------------------------
+# HL7 Work Group and Standards Status
+# -----------------------------------------------------------------------
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: pher
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: draft
+
+# -----------------------------------------------------------------------
 # Package Dependencies
 # -----------------------------------------------------------------------
 dependencies:
@@ -65,7 +74,7 @@ dependencies:
     uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
   us.nlm.vsac:
     version: 0.19.0
-    uri: https://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac
+    uri: http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac
 
 # -----------------------------------------------------------------------
 # Pages / Navigation Structure
@@ -92,6 +101,8 @@ pages:
     title: Extensions
   terminology.md:
     title: Terminology
+  examples.md:
+    title: Examples
   security.md:
     title: Security and Privacy
   downloads.md:
@@ -117,6 +128,8 @@ menu:
     Profiles: profiles.html
     Extensions: extensions.html
     Terminology: terminology.html
+    Examples: examples.html
+    Artifacts Summary: artifacts.html
   Downloads: downloads.html
   Change Log: changes.html
 

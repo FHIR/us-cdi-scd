@@ -53,10 +53,10 @@ Description: """
   transfusion reactions to the causative BiologicallyDerivedProduct encounter.
 """
 
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^date = "2025-01-01"
-* ^publisher = "HL7 International / Patient Care"
+* ^publisher = "HL7 International / Public Health"
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Inherited Must Support from US Core AllergyIntolerance
@@ -130,10 +130,10 @@ Description: """
   MedicationRequest, and other resources where available.
 """
 
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^date = "2025-01-01"
-* ^publisher = "HL7 International / Patient Care"
+* ^publisher = "HL7 International / Public Health"
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Inherited Must Support from US Core CarePlan
@@ -204,10 +204,10 @@ Description: """
     follow-up, genetic counseling referrals
 """
 
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^date = "2025-01-01"
-* ^publisher = "HL7 International / Patient Care"
+* ^publisher = "HL7 International / Public Health"
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Inherited Must Support from US Core ServiceRequest
@@ -262,31 +262,36 @@ Description: """
 
   **Disease-Modifying Therapies:**
   - Hydroxyurea (Droxia®, Siklos®) — increases fetal hemoglobin (HbF),
-    reduces sickling frequency and VOC rate; first-line therapy for HbSS/HbS-Beta0
-  - L-glutamine (Endari®) — reduces oxidative stress; FDA-approved for SCD ≥5y
-  - Crizanlizumab (Adakveo®) — anti-P-selectin antibody; reduces VOC frequency
+    reduces VOC frequency; first-line therapy for HbSS/HbS-Beta0
+  - L-glutamine (Endari®) — thought to reduce oxidative stress (mechanism not
+    fully understood); FDA-approved for SCD in patients aged 5 years and older
+  - Crizanlizumab (Adakveo®) — anti-P-selectin antibody; FDA-approved to
+    reduce VOC frequency in patients aged 16 years and older
   - Voxelotor (Oxbryta®) — increases Hgb oxygen affinity (NOTE: withdrawn from
-    US market September 2024; include for historical medication records)
-  - Exagamglogene autotemcel (Casgevy®) — gene editing therapy (CTX001)
-  - Lovotibeglogene autotemcel (Lyfgenia®) — gene addition therapy (bb1111)
+    the market in September 2024; include for historical medication records)
+  - Exagamglogene autotemcel (Casgevy®) — gene editing therapy; FDA-approved
+    December 2023 for patients aged 12 and older with recurrent VOC
+  - Lovotibeglogene autotemcel (Lyfgenia®) — gene addition therapy; FDA-approved
+    December 2023 for patients aged 12 and older with a history of VOC
 
   **Iron Chelation Therapy:**
   - Deferasirox (Exjade®, Jadenu®) — oral; for transfusional iron overload
   - Deferoxamine (Desferal®) — parenteral (subcutaneous/IV infusion)
-  - Deferiprone (Ferriprox®) — oral; used in combination or intolerance
+  - Deferiprone (Ferriprox®) — oral; FDA-approved since 2021 for transfusional
+    iron overload due to SCD or other anemias
 
   **Prophylaxis:**
-  - Penicillin V or amoxicillin — for asplenia-related infection prophylaxis
-    (standard of care for children with SCD)
+  - Penicillin — NHLBI 2014 recommends oral penicillin prophylaxis for
+    children with HbSS until age 5. Amoxicillin is a commonly used alternative.
 
   All medications SHALL use RxNorm codes where available. NDC codes MAY be
   included as an additional coding for dispensed medications.
 """
 
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^date = "2025-01-01"
-* ^publisher = "HL7 International / Patient Care"
+* ^publisher = "HL7 International / Public Health"
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Inherited Must Support from US Core Medication
@@ -295,10 +300,63 @@ Description: """
 * code ^comment = """
   Use RxNorm clinical drug codes (ingredient + strength + form) where available.
   NDC codes MAY be provided as additional coding.
-  TODO: Bind code to SCDMedicationVS (value set to be defined) with extensible
-  binding to include SCD disease-modifying medications, iron chelation agents,
-  and prophylactic antibiotics.
+  Bound (extensible) to the SCD Medication value set.
+"""
+* code from SCDMedicationVS (extensible)
+
+// ==============================================================================
+// SCDMedicationRequest
+// ==============================================================================
+// Extends: US Core MedicationRequest Profile
+// Purpose: Represents prescriptions and medication orders for patients with
+//          SCD, linking a medication to the patient, prescriber and dosage.
+//          Supports the SCD Iron Chelation Indication extension for iron
+//          chelation prescriptions.
+// ==============================================================================
+
+Profile: SCDMedicationRequest
+Parent: us-core-medicationrequest
+Id: uscdi-scd-medicationrequest
+Title: "USCDI-SCD MedicationRequest"
+Description: """
+  The USCDI-SCD MedicationRequest profile represents prescriptions and
+  medication orders for patients with Sickle Cell Disease. This profile extends
+  the [US Core MedicationRequest Profile](http://hl7.org/fhir/us/core/STU8.0.1/StructureDefinition-us-core-medicationrequest.html).
+
+  It records what a patient has been prescribed, such as disease-modifying
+  therapy (hydroxyurea, L-glutamine, crizanlizumab), iron chelation
+  (deferasirox, deferoxamine, deferiprone), infection prophylaxis (penicillin)
+  and pain management, together with the prescriber, dosage and reason.
+
+  For iron chelation prescriptions, the SCD Iron Chelation Indication
+  extension SHOULD be used to document the clinical indication and the
+  laboratory or imaging value that triggered therapy.
 """
 
-// TODO: Add value set binding:
-// * code from SCDMedicationVS (extensible)
+* ^status = #draft
+* ^experimental = false
+* ^date = "2025-01-01"
+* ^publisher = "HL7 International / Public Health"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+
+// SCD-specific extension
+* extension contains SCDIronChelationIndicationExtension named scd-iron-chelation-indication 0..1 MS
+* extension[scd-iron-chelation-indication] ^short = "Indication and trigger for iron chelation therapy"
+
+// Inherited Must Support from US Core MedicationRequest
+* status MS
+* intent MS
+* medication[x] MS
+* medication[x] ^short = "SCD medication (RxNorm preferred)"
+* medicationReference only Reference(SCDMedication)
+* medicationCodeableConcept from SCDMedicationVS (extensible)
+* subject MS
+* subject only Reference(SCDPatient)
+* encounter MS
+* encounter only Reference(SCDEncounter)
+* authoredOn MS
+* requester MS
+* reasonCode MS
+* reasonReference MS
+* reasonReference only Reference(SCDConditionEncounterDiagnosis or SCDConditionProblemsAndHealthConcerns or SCDObservationLaboratoryResult)
+* dosageInstruction MS

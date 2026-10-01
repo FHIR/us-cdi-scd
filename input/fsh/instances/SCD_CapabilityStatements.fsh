@@ -41,10 +41,10 @@ Usage: #definition
 * version = "1.0.0"
 * name = "USCDISCDServerCapabilityStatement"
 * title = "USCDI-SCD Server CapabilityStatement"
-* status = #active
+* status = #draft
 * experimental = false
 * date = "2025-01-01"
-* publisher = "HL7 International / Patient Care"
+* publisher = "HL7 International / Public Health"
 * description = """
   Minimum server capabilities for systems conformant with the USCDI + Sickle
   Cell Disease Implementation Guide. Servers SHALL implement US Core Server
@@ -73,11 +73,12 @@ Usage: #definition
     - Condition: search by patient, code (SCD D57.x codes), category
     - Observation: search by patient, code (HbS%, ferritin, SpO2), date
     - Procedure: search by patient, code (transfusion), date
-    - BiologicallyDerivedProduct: search by patient, request, status
+    - BiologicallyDerivedProduct: search by request and status (FHIR R4 has no patient search parameter for this resource)
 """
 
 // Patient
 * rest[=].resource[+].type = #Patient
+* insert Expectation(SHALL)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-patient"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
@@ -90,6 +91,7 @@ Usage: #definition
 
 // Practitioner
 * rest[=].resource[+].type = #Practitioner
+* insert Expectation(SHALL)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-practitioner"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
@@ -98,24 +100,28 @@ Usage: #definition
 
 // PractitionerRole
 * rest[=].resource[+].type = #PractitionerRole
+* insert Expectation(SHALL)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-practitionerrole"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
 
 // Organization
 * rest[=].resource[+].type = #Organization
+* insert Expectation(SHALL)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-organization"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
 
 // Location
 * rest[=].resource[+].type = #Location
+* insert Expectation(SHALL)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-location"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
 
 // Encounter
 * rest[=].resource[+].type = #Encounter
+* insert Expectation(SHALL)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-encounter"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
@@ -128,6 +134,7 @@ Usage: #definition
 
 // Condition
 * rest[=].resource[+].type = #Condition
+* insert Expectation(SHALL)
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-condition-encounter-diagnosis"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-condition-problems"
 * rest[=].resource[=].interaction[+].code = #read
@@ -141,30 +148,48 @@ Usage: #definition
 
 // AllergyIntolerance
 * rest[=].resource[+].type = #AllergyIntolerance
+* insert Expectation(SHALL)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-allergyintolerance"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
 
 // CarePlan
 * rest[=].resource[+].type = #CarePlan
+* insert Expectation(SHALL)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-careplan"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
 
 // ServiceRequest
 * rest[=].resource[+].type = #ServiceRequest
+* insert Expectation(SHALL)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-servicerequest"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
 
 // Medication
 * rest[=].resource[+].type = #Medication
+* insert Expectation(SHALL)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-medication"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
 
+// MedicationRequest
+* rest[=].resource[+].type = #MedicationRequest
+* insert Expectation(SHALL)
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-medicationrequest"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+* rest[=].resource[=].searchParam[+].name = "patient"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[+].name = "intent"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[+].name = "status"
+* rest[=].resource[=].searchParam[=].type = #token
+
 // Procedure
 * rest[=].resource[+].type = #Procedure
+* insert Expectation(SHALL)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-procedure"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
@@ -177,6 +202,7 @@ Usage: #definition
 
 // Observation (Laboratory Result and Vital Signs)
 * rest[=].resource[+].type = #Observation
+* insert Expectation(SHALL)
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-laboratory-result"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-vital-signs"
 * rest[=].resource[=].interaction[+].code = #read
@@ -192,6 +218,7 @@ Usage: #definition
 
 // BiologicallyDerivedProduct
 * rest[=].resource[+].type = #BiologicallyDerivedProduct
+* insert Expectation(SHOULD)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-biologicallyderivedproduct"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
@@ -226,10 +253,10 @@ Usage: #definition
 * version = "1.0.0"
 * name = "USCDISCDClientCapabilityStatement"
 * title = "USCDI-SCD Client CapabilityStatement"
-* status = #active
+* status = #draft
 * experimental = false
 * date = "2025-01-01"
-* publisher = "HL7 International / Patient Care"
+* publisher = "HL7 International / Public Health"
 * description = """
   Minimum client capabilities for systems conformant with the USCDI + Sickle
   Cell Disease Implementation Guide. Clients SHALL implement US Core Client
@@ -248,7 +275,8 @@ Usage: #definition
 * rest[=].documentation = """
   USCDI-SCD Clients SHALL:
   1. Support all US Core Client requirements
-  2. Be capable of requesting and processing all USCDI-SCD profiles
+  2. Be capable of requesting and processing the USCDI-SCD profiles marked SHALL below,
+     and SHOULD support those marked SHOULD
   3. Process all Must Support elements in USCDI-SCD profiles without error
   4. Handle missing data using dataAbsentReason where applicable
   5. Display SCD-relevant clinical data in human-readable form
@@ -256,18 +284,118 @@ Usage: #definition
   TODO: Add specific client requirements for SCD workflows.
 """
 
+// Patient
 * rest[=].resource[+].type = #Patient
+* insert Expectation(SHALL)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-patient"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
 
+// Condition
+* rest[=].resource[+].type = #Condition
+* insert Expectation(SHALL)
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-condition-encounter-diagnosis"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-condition-problems"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+
+// Encounter
+* rest[=].resource[+].type = #Encounter
+* insert Expectation(SHALL)
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-encounter"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+
+// Observation
 * rest[=].resource[+].type = #Observation
+* insert Expectation(SHALL)
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-laboratory-result"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-vital-signs"
 * rest[=].resource[=].interaction[+].code = #read
 * rest[=].resource[=].interaction[+].code = #search-type
 
+// Procedure
+* rest[=].resource[+].type = #Procedure
+* insert Expectation(SHALL)
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-procedure"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+
+// AllergyIntolerance
+* rest[=].resource[+].type = #AllergyIntolerance
+* insert Expectation(SHALL)
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-allergyintolerance"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+
+// MedicationRequest
+* rest[=].resource[+].type = #MedicationRequest
+* insert Expectation(SHALL)
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-medicationrequest"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+
+// Practitioner
+* rest[=].resource[+].type = #Practitioner
+* insert Expectation(SHOULD)
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-practitioner"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+
+// PractitionerRole
+* rest[=].resource[+].type = #PractitionerRole
+* insert Expectation(SHOULD)
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-practitionerrole"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+
+// Organization
+* rest[=].resource[+].type = #Organization
+* insert Expectation(SHOULD)
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-organization"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+
+// Location
+* rest[=].resource[+].type = #Location
+* insert Expectation(SHOULD)
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-location"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+
+// Medication
+* rest[=].resource[+].type = #Medication
+* insert Expectation(SHOULD)
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-medication"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+
+// CarePlan
+* rest[=].resource[+].type = #CarePlan
+* insert Expectation(SHOULD)
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-careplan"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+
+// ServiceRequest
+* rest[=].resource[+].type = #ServiceRequest
+* insert Expectation(SHOULD)
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-servicerequest"
+* rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
+
+// BiologicallyDerivedProduct
 * rest[=].resource[+].type = #BiologicallyDerivedProduct
+* insert Expectation(SHOULD)
 * rest[=].resource[=].profile = "http://hl7.org/fhir/us/uscdi-scd/StructureDefinition/uscdi-scd-biologicallyderivedproduct"
 * rest[=].resource[=].interaction[+].code = #read
+* rest[=].resource[=].interaction[+].code = #search-type
 * rest[=].resource[=].documentation = "Client SHOULD support retrieval and display of blood product information for SCD transfusion history review."
+
+// ==============================================================================
+// RuleSet: per-resource conformance expectation (SHALL | SHOULD | MAY)
+// ==============================================================================
+
+RuleSet: Expectation(level)
+* rest[=].resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest[=].resource[=].extension[=].valueCode = #{level}
