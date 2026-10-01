@@ -21,7 +21,7 @@ This guide defines seven extensions for SCD-specific information that neither FH
 ### Diagnosis and Disease History
 
 #### [SCD Genotype](StructureDefinition-scd-genotype.html)
-Records the patient's confirmed SCD genotype, such as HbSS, HbSC, HbS-β⁰-thalassemia or HbS-β⁺-thalassemia, on the Condition representing the primary SCD diagnosis. The genotype is coded from the [SCD Genotype Value Set](ValueSet-scd-genotype-vs.html) (extensible binding).
+Records the patient's confirmed SCD genotype, such as HbSS, HbSC, HbS-β⁰-thalassemia or HbS-β⁺-thalassemia, on the Condition representing the primary SCD diagnosis. The [SCD Genotype Value Set](ValueSet-scd-genotype-vs.html) lists codes for the major genotypes (example binding).
 
 Genotype matters because it affects treatment and transfusion decisions. For example, genotype determines which patients NHLBI 2014 recommends for hydroxyurea (HbSS and HbS-β⁰), and patients with HbSC have higher baseline hemoglobin, which affects the choice between simple and exchange transfusion. It also supports quality measurement and population health reporting. Genotype is confirmed by hemoglobin fractionation or genetic testing, and the Condition's `verificationStatus` should reflect whether it has been confirmed.
 
@@ -74,7 +74,7 @@ This extension SHALL be used on the blood product when extended antigen matching
 
 | Part | Type | Description |
 |---|---|---|
-| `matchedAntigen` (repeating) | CodeableConcept | Each antigen that was matched, from the [SCD Red Cell Antigen Value Set](ValueSet-scd-red-cell-antigen-vs.html) |
+| `matchedAntigen` (repeating) | CodeableConcept | Each antigen that was matched (see the [SCD Red Cell Antigen Value Set](ValueSet-scd-red-cell-antigen-vs.html), example binding) |
 | `matchingProtocol` | string | The matching protocol used, such as "Extended 5-antigen match" |
 
 *Example:* [BiologicallyDerivedProduct — Antigen-Matched pRBCs](BiologicallyDerivedProduct-prbcs-antigen-matched-example.html)

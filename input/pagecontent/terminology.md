@@ -8,20 +8,22 @@ All terminology requirements of [US Core 8.0.1](http://hl7.org/fhir/us/core/STU8
 
 ### Value Sets
 
-This guide defines ten value sets. Each name links to the full list of codes. All bindings are **extensible**: when a code in the value set fits the concept, systems SHALL use it, and when none fits, they MAY send another code.
+This guide defines ten value sets. Each name links to the full list of codes.
 
-| Value Set | Code systems | Bound to |
-|---|---|---|
-| [SCD Diagnosis](ValueSet-scd-diagnosis-vs.html) | ICD-10-CM, SNOMED CT | `Condition.code` in [Condition Problems and Health Concerns](StructureDefinition-uscdi-scd-condition-problems.html): the primary SCD diagnosis, covering all major genotypes |
-| [SCD Genotype](ValueSet-scd-genotype-vs.html) | SNOMED CT | The [SCD Genotype](StructureDefinition-scd-genotype.html) extension: the patient's confirmed genotype |
-| [SCD Acute Complication](ValueSet-scd-acute-complication-vs.html) | SNOMED CT, ICD-10-CM | `Condition.code` in [Condition Encounter Diagnosis](StructureDefinition-uscdi-scd-condition-encounter-diagnosis.html): acute complications such as VOC, acute chest syndrome and splenic sequestration |
-| [SCD Laboratory Panel](ValueSet-scd-laboratory-panel-vs.html) | LOINC | `Observation.code` in [Laboratory Result](StructureDefinition-uscdi-scd-laboratory-result.html): CBC, hemoglobin fractionation, hemolysis markers, iron studies, kidney and liver function, immunohematology |
-| [SCD Vital Signs](ValueSet-scd-vital-signs-vs.html) | LOINC | `Observation.code` in [Vital Signs](StructureDefinition-uscdi-scd-vital-signs.html): US Core vital signs plus the pain severity score used to assess VOC |
-| [SCD Medication](ValueSet-scd-medication-vs.html) | RxNorm | `Medication.code` in [Medication](StructureDefinition-uscdi-scd-medication.html) and `medication[x]` in [MedicationRequest](StructureDefinition-uscdi-scd-medicationrequest.html): disease-modifying therapies, iron chelation agents and preventive antibiotics |
-| [SCD Procedure](ValueSet-scd-procedure-vs.html) | SNOMED CT | `Procedure.code` in [Procedure](StructureDefinition-uscdi-scd-procedure.html): transfusion, exchange transfusion, stem cell transplantation and monitoring procedures |
-| [SCD Blood Product Type](ValueSet-scd-blood-product-type-vs.html) | SNOMED CT | `productCode` in [BiologicallyDerivedProduct](StructureDefinition-uscdi-scd-biologicallyderivedproduct.html): red blood cell and hematopoietic progenitor cell products |
-| [SCD Blood Product Processing](ValueSet-scd-blood-product-processing-vs.html) | SCD Blood Product Processing (local) | `processing.procedure` in [BiologicallyDerivedProduct](StructureDefinition-uscdi-scd-biologicallyderivedproduct.html): processing steps such as leukoreduction, irradiation and antigen matching |
-| [SCD Red Cell Antigen](ValueSet-scd-red-cell-antigen-vs.html) | SNOMED CT | The [SCD Transfusion Red Cell Antigen Match Profile](StructureDefinition-scd-transfusion-antigen-match.html) extension: Rh, Kell, Duffy, Kidd and MNS antigens used for extended matching |
+In line with the project's approach of not constraining the exchanged data, these value sets do not add any requirement beyond US Core. Most are **reference lists** of the codes commonly used in SCD care, which can help with tasks such as prioritizing what to display. Where a profile element already has a US Core binding (for example, LOINC for laboratory tests or RxNorm for medications), the US Core binding applies. Where this guide binds a value set, the binding strength is **example**: it shows the kinds of codes expected without requiring them.
+
+| Value Set | Code systems | Used with | Binding |
+|---|---|---|---|
+| [SCD Diagnosis](ValueSet-scd-diagnosis-vs.html) | ICD-10-CM, SNOMED CT | `Condition.code` in [Condition Problems and Health Concerns](StructureDefinition-uscdi-scd-condition-problems.html): SCD diagnoses, covering all major genotypes | Reference list (US Core preferred binding applies) |
+| [SCD Genotype](ValueSet-scd-genotype-vs.html) | SNOMED CT | The [SCD Genotype](StructureDefinition-scd-genotype.html) extension: the patient's confirmed genotype | Example |
+| [SCD Acute Complication](ValueSet-scd-acute-complication-vs.html) | SNOMED CT, ICD-10-CM | `Condition.code` in [Condition Encounter Diagnosis](StructureDefinition-uscdi-scd-condition-encounter-diagnosis.html): acute complications such as VOC, acute chest syndrome, splenic sequestration and aplastic crisis | Reference list (US Core preferred binding applies) |
+| [SCD Laboratory Panel](ValueSet-scd-laboratory-panel-vs.html) | LOINC | `Observation.code` in [Laboratory Result](StructureDefinition-uscdi-scd-laboratory-result.html): CBC, hemoglobin fractionation, hemolysis markers, iron studies, kidney and liver function, immunohematology | Reference list (US Core extensible binding applies) |
+| [SCD Vital Signs](ValueSet-scd-vital-signs-vs.html) | LOINC | `Observation.code` in [Vital Signs](StructureDefinition-uscdi-scd-vital-signs.html): US Core vital signs plus the pain severity score used to assess VOC | Reference list (US Core extensible binding applies) |
+| [SCD Medication](ValueSet-scd-medication-vs.html) | RxNorm | `Medication.code` in [Medication](StructureDefinition-uscdi-scd-medication.html) and `medication[x]` in [MedicationRequest](StructureDefinition-uscdi-scd-medicationrequest.html): disease-modifying therapies, gene therapies, iron chelation agents and preventive antibiotics | Reference list (US Core extensible binding applies) |
+| [SCD Procedure](ValueSet-scd-procedure-vs.html) | SNOMED CT | `Procedure.code` in [Procedure](StructureDefinition-uscdi-scd-procedure.html): transfusion, exchange transfusion, stem cell transplantation and monitoring procedures | Reference list (US Core preferred binding applies) |
+| [SCD Blood Product Type](ValueSet-scd-blood-product-type-vs.html) | SNOMED CT | `productCode` in [BiologicallyDerivedProduct](StructureDefinition-uscdi-scd-biologicallyderivedproduct.html): red blood cell and hematopoietic progenitor cell products | Example |
+| [SCD Blood Product Processing](ValueSet-scd-blood-product-processing-vs.html) | SCD Blood Product Processing (local) | `processing.procedure` in [BiologicallyDerivedProduct](StructureDefinition-uscdi-scd-biologicallyderivedproduct.html): processing steps such as leukoreduction, irradiation and antigen matching | Example |
+| [SCD Red Cell Antigen](ValueSet-scd-red-cell-antigen-vs.html) | SNOMED CT | The [SCD Transfusion Red Cell Antigen Match Profile](StructureDefinition-scd-transfusion-antigen-match.html) extension: Rh, Kell, Duffy, Kidd and MNS antigens used for matching | Example |
 
 These value sets are drafts. Some codes are still under terminology review. The value sets are intended for future submission to the [Value Set Authority Center (VSAC)](https://vsac.nlm.nih.gov/).
 

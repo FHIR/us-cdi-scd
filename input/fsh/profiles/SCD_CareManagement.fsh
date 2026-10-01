@@ -300,9 +300,9 @@ Description: """
 * code ^comment = """
   Use RxNorm clinical drug codes (ingredient + strength + form) where available.
   NDC codes MAY be provided as additional coding.
-  Bound (extensible) to the SCD Medication value set.
+  US Core requires RxNorm codes here (extensible binding). The SCD Medication
+  value set lists medications commonly used in SCD care, for reference.
 """
-* code from SCDMedicationVS (extensible)
 
 // ==============================================================================
 // SCDMedicationRequest
@@ -349,7 +349,6 @@ Description: """
 * medication[x] MS
 * medication[x] ^short = "SCD medication (RxNorm preferred)"
 * medicationReference only Reference(SCDMedication)
-* medicationCodeableConcept from SCDMedicationVS (extensible)
 * subject MS
 * subject only Reference(SCDPatient)
 * encounter MS

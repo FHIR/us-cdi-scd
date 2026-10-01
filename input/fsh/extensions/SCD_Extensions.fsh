@@ -38,9 +38,9 @@ Description: """
   patient in a structured, coded format. This extension is intended for use
   on the Condition resource representing the patient's primary SCD diagnosis.
 
-  The genotype SHOULD be coded using a value from the SCDGenotypeVS value set
-  (extensible binding), which includes SNOMED CT codes for the major SCD
-  subtypes (HbSS, HbSC, HbS-Beta0-thalassemia, HbS-Beta+-thalassemia, etc.).
+  The SCDGenotypeVS value set (example binding) lists SNOMED CT codes for the
+  major SCD subtypes (HbSS, HbSC, HbS-Beta0-thalassemia, HbS-Beta+-thalassemia,
+  etc.).
 
   This extension supports:
   - Clinical decision support (e.g., genotype determines eligibility for
@@ -60,7 +60,7 @@ Description: """
 * ^context[=].expression = "Condition"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from SCDGenotypeVS (extensible)
+* valueCodeableConcept from SCDGenotypeVS (example)
 * valueCodeableConcept ^short = "SCD genotype code (HbSS, HbSC, HbS-Beta0, etc.)"
 
 
@@ -107,7 +107,7 @@ Description: """
 * extension[matchedAntigen] ^short = "Specific antigen confirmed matched/negative"
 * extension[matchedAntigen] ^definition = "A specific red cell antigen that was confirmed negative (matched) in the selected blood product."
 * extension[matchedAntigen].value[x] only CodeableConcept
-* extension[matchedAntigen].valueCodeableConcept from SCDRedCellAntigenVS (extensible)
+* extension[matchedAntigen].valueCodeableConcept from SCDRedCellAntigenVS (example)
 
 * extension[matchingProtocol] ^short = "Antigen matching protocol used"
 * extension[matchingProtocol] ^definition = "The institutional or standard matching protocol applied (e.g., 'CcEeK matching', 'Extended 5-antigen match', 'Full phenotype match')."

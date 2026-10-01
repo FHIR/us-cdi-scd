@@ -135,9 +135,9 @@ Description: """
 * code ^comment = """
   For SCD encounter diagnoses, code SHOULD use SNOMED CT or ICD-10-CM.
   Where both are available, both SHOULD be included as coding repetitions.
-  Bound (extensible) to the SCD Acute Complication value set.
+  US Core's preferred binding applies. The SCD Acute Complication value set
+  lists common acute SCD complications, for reference.
 """
-* code from SCDAcuteComplicationVS (extensible)
 * subject MS
 * subject only Reference(SCDPatient)
 * encounter MS
@@ -216,10 +216,10 @@ Description: """
   The code SHALL represent the patient's SCD diagnosis. For the primary SCD
   diagnosis, this SHOULD be the genotype-specific code (e.g., HbSS, HbSC).
   Use SNOMED CT or ICD-10-CM. Both SHOULD be included when available.
-  Bound (extensible) to the SCD Diagnosis value set. Codes outside the value
-  set MAY be used for chronic complications and other problems it does not cover.
+  US Core's preferred binding applies. The SCD Diagnosis value set lists SCD
+  diagnosis codes, for reference. Any appropriate code may be used, including
+  for chronic complications and other problems the value set does not cover.
 """
-* code from SCDDiagnosisVS (extensible)
 * subject MS
 * subject only Reference(SCDPatient)
 * onset[x] MS

@@ -76,9 +76,9 @@ Description: """
   For transfusion procedures, code SHOULD use SNOMED CT 116863004 or 71493000
   (simple transfusion) or 438839005 (automated red cell exchange). CPT codes
   MAY be included.
-  Bound (extensible) to the SCD Procedure value set.
+  US Core's preferred binding applies. The SCD Procedure value set lists
+  common SCD procedures, for reference.
 """
-* code from SCDProcedureVS (extensible)
 * subject MS
 * subject only Reference(SCDPatient)
 * encounter MS
@@ -212,10 +212,10 @@ Description: """
   - Serum creatinine: 2160-0
   - Urine albumin/creatinine ratio: 14959-1
   - Reticulocyte count: 17849-1
-  - See SCDLaboratoryPanelVS for the full recommended value set.
-  Bound (extensible) to the SCD Laboratory Panel value set.
+  - See SCDLaboratoryPanelVS for a reference list of SCD laboratory tests.
+  US Core requires LOINC codes here (extensible binding). The SCD Laboratory
+  Panel value set lists tests commonly used in SCD care, for reference.
 """
-* code from SCDLaboratoryPanelVS (extensible)
 * subject MS
 * subject only Reference(SCDPatient)
 * effective[x] MS
@@ -327,9 +327,9 @@ Description: """
   - Heart rate: LOINC 8867-4
   - Respiratory rate: LOINC 9279-1
   - Body weight: LOINC 29463-7
-  Bound (extensible) to the SCD Vital Signs value set.
+  US Core's vital signs binding applies. The SCD Vital Signs value set lists
+  vital signs especially relevant to SCD, for reference.
 """
-* code from SCDVitalSignsVS (extensible)
 
 
 // ==============================================================================
@@ -433,10 +433,10 @@ Description: """
   TODO: add codes for hematopoietic progenitor cell products (HPC-A, HPC-M,
   cord blood); no SNOMED CT equivalents were found.
 
-  Bound (extensible) to the SCD Blood Product Type value set.
+  The SCD Blood Product Type value set lists common products (example binding).
   TODO: Add ISBT 128 codes to SCDBloodProductTypeVS.
 """
-* productCode from SCDBloodProductTypeVS (extensible)
+* productCode from SCDBloodProductTypeVS (example)
 
 // Status of the product
 * status MS
@@ -479,12 +479,12 @@ Description: """
     additional antigens for alloimmunized patients — document matched
     antigens in the processing description or via extension
 
-  processing.procedure is bound (extensible) to the SCD Blood Product
+  processing.procedure has an example binding to the SCD Blood Product
   Processing value set.
 """
 * processing.description MS
 * processing.procedure MS
-* processing.procedure from SCDBloodProductProcessingVS (extensible)
+* processing.procedure from SCDBloodProductProcessingVS (example)
 * processing.time[x] MS
 
 // Storage
