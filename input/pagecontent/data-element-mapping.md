@@ -221,7 +221,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 | `Condition.verificationStatus` | 0..1 | Y | CodeableConcept | condition-ver-status (required) | Inherited | unconfirmed \| provisional \| differential \| confirmed \| refuted \| entered-in-error |
 | `Condition.category` | 1..* | Y | CodeableConcept | condition-category (extensible) | Inherited | category codes |
 | `Condition.category:us-core` | 1..* | Y | CodeableConcept | us-core-problem-or-health-concern (required) | Inherited | problem-list-item \| health-concern |
-| `Condition.code` | 1..1 | Y | CodeableConcept | SCD Diagnosis Value Set (extensible) | USCDI-SCD | SCD diagnosis, genotype, or chronic complication code |
+| `Condition.code` | 1..1 | Y | CodeableConcept | us-core-condition-code (preferred) | Inherited | SCD diagnosis, genotype, or chronic complication code |
 | `Condition.subject` | 1..1 | Y | Reference(USCDI-SCD Patient) |  | USCDI-SCD | Who has the condition? |
 | `Condition.onset[x]` | 0..1 | Y | dateTime \| Age \| Period \| Range \| string |  | Inherited | Estimated or actual date,  date-time, or age |
 | `Condition.abatement[x]` | 0..1 | Y | dateTime \| Age \| Period \| Range \| string |  | Inherited | When in resolution/remission |
@@ -246,7 +246,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 | `Condition.verificationStatus` | 0..1 | Y | CodeableConcept | condition-ver-status (required) | USCDI-SCD | unconfirmed \| provisional \| differential \| confirmed \| refuted \| entered-in-error |
 | `Condition.category` | 1..* | Y | CodeableConcept | condition-category (extensible) | Inherited | category codes |
 | `Condition.category:us-core` | 1..1 | Y | CodeableConcept | condition-category (extensible) | Inherited | encounter-diagnosis |
-| `Condition.code` | 1..1 | Y | CodeableConcept | SCD Acute Complication Value Set (extensible) | USCDI-SCD | Acute SCD diagnosis code (SNOMED CT or ICD-10-CM) |
+| `Condition.code` | 1..1 | Y | CodeableConcept | us-core-condition-code (preferred) | Inherited | Acute SCD diagnosis code (SNOMED CT or ICD-10-CM) |
 | `Condition.subject` | 1..1 | Y | Reference(USCDI-SCD Patient) |  | USCDI-SCD | Who has the condition? |
 | `Condition.encounter` | 0..1 | Y | Reference(USCDI-SCD Encounter) |  | USCDI-SCD | Encounter created as part of |
 | `Condition.onset[x]` | 0..1 | Y | dateTime \| Age \| Period \| Range \| string |  | USCDI-SCD | Estimated or actual date,  date-time, or age |
@@ -266,7 +266,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 | Element | Card. | MS | Type | Binding | Source | Description |
 |---|---|---|---|---|---|---|
-| `Medication.code` | 1..1 | Y | CodeableConcept | SCD Medication Value Set (extensible) | USCDI-SCD | SCD medication code (RxNorm preferred) |
+| `Medication.code` | 1..1 | Y | CodeableConcept | 2.16.840.1.113762.1.4.1010.4 (extensible) | Inherited | SCD medication code (RxNorm preferred) |
 
 </div>
 
@@ -288,7 +288,6 @@ Elements inherited from US Core are included so testers can see every requiremen
 | `MedicationRequest.reported[x]` | 0..1 | Y | boolean \| Reference(US Core Practitioner Profile \| US Core Organization Profile \| US Core Patient Profile \| US Core PractitionerRole Profile \| US Core RelatedPerson Profile) |  | Inherited | Reported rather than primary record |
 | `MedicationRequest.medication[x]` | 1..1 | Y | CodeableConcept \| Reference(US Core Medication Profile) | 2.16.840.1.113762.1.4.1010.4 (extensible) | Inherited | SCD medication (RxNorm preferred) |
 | `MedicationRequest.medication[x]:medicationReference` | 0..1 | Y | Reference(USCDI-SCD Medication) |  | USCDI-SCD | Medication to be taken |
-| `MedicationRequest.medication[x]:medicationCodeableConcept` | 0..1 | Y | CodeableConcept | SCD Medication Value Set (extensible) | USCDI-SCD | Medication to be taken |
 | `MedicationRequest.subject` | 1..1 | Y | Reference(USCDI-SCD Patient) |  | USCDI-SCD | Who or group medication request is for |
 | `MedicationRequest.encounter` | 0..1 | Y | Reference(USCDI-SCD Encounter) |  | USCDI-SCD | Encounter created as part of encounter/admission/stay |
 | `MedicationRequest.authoredOn` | 0..1 | Y | dateTime |  | Inherited | When request was initially authored |
@@ -399,7 +398,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 |---|---|---|---|---|---|---|
 | `Procedure.extension:scd-transfusion-antigen-match` | 0..1 |  | Extension(SCD Transfusion Red Cell Antigen Match Profile) |  | USCDI-SCD | Red cell antigen matching requested for the transfusion |
 | `Procedure.status` | 1..1 | Y | code | event-status (required) | Inherited | preparation \| in-progress \| not-done \| on-hold \| stopped \| completed \| entered-in-error \| unknown |
-| `Procedure.code` | 1..1 | Y | CodeableConcept | SCD Procedure Value Set (extensible) | USCDI-SCD | SCD procedure code (SNOMED CT or CPT) |
+| `Procedure.code` | 1..1 | Y | CodeableConcept | us-core-procedure-code (preferred) | Inherited | SCD procedure code (SNOMED CT or CPT) |
 | `Procedure.subject` | 1..1 | Y | Reference(USCDI-SCD Patient) |  | USCDI-SCD | Who the procedure was performed on |
 | `Procedure.encounter` | 0..1 | Y | Reference(USCDI-SCD Encounter) |  | USCDI-SCD | Encounter associated with the procedure |
 | `Procedure.performed[x]` | 0..1 | Y | dateTime \| Period \| string \| Age \| Range |  | Inherited | When the procedure was performed |
@@ -425,7 +424,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 | `Observation.status` | 1..1 | Y | code | observation-status (required) | Inherited | registered \| preliminary \| final \| amended + |
 | `Observation.category` | 1..* | Y | CodeableConcept | observation-category (preferred) | Inherited | Classification of  type of observation |
 | `Observation.category:us-core` | 1..1 | Y | CodeableConcept | us-core-clinical-result-observation-category (required) | Inherited | Classification of type of observation |
-| `Observation.code` | 1..1 | Y | CodeableConcept | SCD Laboratory Panel Value Set (extensible) | USCDI-SCD | LOINC code for SCD laboratory test |
+| `Observation.code` | 1..1 | Y | CodeableConcept | us-core-laboratory-test-codes (extensible) | Inherited | LOINC code for SCD laboratory test |
 | `Observation.subject` | 1..1 | Y | Reference(USCDI-SCD Patient) |  | USCDI-SCD | Who and/or what the observation is about |
 | `Observation.encounter` | 0..1 | Y | Reference(US Core Encounter Profile) |  | Inherited | Encounter associated with Observation |
 | `Observation.effective[x]` | 0..1 | Y | dateTime \| Period \| Timing \| instant |  | Inherited | Clinically relevant time/time-period for observation |
@@ -459,7 +458,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 | `Observation.category:VSCat.coding` | 1..* | Y | Coding |  | Inherited | Code defined by a terminology system |
 | `Observation.category:VSCat.coding.system` | 1..1 | Y | uri |  | Inherited | Identity of the terminology system |
 | `Observation.category:VSCat.coding.code` | 1..1 | Y | code |  | Inherited | Symbol in syntax defined by the system |
-| `Observation.code` | 1..1 | Y | CodeableConcept | SCD Vital Signs Value Set (extensible) | USCDI-SCD | Vital sign LOINC code (SpO2, pain score, BP, temp, RR, HR, weight) |
+| `Observation.code` | 1..1 | Y | CodeableConcept | 2.16.840.1.113883.3.88.12.80.62 (extensible) | Inherited | Vital sign LOINC code (SpO2, pain score, BP, temp, RR, HR, weight) |
 | `Observation.subject` | 1..1 | Y | Reference(USCDI-SCD Patient) |  | USCDI-SCD | Who and/or what the observation is about |
 | `Observation.effective[x]` | 1..1 | Y | dateTime \| Period |  | Inherited | Often just a dateTime for Vital Signs |
 | `Observation.performer` | 0..* | Y | Reference(US Core Practitioner Profile \| US Core Organization Profile \| US Core Patient Profile \| PractitionerRole \| US Core CareTeam Profile \| US Core RelatedPerson Profile) |  | Inherited | Who is responsible for the observation |
@@ -485,7 +484,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 | `BiologicallyDerivedProduct.extension:scd-transfusion-antigen-match` | 0..1 | Y | Extension(SCD Transfusion Red Cell Antigen Match Profile) |  | USCDI-SCD | Red cell antigens matched for this product |
 | `BiologicallyDerivedProduct.extension:scd-blood-product-age` | 0..1 | Y | Extension(SCD Blood Product Age at Transfusion) |  | USCDI-SCD | Age of the product in days at transfusion |
 | `BiologicallyDerivedProduct.productCategory` | 0..1 | Y | code | product-category (required) | USCDI-SCD | biologicalAgent \| cells \| fluid \| tissue \| organ |
-| `BiologicallyDerivedProduct.productCode` | 0..1 | Y | CodeableConcept | SCD Blood Product Type Value Set (extensible) | USCDI-SCD | Blood product type code (ISBT 128 or SNOMED CT) |
+| `BiologicallyDerivedProduct.productCode` | 0..1 | Y | CodeableConcept | SCD Blood Product Type Value Set (example) | USCDI-SCD | Blood product type code (ISBT 128 or SNOMED CT) |
 | `BiologicallyDerivedProduct.status` | 0..1 | Y | code | product-status (required) | USCDI-SCD | available \| unavailable \| unsatisfactory \| entered-in-error |
 | `BiologicallyDerivedProduct.request` | 0..* | Y | Reference(USCDI-SCD ServiceRequest) |  | USCDI-SCD | Reference to the transfusion order (SCDServiceRequest) |
 | `BiologicallyDerivedProduct.collection` | 0..1 | Y | BackboneElement |  | USCDI-SCD | Collection details (donor vs autologous, collection time) |
@@ -493,7 +492,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 | `BiologicallyDerivedProduct.collection.collected[x]` | 0..1 | Y | dateTime \| Period |  | USCDI-SCD | Time of product collection |
 | `BiologicallyDerivedProduct.processing` | 0..* | Y | BackboneElement |  | USCDI-SCD | Product processing steps (irradiation, leukoreduction, CMV-neg) |
 | `BiologicallyDerivedProduct.processing.description` | 0..1 | Y | string |  | USCDI-SCD | Description of of processing |
-| `BiologicallyDerivedProduct.processing.procedure` | 0..1 | Y | CodeableConcept | SCD Blood Product Processing Value Set (extensible) | USCDI-SCD | Procesing code |
+| `BiologicallyDerivedProduct.processing.procedure` | 0..1 | Y | CodeableConcept | SCD Blood Product Processing Value Set (example) | USCDI-SCD | Procesing code |
 | `BiologicallyDerivedProduct.processing.time[x]` | 0..1 | Y | dateTime \| Period |  | USCDI-SCD | Time of processing |
 | `BiologicallyDerivedProduct.storage` | 0..* | Y | BackboneElement |  | USCDI-SCD | Storage conditions and duration |
 | `BiologicallyDerivedProduct.storage.duration` | 0..1 | Y | Period |  | USCDI-SCD | Storage timeperiod |
@@ -511,12 +510,12 @@ The parts of each SCD extension used in the profiles above.
 | Extension | Part | Card. | Type | Binding | Description |
 |---|---|---|---|---|---|
 | [SCD Blood Product Age at Transfusion](StructureDefinition-scd-blood-product-age.html) | (value) | 0..* | Quantity |  | Extension |
-| [SCD Genotype](StructureDefinition-scd-genotype.html) | (value) | 0..* | CodeableConcept | SCD Genotype Value Set (extensible) | Extension |
+| [SCD Genotype](StructureDefinition-scd-genotype.html) | (value) | 0..* | CodeableConcept | SCD Genotype Value Set (example) | Extension |
 | [SCD Iron Chelation Indication](StructureDefinition-scd-iron-chelation-indication.html) | indicationCode | 0..1 | CodeableConcept |  | Reason for initiating iron chelation |
 | [SCD Iron Chelation Indication](StructureDefinition-scd-iron-chelation-indication.html) | triggerMeasurement | 0..1 | CodeableConcept |  | Laboratory or imaging measure that triggered chelation |
 | [SCD Iron Chelation Indication](StructureDefinition-scd-iron-chelation-indication.html) | triggerValue | 0..1 | Quantity |  | The value at which chelation was initiated |
 | [SCD Newborn Screen Reference](StructureDefinition-scd-newborn-screen-reference.html) | (value) | 0..* | Reference(Observation \| DiagnosticReport) |  | Extension |
-| [SCD Transfusion Red Cell Antigen Match Profile](StructureDefinition-scd-transfusion-antigen-match.html) | matchedAntigen | 0..* | CodeableConcept | SCD Red Cell Antigen Value Set (extensible) | Specific antigen confirmed matched/negative |
+| [SCD Transfusion Red Cell Antigen Match Profile](StructureDefinition-scd-transfusion-antigen-match.html) | matchedAntigen | 0..* | CodeableConcept | SCD Red Cell Antigen Value Set (example) | Specific antigen confirmed matched/negative |
 | [SCD Transfusion Red Cell Antigen Match Profile](StructureDefinition-scd-transfusion-antigen-match.html) | matchingProtocol | 0..1 | string |  | Antigen matching protocol used |
 | [SCD Vaso-Occlusive Crisis Frequency](StructureDefinition-scd-voc-frequency.html) | episodeCount | 1..1 | integer |  | Number of VOC episodes in the observation period |
 | [SCD Vaso-Occlusive Crisis Frequency](StructureDefinition-scd-voc-frequency.html) | observationPeriod | 1..1 | Period |  | Period over which VOC episodes were counted |
