@@ -141,15 +141,17 @@ Description: """
 * $sct#367061000119107  "Priapism due to sickle cell disease"
 * $sct#371104006  "Hand-foot syndrome in sickle cell anemia"
 // Avascular necrosis is a chronic complication and is not included here.
-// TODO: define a chronic complication value set (avascular necrosis, CKD,
-//       retinopathy, pulmonary hypertension) for the problem list profile.
+// The project has chosen not to define additional value sets that would
+// constrain the exchanged data. Value sets for chronic complications may be
+// considered later (for example, to prioritize display in the Emergency
+// Department use case, or for future registry and research phases).
 
 // Stroke / Cerebrovascular
 * $icd10cm#I63.9  "Cerebral infarction, unspecified"
 * $sct#230690007  "Cerebrovascular accident (disorder)"
 
 // Aplastic crisis
-// TODO: add a specific SNOMED CT code for SCD aplastic crisis
+* $sct#69075005   "Aplastic crisis"
 * $icd10cm#D57.09 "Hb-SS disease with crisis with other specified complication"
 
 // Fever/Sepsis in SCD (functional asplenia)

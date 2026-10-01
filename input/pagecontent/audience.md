@@ -72,7 +72,7 @@ How you can help:
 
 - **Review the clinical content.** The [Profiles](profiles.html) page describes each form in plain language, and the [Examples](examples.html) page shows a complete fictional patient story. Check whether the information captured is what you would need when caring for a patient with SCD.
 - **Check the codes.** The [Terminology](terminology.html) page lists the diagnoses, complications, lab tests and medications included. Tell us if something important is missing or incorrect.
-- **Share your feedback.** Use the **Propose a change** link at the bottom of any page, or contact the HL7 Public Health Work Group at pher@lists.HL7.org.
+- **Share your feedback.** Use the **Propose a change** link at the bottom of any page, or contact the HL7 Public Health Work Group at PHER@HL7.org.
 
 Clinical input shapes future versions of this guide, including which data elements are required and how they are coded.
 
@@ -91,6 +91,4 @@ Today, when a person with SCD sees a new doctor or goes to an emergency departme
 
 Protecting your information is a core part of this guide. Data is shared only between authorized systems, using the security requirements described in [Security and Privacy](security.html).
 
-Patients and advocates are welcome to share feedback on this guide by contacting the HL7 Public Health Work Group at pher@lists.HL7.org.
-
-<!-- TODO: Confirm the Public Health Work Group list address with the work group co-chairs. -->
+Patients and advocates are welcome to share feedback on this guide by contacting the HL7 Public Health Work Group at PHER@HL7.org.

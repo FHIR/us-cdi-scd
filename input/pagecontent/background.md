@@ -14,9 +14,8 @@ Patients’ access to care is often fragmented. The rarity of SCD results in a l
 
 The current state of SCD data exchange does not satisfy the information needs of patients, providers, researchers, and public health agencies to improve health outcomes at a national scale effectively. Though broad interoperability standards to promote care coordination and multiple systems exist to collect SCD patient data, a lack of standardized data elements to identify SCD patients and describe their care limits insights into patients’ experiences and therapy effectiveness. Standardizing a list of minimum core data elements for SCD data exchange can benefit an array of patient interactions, like diagnosis, treatment management, surveillance, and research.
 
-<!-- TODO: Cite the source for the care-access and data-landscape statements above
-     (for example, the USCDI+ SCD project documentation or the National Academies
-     2020 report "Addressing Sickle Cell Disease: A Strategic Plan and Blueprint
-     for Action"). -->
+<!-- TODO: Cite the USCDI+ SCD project's landscape analysis and literature review,
+     which is the source of the statements above, and add a link if it is
+     publicly available. -->
 
 

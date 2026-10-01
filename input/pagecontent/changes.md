@@ -6,12 +6,7 @@ CHANGE LOG PAGE — changes.md
 
 #### Version 0.1.0 (DRAFT)
 
-<!-- TODO: Replace this placeholder with the actual change log entries
-     once the IG has gone through ballot and publication cycles.
-     Use the format below for each version. -->
-
-**Initial draft.**
-<!-- TODO: Update this heading when the ballot cycle is confirmed. -->
+**Initial draft.** This guide is being developed under the FHIR Community Process and is not intended for ballot.
 
 - Initial profiles derived from US Core 8.0.1:
   - USCDI-SCD Patient

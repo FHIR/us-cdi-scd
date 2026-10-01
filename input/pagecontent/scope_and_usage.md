@@ -18,8 +18,8 @@ The following use cases are **in scope** for this Implementation Guide:
 | 1 | Transfer of Care | Patient, Condition (Problems), Laboratory Result, Practitioner, PractitionerRole, Organization |
 | 2 | Emergency Department | Encounter, Condition (Encounter Diagnosis), Laboratory Result, Vital Signs, MedicationRequest, CarePlan |
 
-This diagram illustrates the data exchange process flow for these use cases.
-<!-- TODO: If this flow was tested (for example, at a Connectathon or pilot), name the test event and date. --> When the SCD patient presents to a new provider for care, a query is initiated to locate the patient's EMR.  Once located, the necessary medical record data is queried for and returned by the identified EHR.
+This diagram illustrates the data exchange process flow for these use cases, as tested at a connectathon.
+<!-- TODO: Name the connectathon and its date. --> When the SCD patient presents to a new provider for care, a query is initiated to locate the patient's EMR.  Once located, the necessary medical record data is queried for and returned by the identified EHR.
 
 
 <figure>

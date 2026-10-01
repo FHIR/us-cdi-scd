@@ -33,7 +33,7 @@ releaseLabel: draft         # ci-build | draft | qa-preview | ballot | trial-use
 publisher:
   name: HL7 International / Public Health
   url: https://www.hl7.org/Special/committees/pher
-  email: pher@lists.HL7.org
+  email: PHER@HL7.org
 
 contact:
   - name: HL7 Public Health Work Group
@@ -41,7 +41,7 @@ contact:
       - system: url
         value: http://www.hl7.org/Special/committees/pher
       - system: email
-        value: pher@lists.HL7.org
+        value: PHER@HL7.org
 
 # -----------------------------------------------------------------------
 # Jurisdiction

@@ -1,6 +1,6 @@
 ### Exchange Workflow
 
-This page describes how a USCDI-SCD exchange works, based on what this guide currently defines. Parts of the workflow that have not yet been defined are marked as open items within each step. Comments on them are especially welcome.
+This page describes how a USCDI-SCD exchange works, based on what this guide currently defines. The workflow shown in the [exchange process diagram](scope_and_usage.html#in-scope) was tested at a connectathon, where several query patterns were tried. Parts of the workflow that have not yet been defined are marked as open items within each step; a future project pilot or workshop may help resolve them. Comments on them are especially welcome.
 
 ---
 
