@@ -27,6 +27,8 @@ This diagram illustrates the data exchange process flow for these use cases.
   <figcaption><b>Figure 1: USCDI-SCD Exchange Process Data Flow</b></figcaption>
 </figure>
 
+The [Exchange Workflow](workflow.html) page describes each step of this flow in more detail.
+
 ---
  
 ### Out of Scope

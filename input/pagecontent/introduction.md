@@ -26,7 +26,7 @@ This guide is organized into four parts. You don't need to read it front to back
 | Part | Pages | What you'll find |
 |---|---|---|
 | **Introduction** | [Introduction](introduction.html), [Background](background.html), [Scope and Usage](scope_and_usage.html), [Overview](overview.html), [Audience](audience.html) | Why this guide exists, the use cases it supports, and the big picture of how the pieces fit together |
-| **Guidance** | [Conformance Requirements](conformance.html), [Security and Privacy](security.html) | The rules systems must follow to conform, and how to protect SCD data |
+| **Guidance** | [Conformance Requirements](conformance.html), [Exchange Workflow](workflow.html), [Security and Privacy](security.html) | The rules systems must follow to conform, how an exchange works, and how to protect SCD data |
 | **Artifacts** | [Profiles](profiles.html), [Extensions](extensions.html), [Terminology](terminology.html), [Examples](examples.html), [Data Element Mapping](data-element-mapping.html), [Test Data](testing.html), [Artifacts Summary](artifacts.html) | The technical definitions: what data is exchanged, how it is coded, sample records, and test data |
 | **Reference** | [Downloads](downloads.html), [Change Log](changes.html) | Files for developers and tools, and the history of changes |
 
@@ -35,8 +35,8 @@ This guide is organized into four parts. You don't need to read it front to back
 | If you are… | Start with | Then read |
 |---|---|---|
 | **A clinician or clinical informaticist** | [Background](background.html) and [Scope and Usage](scope_and_usage.html) | [Overview](overview.html) for the information model, then [Profiles](profiles.html) and [Examples](examples.html) |
-| **A developer or implementer** | [Conformance Requirements](conformance.html) | [Profiles](profiles.html), [Data Element Mapping](data-element-mapping.html), [Examples](examples.html) and [Downloads](downloads.html) |
-| **A tester** | [Test Data](testing.html) | [Data Element Mapping](data-element-mapping.html) and the [Server CapabilityStatement](CapabilityStatement-uscdi-scd-server.html) |
+| **A developer or implementer** | [Conformance Requirements](conformance.html) and [Exchange Workflow](workflow.html) | [Profiles](profiles.html), [Data Element Mapping](data-element-mapping.html), [Examples](examples.html) and [Downloads](downloads.html) |
+| **A tester** | [Test Data](testing.html) | [Exchange Workflow](workflow.html), [Data Element Mapping](data-element-mapping.html) and the [Server CapabilityStatement](CapabilityStatement-uscdi-scd-server.html) |
 | **A terminologist** | [Terminology](terminology.html) | The value sets listed on the [Artifacts Summary](artifacts.html) page |
 | **Policy or program staff** | [Background](background.html) and [Scope and Usage](scope_and_usage.html) | [Audience](audience.html) and [Security and Privacy](security.html) |
 

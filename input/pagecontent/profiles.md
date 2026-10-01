@@ -4,7 +4,7 @@ This page describes the profiles defined in this Implementation Guide. Each head
 
 All profiles except one extend a [US Core 8.0.1](http://hl7.org/fhir/us/core/STU8.0.1/) profile and inherit its requirements. The exception is the USCDI-SCD BiologicallyDerivedProduct profile, which is based directly on the FHIR R4 resource because US Core has no equivalent profile. Across the guide, references between resources are constrained to the USCDI-SCD profiles, so that a diagnosis, encounter or lab result always points to a USCDI-SCD Patient.
 
-Both use cases require similar query and response patterns to obtain the clinical information needed. An initial query will be executed to locate the appropriate patient record(s) (this may result in multiple EHR systems being identified as containing relevant information). When the target EHR system(s) is/are identified, a task-based, SCD-focused query will be executed for retrieval of the SCD-relevant resources.
+Both use cases require similar query and response patterns to obtain the clinical information needed. An initial query will be executed to locate the appropriate patient record(s) (this may result in multiple EHR systems being identified as containing relevant information). When the target EHR system(s) is/are identified, a task-based, SCD-focused query will be executed for retrieval of the SCD-relevant resources. See [Exchange Workflow](workflow.html) for details and open questions.
 
 Example instances for each profile are listed on the [Examples](examples.html) page.
 

@@ -34,6 +34,7 @@ Sickle Cell Disease (SCD). This guide extends and aligns with
 | [Overview](overview.html) | Architectural overview of profiles and interactions |
 | [Audience](audience.html) | Intended readers and implementers |
 | [Conformance Requirements](conformance.html) | Must Support, missing data, and capability statements |
+| [Exchange Workflow](workflow.html) | How an exchange works, step by step, and open questions |
 | [Profiles](profiles.html) | All FHIR profiles defined or constrained in this IG |
 | [Extensions](extensions.html) | Custom extensions introduced by this IG |
 | [Terminology](terminology.html) | Value sets and code systems |

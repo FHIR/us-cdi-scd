@@ -95,6 +95,8 @@ pages:
     title: Audience
   conformance.md:
     title: Conformance Requirements
+  workflow.md:
+    title: Exchange Workflow
   profiles.md:
     title: Profiles
   extensions.md:
@@ -127,6 +129,7 @@ menu:
     Audience: audience.html
   Guidance:
     Conformance Requirements: conformance.html
+    Exchange Workflow: workflow.html
     Security and Privacy: security.html
   Artifacts:
     Profiles: profiles.html
