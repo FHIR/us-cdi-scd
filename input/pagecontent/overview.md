@@ -64,3 +64,14 @@ The following profiles are defined or used in this IG:
 
 ### Conventions
 
+The following conventions apply throughout this guide.
+
+- **Naming.** Profiles are titled "USCDI-SCD [Resource]" (for example, USCDI-SCD Patient) and extensions are titled "SCD [Concept]" (for example, SCD Genotype). All artifacts defined by this guide have canonical URLs beginning with `http://hl7.org/fhir/us/uscdi-scd/`.
+- **Profile basis.** Every profile extends a [US Core 8.0.1](http://hl7.org/fhir/us/core/STU8.0.1/) profile except USCDI-SCD BiologicallyDerivedProduct, which is based on the FHIR R4 resource. Where a reference points to a resource that has a USCDI-SCD profile, it is constrained to that profile (for example, a diagnosis references a USCDI-SCD Patient).
+- **Must Support.** Elements marked with an **S** in a profile are Must Support. See [Must Support](conformance.html#must-support).
+- **Conformance verbs.** SHALL, SHOULD and MAY have the meanings defined in [Conformance Verbs](conformance.html#conformance-verbs).
+- **Terminology bindings.** All value set bindings defined by this guide are **extensible**: when a code in the value set fits, it SHALL be used; when none fits, another code MAY be sent. See [Terminology](terminology.html).
+- **Code systems.** Diagnoses use SNOMED CT, and ICD-10-CM may be added. Procedures use SNOMED CT, and CPT may be added. Laboratory results and vital signs use LOINC. Medications use RxNorm.
+- **Examples.** All examples follow a single fictional patient. See [Examples](examples.html).
+- **Draft status.** This is a draft guide. Open questions are recorded as TODO notes in the source.
+
