@@ -1,0 +1,11 @@
+# IG Publisher / SUSHI build output
+fsh-generated/
+input-cache/
+output/
+temp/
+template/
+.fhir/
+*.log
+
+# IG Publisher-generated Jira spec draft (belongs in HL7 Jira-Spec-Artifacts)
+FHIR-us-uscdi-scd.xml
