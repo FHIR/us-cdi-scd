@@ -1,6 +1,6 @@
 ### Exchange Workflow
 
-This page describes how a USCDI-SCD exchange works, based on what this guide currently defines. Parts of the workflow that have not yet been defined are marked as open items. They are listed together at the end of this page as questions for public comment.
+This page describes how a USCDI-SCD exchange works, based on what this guide currently defines. Parts of the workflow that have not yet been defined are marked as open items within each step. Comments on them are especially welcome.
 
 ---
 
@@ -130,20 +130,3 @@ In the Transfer of Care use case, the new provider creates or updates the patien
      to (written to) another system. -->
 
 **Open item:** whether the Transfer of Care use case includes writing data back to another system.
-
----
-
-### Open Questions for Public Comment
-
-The workflow items below are not yet defined. Comments on them are especially welcome.
-
-| # | Question | Step |
-|---|---|---|
-| 1 | How should a client find which systems hold a patient's records? | Locate |
-| 2 | Which patient matching method should be used, with which demographics? | Locate |
-| 3 | What should a client do when no patient, or more than one candidate, is found? | Locate |
-| 4 | Does SMART App Launch fit exchange between organizations, or is system-to-system authorization also needed? Which SMART scopes are required? | Authorize |
-| 5 | What exactly does an "SCD-focused query" retrieve for each use case? | Retrieve |
-| 6 | Does "task-based" refer to the FHIR Task resource? | Retrieve |
-| 7 | How should blood product (BiologicallyDerivedProduct) records be retrieved? | Retrieve |
-| 8 | Does the Transfer of Care use case include writing data back to another system? | Use |
