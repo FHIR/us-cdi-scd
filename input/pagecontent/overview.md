@@ -1,21 +1,5 @@
-{%- comment -%}
-================================================================================
-OVERVIEW PAGE — overview.md
-================================================================================
-CONTENT TO INSERT:
-  - Architectural overview diagram (actors, systems, data flows)
-  - Profile dependency / hierarchy diagram
-  - Mapping of USCDI+ SCD data elements → FHIR profiles/elements
-  - Summary narrative of how the profiles fit together
-  - Conventions used in this IG (Must Support, cardinality, binding strength)
-================================================================================
-{%- endcomment -%}
-
 ### Overview
 
-
-
----
 This Implementation Guide (IG) for the US Core Data for Interoperability Plus Sickle Cell Disease (USCDI+SCD) is a product of the Assistant Secretary for Technology Policy/Office of the National Coordinator for Health IT (ASTP/ONC) efforts to facilitate interoperability for Sickle Cell Disease (SCD) patient care-related data exchanges.  Two related Use Cases are addressed by this guide.
 <!-- TODO: Confirm with ASTP/ONC whether this IG can be described as the first product of the USCDI+ SCD effort. -->
 ### USCDI+ SCD Data Element Mapping
@@ -31,8 +15,9 @@ NOTE: There is no cardinality of the relationship represented in this model.  Ac
   <figcaption><b>Figure 1: USCDI-SCD Information Model</b></figcaption>
 </figure>
 
-The table below maps known USCDI+ Sickle Cell Disease data elements to the
-corresponding FHIR profiles and elements in this IG.
+<!-- TODO: Add a table mapping the USCDI+ Sickle Cell Disease data elements to the
+     corresponding FHIR profiles and elements in this IG (requires the official
+     USCDI+ SCD data element list). -->
 
 ---
 

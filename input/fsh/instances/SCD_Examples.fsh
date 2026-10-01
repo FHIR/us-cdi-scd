@@ -158,6 +158,15 @@ Usage: #example
 * onsetString = "Diagnosed by newborn screening, April 1996"
 * recordedDate = "2010-03-15"
 
+// VOC frequency extension: episodes counted over the 12 months before the ED visit
+* extension[scd-voc-frequency].extension[episodeCount].valueInteger = 3
+* extension[scd-voc-frequency].extension[observationPeriod].valuePeriod.start = "2023-11-14"
+* extension[scd-voc-frequency].extension[observationPeriod].valuePeriod.end = "2024-11-14"
+* extension[scd-voc-frequency].extension[measurementMethod].valueCodeableConcept.text = "Chart review of ED visits and hospitalizations"
+
+// Newborn screen reference extension (referenced by description only in this example)
+* extension[scd-newborn-screen-reference].valueReference.display = "State newborn screening result, April 1996"
+
 
 // ==============================================================================
 // Example: Condition (Encounter Diagnosis) — Vaso-Occlusive Crisis
@@ -244,6 +253,7 @@ Usage: #example
 
 * subject = Reference(maya-johnson-patient)
 * effectiveDateTime = "2024-11-21T07:30:00-06:00"
+* performer[+] = Reference(metro-scd-center-org)
 * issued = "2024-11-21T08:30:00-06:00"
 
 // Overall interpretation
@@ -303,6 +313,7 @@ Usage: #example
 * subject = Reference(maya-johnson-patient)
 * encounter = Reference(maya-johnson-ed-encounter)
 * effectiveDateTime = "2024-11-14T02:45:00-06:00"
+* performer[+] = Reference(metro-scd-center-org)
 * valueQuantity.value = 91
 * valueQuantity.unit = "%"
 * valueQuantity.system = $ucum
@@ -335,6 +346,7 @@ Usage: #example
 * subject = Reference(maya-johnson-patient)
 * encounter = Reference(maya-johnson-ed-encounter)
 * effectiveDateTime = "2024-11-14T02:45:00-06:00"
+* performer[+] = Reference(metro-scd-center-org)
 * valueInteger = 9
 * interpretation[+].coding[+] = $v3-ObservationInterpretation#H "High"
 * interpretation[=].text = "Severe pain — 9/10 NRS. IV opioid analgesia initiated."
@@ -562,3 +574,82 @@ Usage: #example
 * dosageInstruction[=].timing.repeat.periodUnit = #d
 * dosageInstruction[=].route = $sct#26643006 "Oral route"
 * dosageInstruction[=].doseAndRate[+].doseQuantity = 1080 'mg' "mg"
+
+// ==============================================================================
+// Example: PractitionerRole — Dr. Sarah Chen at Metro Sickle Cell Center
+// ==============================================================================
+
+Instance: dr-sarah-chen-hematology-role
+InstanceOf: SCDPractitionerRole
+Title: "Example PractitionerRole — Dr. Sarah Chen, Hematologist at Metro Sickle Cell Center"
+Description: "Example SCDPractitionerRole linking Dr. Sarah Chen to Metro Sickle Cell Center as a hematologist."
+Usage: #example
+
+* id = "dr-sarah-chen-hematology-role"
+* active = true
+* practitioner = Reference(dr-sarah-chen-practitioner)
+* organization = Reference(metro-scd-center-org)
+* location[+] = Reference(metro-scd-center-hematology-clinic)
+* specialty[+] = $nucc#207RH0000X "Hematology (Internal Medicine) Physician"
+* telecom[+].system = #phone
+* telecom[=].value = "555-200-3000"
+* telecom[=].use = #work
+
+
+// ==============================================================================
+// Example: Location — Metro Sickle Cell Center Hematology Clinic
+// ==============================================================================
+
+Instance: metro-scd-center-hematology-clinic
+InstanceOf: SCDLocation
+Title: "Example Location — Metro Sickle Cell Center Hematology Clinic"
+Description: "Example SCDLocation for the outpatient hematology clinic at Metro Sickle Cell Center, where Maya Johnson receives her scheduled exchange transfusions."
+Usage: #example
+
+* id = "metro-scd-center-hematology-clinic"
+* status = #active
+* name = "Metro Sickle Cell Center Hematology Clinic"
+* type[+] = $v3-RoleCode#HEM "Hematology clinic"
+* telecom[+].system = #phone
+* telecom[=].value = "555-200-3000"
+* address.line[+] = "1400 Medical Drive, Suite 500"
+* address.city = "Springfield"
+* address.state = "IL"
+* address.postalCode = "62702"
+* address.country = "US"
+* managingOrganization = Reference(metro-scd-center-org)
+
+
+// ==============================================================================
+// Example: CarePlan — Chronic Transfusion Therapy Plan
+// ==============================================================================
+
+Instance: maya-johnson-chronic-transfusion-plan
+InstanceOf: SCDCarePlan
+Title: "Example CarePlan — Chronic Transfusion Therapy for Secondary Stroke Prevention"
+Description: """
+  Example SCDCarePlan for Maya Johnson's chronic transfusion therapy for
+  secondary stroke prevention, with scheduled automated red cell exchange
+  transfusions and iron overload monitoring.
+"""
+Usage: #example
+
+* id = "maya-johnson-chronic-transfusion-plan"
+* text.status = #additional
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Chronic transfusion therapy for secondary stroke prevention: scheduled automated red cell exchange transfusion every 4 to 6 weeks, with a goal of pre-transfusion HbS below 30%. Rh (C, E) and K antigen-matched, HbS-negative, leukoreduced red cells. Monitor ferritin for transfusional iron overload.</p></div>"
+* status = #active
+* intent = #plan
+* category[AssessPlan] = http://hl7.org/fhir/us/core/CodeSystem/careplan-category#assess-plan "Assessment and Plan of Treatment"
+* title = "Chronic transfusion therapy plan"
+* subject = Reference(maya-johnson-patient)
+* period.start = "2004-06-01"
+* author = Reference(dr-sarah-chen-practitioner)
+* addresses[+] = Reference(maya-johnson-scd-diagnosis)
+
+* activity[+].reference = Reference(exchange-transfusion-order-example)
+
+* activity[+].detail.status = #in-progress
+* activity[=].detail.description = "Automated red cell exchange transfusion every 4 to 6 weeks; goal pre-transfusion HbS below 30%"
+
+* activity[+].detail.status = #in-progress
+* activity[=].detail.description = "Monitor serum ferritin and liver iron concentration for transfusional iron overload"

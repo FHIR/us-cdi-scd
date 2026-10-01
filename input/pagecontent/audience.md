@@ -2,11 +2,6 @@
 ================================================================================
 AUDIENCE PAGE — audience.md
 ================================================================================
-CONTENT TO INSERT:
-  - Primary audiences with tailored guidance for each
-  - Prerequisites / assumed knowledge for implementers
-  - Reading guide ("If you are a [role], start here")
-================================================================================
 {%- endcomment -%}
 
 ### Audience

@@ -14,6 +14,8 @@ All examples are entirely fictional and contain no real patient data.
 | [Patient — Maya Johnson](Patient-maya-johnson-patient.html) | [USCDI-SCD Patient](StructureDefinition-uscdi-scd-patient.html) |
 | [Practitioner — Dr. Sarah Chen](Practitioner-dr-sarah-chen-practitioner.html) | [USCDI-SCD Practitioner](StructureDefinition-uscdi-scd-practitioner.html) |
 | [Organization — Metro Sickle Cell Center](Organization-metro-scd-center-org.html) | [USCDI-SCD Organization](StructureDefinition-uscdi-scd-organization.html) |
+| [PractitionerRole — Dr. Sarah Chen, Hematologist](PractitionerRole-dr-sarah-chen-hematology-role.html) | [USCDI-SCD PractitionerRole](StructureDefinition-uscdi-scd-practitionerrole.html) |
+| [Location — Metro Sickle Cell Center Hematology Clinic](Location-metro-scd-center-hematology-clinic.html) | [USCDI-SCD Location](StructureDefinition-uscdi-scd-location.html) |
 
 #### Encounter and Conditions
 
@@ -37,6 +39,7 @@ All examples are entirely fictional and contain no real patient data.
 | Example | Profile |
 |---|---|
 | [Medication — Hydroxyurea](Medication-hydroxyurea-medication-example.html) | [USCDI-SCD Medication](StructureDefinition-uscdi-scd-medication.html) |
+| [CarePlan — Chronic Transfusion Therapy](CarePlan-maya-johnson-chronic-transfusion-plan.html) | [USCDI-SCD CarePlan](StructureDefinition-uscdi-scd-careplan.html) |
 | [MedicationRequest — Hydroxyurea Prescription](MedicationRequest-maya-johnson-hydroxyurea-request.html) | [USCDI-SCD MedicationRequest](StructureDefinition-uscdi-scd-medicationrequest.html) |
 | [MedicationRequest — Deferasirox Iron Chelation](MedicationRequest-maya-johnson-deferasirox-request.html) | [USCDI-SCD MedicationRequest](StructureDefinition-uscdi-scd-medicationrequest.html) |
 | [ServiceRequest — Exchange Transfusion Order](ServiceRequest-exchange-transfusion-order-example.html) | [USCDI-SCD ServiceRequest](StructureDefinition-uscdi-scd-servicerequest.html) |

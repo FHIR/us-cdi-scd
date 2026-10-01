@@ -8,15 +8,15 @@ SCOPE AND USAGE PAGE — scope_and_usage.md
 
 ### In Scope
 
-The following use cases and data exchange scenarios are **in scope** for
-this Implementation Guide:
-Transfer of Care: An SCD patient transitions their care from one provider to another. The new provider creates or updates the SCD diagnosis of the patient.
-Emergency Department: An SCD patient presents at an Emergency Department (ED) for immediate, critical care. The new provider retrieves the clinical information needed in order to provide appropriate care to the patient.
+The following use cases are **in scope** for this Implementation Guide:
+
+- **Transfer of Care:** An SCD patient transitions their care from one provider to another. The new provider creates or updates the SCD diagnosis of the patient.
+- **Emergency Department:** An SCD patient presents at an Emergency Department (ED) for immediate, critical care. The new provider retrieves the clinical information needed in order to provide appropriate care to the patient.
 
 | # | Use Case | Key Profiles |
 |---|---|---|
-| 1 | SCD Diagnosis and Genotype Documentation | Condition (Problems), Patient, Practitioner, PractitionerRole, Organization, Vital Signs Observation |
-| 2 | Acute Care Encounter (VOC, ACS) | Encounter, Condition (Encounter Dx), Laboratory Result Observation, MedicationRequest, CarePlan  |
+| 1 | Transfer of Care | Patient, Condition (Problems), Laboratory Result, Practitioner, PractitionerRole, Organization |
+| 2 | Emergency Department | Encounter, Condition (Encounter Diagnosis), Laboratory Result, Vital Signs, MedicationRequest, CarePlan |
 
 This diagram illustrates the data exchange process flow for these use cases.
 <!-- TODO: If this flow was tested (for example, at a Connectathon or pilot), name the test event and date. --> When the SCD patient presents to a new provider for care, a query is initiated to locate the patient's EMR.  Once located, the necessary medical record data is queried for and returned by the identified EHR.
