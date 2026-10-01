@@ -1,0 +1,2 @@
+# Keep authors' RTF documents byte-for-byte (no line-ending conversion)
+*.rtf -text
