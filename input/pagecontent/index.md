@@ -20,6 +20,12 @@ Sickle Cell Disease (SCD). This guide extends and aligns with
 
 ### Quick Navigation
 
+<!-- TODO: Reviewers to create a targeted list of questions for public comment
+     (for example, on SHALL/SHOULD levels in the CapabilityStatements, binding
+     strengths, the Hydroxyurea Adherence extension, and the exchange workflow),
+     and publish it on a "Questions for Reviewers" page before the comment
+     period opens. -->
+
 | Section | Description |
 |---|---|
 | [Introduction](introduction.html) | Purpose, goals, and relationship to other standards |
@@ -27,12 +33,16 @@ Sickle Cell Disease (SCD). This guide extends and aligns with
 | [Scope and Usage](scope_and_usage.html) | What is in and out of scope; use cases |
 | [Overview](overview.html) | Architectural overview of profiles and interactions |
 | [Audience](audience.html) | Intended readers and implementers |
-| [Conformance Requirements](conformance.html) | Must Support, obligations, and capability statements |
+| [Conformance Requirements](conformance.html) | Must Support, missing data, and capability statements |
 | [Profiles](profiles.html) | All FHIR profiles defined or constrained in this IG |
 | [Extensions](extensions.html) | Custom extensions introduced by this IG |
 | [Terminology](terminology.html) | Value sets and code systems |
+| [Examples](examples.html) | Example records following one fictional patient |
+| [Data Element Mapping](data-element-mapping.html) | Every Must Support and required element, with cardinality and bindings |
+| [Test Data](testing.html) | Test Bundles and expected search results for testers |
 | [Security and Privacy](security.html) | Guidance on protecting sensitive SCD data |
 | [Downloads](downloads.html) | Downloadable artifacts |
+| [Change Log](changes.html) | Changes in each version of this guide |
 
 ---
 

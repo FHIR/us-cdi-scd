@@ -186,6 +186,7 @@ Usage: #definition
 * rest[=].resource[=].searchParam[=].type = #token
 * rest[=].resource[=].searchParam[+].name = "status"
 * rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchInclude[+] = "MedicationRequest:medication"
 
 // Procedure
 * rest[=].resource[+].type = #Procedure
