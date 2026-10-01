@@ -10,7 +10,8 @@ CHANGE LOG PAGE — changes.md
      once the IG has gone through ballot and publication cycles.
      Use the format below for each version. -->
 
-**Initial STU1 ballot publication.**
+**Initial draft.**
+<!-- TODO: Update this heading when the ballot cycle is confirmed. -->
 
 - Initial profiles derived from US Core 8.0.1:
   - USCDI-SCD Patient
@@ -25,10 +26,14 @@ CHANGE LOG PAGE — changes.md
   - USCDI-SCD CarePlan
   - USCDI-SCD ServiceRequest
   - USCDI-SCD Medication
+  - USCDI-SCD MedicationRequest
   - USCDI-SCD Procedure
   - USCDI-SCD Laboratory Result
   - USCDI-SCD Vital Signs
 - Initial profile for FHIR 4.0.1 BiologicallyDerivedProduct
+- Initial extensions for SCD genotype, VOC frequency, newborn screening,
+  hydroxyurea adherence, iron chelation, transfusion antigen matching and
+  blood product age
 - Initial value sets and code systems for SCD diagnoses, medications,
   laboratory tests, procedures, and blood products
 - Initial CapabilityStatements for server and client actors

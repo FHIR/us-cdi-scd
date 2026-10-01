@@ -11,12 +11,12 @@ The following artifacts are available for download:
 | Artifact | Description |
 |---|---|
 | [FHIR Package (NPM)](package.tgz) | Full FHIR package for validator and tooling |
-| [FSH Source](fsh-source.zip) | FHIR Shorthand source files |
+| [Full IG](full-ig.zip) | The entire IG website, for offline viewing |
 | [StructureDefinitions (JSON)](definitions.json.zip) | All profiles, extensions, value sets |
 | [StructureDefinitions (XML)](definitions.xml.zip) | All profiles, extensions, value sets (XML) |
 | [Examples (JSON)](examples.json.zip) | All example instances |
 | [Examples (XML)](examples.xml.zip) | All example instances (XML) |
-| [Schematron](schematron.zip) | Schematron validation rules |
+| [Schematron](schematrons.zip) | Schematron validation rules |
 
 ---
 

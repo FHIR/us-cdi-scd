@@ -16,15 +16,21 @@ CONTENT TO INSERT:
 
 
 ---
-This Implementation Guide (IG) for the US Core Data for Interoperability Plus Sickle Cell Disease (USCDI+SCD) is the first product related to ASTP’s efforts to facilitate interoperability for Sickle Cell Disease (SCD) patient care-related data exchanges.  Two related Use Cases are addressed by this guide.
+This Implementation Guide (IG) for the US Core Data for Interoperability Plus Sickle Cell Disease (USCDI+SCD) is a product of the Assistant Secretary for Technology Policy/Office of the National Coordinator for Health IT (ASTP/ONC) efforts to facilitate interoperability for Sickle Cell Disease (SCD) patient care-related data exchanges.  Two related Use Cases are addressed by this guide.
+<!-- TODO: Confirm with ASTP/ONC whether this IG can be described as the first product of the USCDI+ SCD effort. -->
 ### USCDI+ SCD Data Element Mapping
 
 The Information Model below represents the information to be included in exchanges supporting the 2 Use Cases addressed by this IG. 
 Each box represents an information concept or class, and generally corresponds to an individual FHIR resource included in the IG. These resources contain multiple related data elements.
-Each connecting line represents a relationship between the concepts. The text on the line describes the relationship represented and should be interpreted fron the line start to the arrowhead (e.g.: A Problem/Condition is evidenced by a Lab Result). 
+Each connecting line represents a relationship between the concepts. The text on the line describes the relationship represented and should be interpreted from the line start to the arrowhead (e.g.: A Problem/Condition is evidenced by a Lab Result). 
 NOTE: There is no cardinality of the relationship represented in this model.  Actual manifestation within the FHIR resources (using resource references) may/may not follow the direction of the arrows.
 
-! UCSDI-SCD Info Model 20260330.jpg
+
+<figure>
+  <img src="uscdi-scd-info-model.jpg" alt="USCDI-SCD Information Model" style="max-width:100%"/>
+  <figcaption><b>Figure 1: USCDI-SCD Information Model</b></figcaption>
+</figure>
+
 The table below maps known USCDI+ Sickle Cell Disease data elements to the
 corresponding FHIR profiles and elements in this IG.
 
@@ -48,6 +54,7 @@ The following profiles are defined or used in this IG:
 | USCDI-SCD CarePlan | CarePlan | US Core CarePlan | SCD disease management care plans |
 | USCDI-SCD ServiceRequest | ServiceRequest | US Core ServiceRequest | Referrals and orders |
 | USCDI-SCD Medication | Medication | US Core Medication | SCD medications |
+| USCDI-SCD MedicationRequest | MedicationRequest | US Core MedicationRequest | SCD prescriptions (hydroxyurea, iron chelation) |
 | USCDI-SCD Procedure | Procedure | US Core Procedure | Transfusions, HSCT, phlebotomy |
 | USCDI-SCD Laboratory Result | Observation | US Core Laboratory Result Observation | CBC, Hgb fractionation, ferritin |
 | USCDI-SCD Vital Signs | Observation | US Core Vital Signs | SpO2, pain, BP, temp |
