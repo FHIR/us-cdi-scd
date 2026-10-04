@@ -129,20 +129,21 @@ This IG is built with the standard HL7 tooling ([FHIR Shorthand / SUSHI](https:/
 The generated output is written to the `output/` directory; open `output/index.html` to view the build.
 
 
-## Key TODOs Before Ballot
+## Key TODOs Before Public Comment
 
-- [ ] Complete all narrative page content (marked `TODO` in .md files)
-- [ ] Submit value sets to VSAC and update canonical URIs
-- [ ] Confirm all RxNorm concept IDs for SCD medications
-- [ ] Confirm SNOMED CT concept codes (US edition)
-- [ ] Add ISBT 128 code system registration and product codes
-- [ ] Complete CapabilityStatement search parameter definitions
-- [ ] Define SMART on FHIR scope requirements
-- [ ] Add CarePlan and ServiceRequest examples
-- [ ] Add pediatric patient example
+This guide is developed under the FHIR Community Process and is not intended for ballot. Open items are tracked as `TODO` comments in the source; the full checklist is in [pull request #1](https://github.com/FHIR/us-cdi-scd/pull/1).
+
+- [x] Complete the narrative page content (remaining items are marked `TODO` in the .md files)
+- [x] Confirm RxNorm concept IDs for SCD medications
+- [x] Confirm SNOMED CT concept codes (US Edition), except those still marked `TODO`
+- [x] Add CarePlan and ServiceRequest examples
+- [ ] Select codes for the remaining red cell antigens and blood products (ISBT 128 options)
+- [ ] Resolve the open items on the Exchange Workflow page and complete the CapabilityStatements (search parameters, SMART scopes)
+- [ ] Add data element names from the project's USCDI+ SCD data element list to the mapping chart
+- [ ] Add test data for additional patients, including a pediatric patient
 - [ ] Review extensions against hl7.fhir.uv.extensions.r4 for reuse opportunities
-- [ ] Conduct clinical SME review of profiles and value sets
-- [ ] Submit for HL7 ballot (STU1)
+- [ ] Clinical review of the example scenario
+- [ ] Create a targeted list of questions for public comment
 
 ## Contributing
 
