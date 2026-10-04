@@ -20,11 +20,6 @@ Sickle Cell Disease (SCD). This guide extends and aligns with
 
 ### Quick Navigation
 
-<!-- TODO: Create a targeted list of questions for the SME and work group
-     review (for example, on SHALL/SHOULD levels in the CapabilityStatements,
-     the Hydroxyurea Adherence extension, and the exchange workflow), and
-     publish it on a "Questions for Reviewers" page before that review. -->
-
 | Section | Description |
 |---|---|
 | [Introduction](introduction.html) | Purpose, goals, and relationship to other standards |

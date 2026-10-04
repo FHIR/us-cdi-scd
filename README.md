@@ -133,10 +133,6 @@ The generated output is written to the `output/` directory; open `output/index.h
 
 This guide is developed under the FHIR Community Process and is not intended for ballot. Open items are tracked as `TODO` comments in the source; the full checklist is in [pull request #1](https://github.com/FHIR/us-cdi-scd/pull/1).
 
-- [x] Complete the narrative page content (remaining items are marked `TODO` in the .md files)
-- [x] Confirm RxNorm concept IDs for SCD medications
-- [x] Confirm SNOMED CT concept codes (US Edition), except those still marked `TODO`
-- [x] Add CarePlan and ServiceRequest examples
 - [ ] Select codes for the remaining red cell antigens and blood products (ISBT 128 options)
 - [ ] Resolve the open items on the Exchange Workflow page and complete the CapabilityStatements (search parameters, SMART scopes)
 - [ ] Add data element names from the project's USCDI+ SCD data element list to the mapping chart
