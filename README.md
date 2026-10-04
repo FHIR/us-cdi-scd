@@ -129,7 +129,7 @@ This IG is built with the standard HL7 tooling ([FHIR Shorthand / SUSHI](https:/
 The generated output is written to the `output/` directory; open `output/index.html` to view the build.
 
 
-## Key TODOs Before SME and Work Group Review
+## Additional Open Items
 
 This guide is developed under the FHIR Community Process and is not intended for ballot. Open items are tracked as `TODO` comments in the source; the full checklist is in [pull request #1](https://github.com/FHIR/us-cdi-scd/pull/1).
 
@@ -143,7 +143,6 @@ This guide is developed under the FHIR Community Process and is not intended for
 - [ ] Add test data for additional patients, including a pediatric patient
 - [ ] Review extensions against hl7.fhir.uv.extensions.r4 for reuse opportunities
 - [ ] Clinical review of the example scenario
-- [ ] Create a targeted list of questions for SME and work group reviewers
 
 ## Contributing
 
