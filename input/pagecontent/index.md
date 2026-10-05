@@ -27,18 +27,25 @@ Sickle Cell Disease (SCD). This guide extends and aligns with
 | [Scope and Usage](scope_and_usage.html) | What is in and out of scope; use cases |
 | [Overview](overview.html) | Architectural overview of profiles and interactions |
 | [Audience](audience.html) | Intended readers and implementers |
-| [Conformance Requirements](conformance.html) | Must Support, obligations, and capability statements |
+| [Conformance Requirements](conformance.html) | Must Support, missing data, and capability statements |
+| [Exchange Workflow](workflow.html) | How an exchange works, step by step, and open questions |
 | [Profiles](profiles.html) | All FHIR profiles defined or constrained in this IG |
 | [Extensions](extensions.html) | Custom extensions introduced by this IG |
 | [Terminology](terminology.html) | Value sets and code systems |
+| [Examples](examples.html) | Example records following one fictional patient |
+| [Data Element Mapping](data-element-mapping.html) | Every Must Support and required element, with cardinality and bindings |
+| [Test Data](testing.html) | Test Bundles and expected search results for testers |
 | [Security and Privacy](security.html) | Guidance on protecting sensitive SCD data |
 | [Downloads](downloads.html) | Downloadable artifacts |
+| [Change Log](changes.html) | Changes in each version of this guide |
 
 ---
 
 ### Acknowledgements
 
-This Implementation Guide was developed as part of the USCDI+ Sickle Cell Disease (SCD) initiative with funding from the Office of the Assistant Secretary for Planning and Evaluation (ASPE) and the Office of the National Coordinator for Health Information Technology (ONC), through sustained collaboration across the warrior, clinical, research, regulatory, public health, and health IT communities.
+This Implementation Guide was developed as part of the USCDI+ Sickle Cell Disease (SCD) initiative with funding from the HHS Office of the Secretary Patient-Centered Outcomes Research Trust Fund (OS-PCORTF), administered by the Office of the Assistant Secretary for Planning and Evaluation (ASPE), through sustained collaboration across the warrior, clinical, research, regulatory, public health, and health IT communities.
+
+<!-- TODO: Confirm the funding and lead-agency wording (ASPE/OS-PCORTF and ASTP/ONC) with the project officer. -->
 
 ---
 

@@ -1,0 +1,4 @@
+== Suppressed Messages ==
+
+# Add warning and information messages from qa.html here (one per line) to suppress them,
+# with a comment above each explaining why it is acceptable. Errors cannot be suppressed.

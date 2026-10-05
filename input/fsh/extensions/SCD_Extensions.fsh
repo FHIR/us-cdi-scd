@@ -38,27 +38,29 @@ Description: """
   patient in a structured, coded format. This extension is intended for use
   on the Condition resource representing the patient's primary SCD diagnosis.
 
-  The genotype SHALL be coded using a value from the SCDGenotypeVS value set,
-  which includes SNOMED CT and ICD-10-CM codes for all major SCD subtypes
-  (HbSS, HbSC, HbS-Beta0-thalassemia, HbS-Beta+-thalassemia, etc.).
+  The SCDGenotypeVS value set (example binding) lists SNOMED CT codes for the
+  major SCD subtypes (HbSS, HbSC, HbS-Beta0-thalassemia, HbS-Beta+-thalassemia,
+  etc.).
 
   This extension supports:
-  - Clinical decision support (e.g., hydroxyurea dosing guidance by genotype)
+  - Clinical decision support (e.g., genotype determines eligibility for
+    hydroxyurea under NHLBI 2014 recommendations for HbSS and HbS-Beta0)
   - Population health stratification by SCD subtype
   - Research and quality measure calculations
-  - Transfusion planning (HbSS vs HbSC affects target HbS%)
+  - Transfusion planning (e.g., patients with HbSC have higher baseline
+    hemoglobin, which affects the choice between simple and exchange transfusion)
 
   Note: Confirmation of genotype requires hemoglobin fractionation (HPLC or
   electrophoresis) and/or molecular genetic testing. The verificationStatus
   of the parent Condition SHALL reflect the confirmation status.
 """
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^context[+].type = #element
 * ^context[=].expression = "Condition"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from SCDGenotypeVS (extensible)
+* valueCodeableConcept from SCDGenotypeVS (example)
 * valueCodeableConcept ^short = "SCD genotype code (HbSS, HbSC, HbS-Beta0, etc.)"
 
 
@@ -79,18 +81,19 @@ Description: """
   Documents the red cell antigen matching criteria that were applied in
   selecting a blood product for transfusion in a patient with Sickle Cell Disease.
 
-  Extended antigen-matched transfusion — typically including C, c, E, e (Rh),
-  K (Kell), Fya/Fyb (Duffy), and Jka/Jkb (Kidd) at minimum — significantly
-  reduces the risk of alloimmunization in SCD patients on chronic transfusion
-  therapy. This extension enables structured documentation of which antigens
-  were matched for a given transfusion event.
+  ASH 2020 recommends prophylactic red cell antigen matching for Rh (C, E or
+  C/c, E/e) and K antigens for patients with SCD receiving transfusions, which
+  reduces the risk of alloimmunization. Matching for additional antigens (for
+  example, Fy, Jk and S) is generally reserved for patients who have already
+  formed alloantibodies. This extension enables structured documentation of
+  which antigens were matched for a given transfusion event.
 
   This extension SHALL be used on SCDBiologicallyDerivedProduct instances when
-  extended antigen matching was performed. It MAY also be used on the SCDProcedure
+  antigen matching was performed. It MAY also be used on the SCDProcedure
   instance representing the transfusion to document the matching requirements
   specified in the order.
 """
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^context[+].type = #element
 * ^context[=].expression = "BiologicallyDerivedProduct"
@@ -104,7 +107,7 @@ Description: """
 * extension[matchedAntigen] ^short = "Specific antigen confirmed matched/negative"
 * extension[matchedAntigen] ^definition = "A specific red cell antigen that was confirmed negative (matched) in the selected blood product."
 * extension[matchedAntigen].value[x] only CodeableConcept
-* extension[matchedAntigen].valueCodeableConcept from SCDRedCellAntigenVS (extensible)
+* extension[matchedAntigen].valueCodeableConcept from SCDRedCellAntigenVS (example)
 
 * extension[matchingProtocol] ^short = "Antigen matching protocol used"
 * extension[matchingProtocol] ^definition = "The institutional or standard matching protocol applied (e.g., 'CcEeK matching', 'Extended 5-antigen match', 'Full phenotype match')."
@@ -124,9 +127,10 @@ Id: scd-hydroxyurea-adherence
 Title: "SCD Hydroxyurea Adherence"
 Description: """
   Captures the documented adherence level of a patient to hydroxyurea therapy.
-  Hydroxyurea is the cornerstone disease-modifying therapy for SCD, but its
-  effectiveness depends critically on consistent adherence. Non-adherence is
-  associated with higher rates of VOC, ACS, and mortality.
+  Hydroxyurea is a cornerstone disease-modifying therapy for SCD that reduces
+  VOC, acute chest syndrome and mortality, but its benefit depends on
+  consistent use. Non-adherence is associated with more VOC episodes and
+  hospitalizations.
 
   Adherence may be assessed by:
   - Patient/caregiver self-report
@@ -141,7 +145,7 @@ Description: """
   (e.g., MMAS, ARMS, WHO adherence classification) and reference appropriate
   LOINC codes if available.
 """
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^context[+].type = #element
 * ^context[=].expression = "MedicationStatement"
@@ -171,8 +175,8 @@ Description: """
 // Context: Condition (SCDConditionProblemsAndHealthConcerns)
 // Purpose: Documents the frequency of vaso-occlusive crisis (VOC) episodes
 //          over a defined period, a key clinical indicator used to guide
-//          therapy escalation decisions (e.g., starting crizanlizumab,
-//          initiating chronic transfusion, considering HSCT).
+//          therapy decisions (e.g., starting hydroxyurea or crizanlizumab,
+//          considering HSCT).
 // ==============================================================================
 
 Extension: SCDVOCFrequencyExtension
@@ -185,14 +189,19 @@ Description: """
   and guide therapy escalation.
 
   Clinical context:
-  - ≥2 VOC episodes/year: threshold for considering hydroxyurea initiation
-  - ≥2 VOC episodes/year on hydroxyurea: threshold for considering crizanlizumab
-  - Frequent hospitalizations for VOC: consideration for HSCT evaluation
+  - NHLBI 2014: adults with sickle cell anemia who have 3 or more moderate to
+    severe pain crises in 12 months should be treated with hydroxyurea.
+    (Infants from 9 months, children and adolescents with HbSS or HbS-Beta0
+    should be offered hydroxyurea regardless of clinical severity.)
+  - Crizanlizumab is FDA-approved to reduce the frequency of VOC in patients
+    aged 16 and older; the label sets no minimum VOC count.
+  - ASH 2021 conditionally suggests HSCT evaluation for patients with frequent
+    pain episodes.
 
   This extension is intended for use on the Condition resource representing
   the patient's primary SCD diagnosis (problem list entry).
 """
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^context[+].type = #element
 * ^context[=].expression = "Condition"
@@ -217,9 +226,8 @@ Description: """
 // ==============================================================================
 // Context: BiologicallyDerivedProduct (SCDBiologicallyDerivedProduct)
 // Purpose: Documents the age of a blood product (days from collection to
-//          transfusion) at the time of transfusion. Fresher blood is preferred
-//          for SCD exchange transfusion to optimize 2,3-DPG levels and
-//          post-exchange HbS% reduction efficacy.
+//          transfusion) at the time of transfusion. Some institutional
+//          protocols prefer fresher units for exchange transfusion.
 // ==============================================================================
 
 Extension: SCDBloodProductAgeExtension
@@ -227,16 +235,15 @@ Id: scd-blood-product-age
 Title: "SCD Blood Product Age at Transfusion"
 Description: """
   Documents the age of a blood product in days from the date of collection
-  (phlebotomy) to the date of transfusion. For Sickle Cell Disease patients
-  undergoing automated red cell exchange (erythrocytapheresis), fresher blood
-  products (≤7 days) are preferred to maximize post-exchange efficacy and
-  minimize issues related to 2,3-DPG depletion and increased RBC rigidity
-  in stored cells.
+  (phlebotomy) to the date of transfusion. Some institutional protocols prefer
+  fresher units (for example, 7 to 14 days or less) for exchange transfusion in
+  patients with Sickle Cell Disease; national guidelines (NHLBI 2014, ASH 2020)
+  do not set a storage-age requirement.
 
   This extension is intended for use on SCDBiologicallyDerivedProduct instances
   when the product age at time of transfusion is clinically documented.
 """
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^context[+].type = #element
 * ^context[=].expression = "BiologicallyDerivedProduct"
@@ -264,13 +271,15 @@ Description: """
   threshold that led to initiation of iron chelation therapy for a patient
   with Sickle Cell Disease on chronic transfusion therapy.
 
-  Iron chelation is indicated when serum ferritin exceeds a threshold
-  (commonly >1000 ng/mL sustained over time, or per institutional protocol)
-  or when liver iron concentration (LIC) measured by MRI exceeds guidelines
-  (typically >5–7 mg Fe/g dry weight). This extension captures the specific
-  trigger value and the method used to assess iron burden.
+  Deferasirox labeling recommends starting chelation when serum ferritin is
+  consistently above 1000 mcg/L after substantial transfusion exposure (about
+  100 mL/kg of packed red cells). Liver iron concentration (LIC) measured by
+  MRI is the preferred measure of iron burden because ferritin rises with
+  inflammation; LIC thresholds vary by guideline and institution. This
+  extension captures the specific trigger value and the method used to assess
+  iron burden.
 """
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^context[+].type = #element
 * ^context[=].expression = "MedicationRequest"
@@ -318,7 +327,7 @@ Description: """
   result from newborn heel stick) or a DiagnosticReport representing the
   complete newborn screen report.
 """
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^context[+].type = #element
 * ^context[=].expression = "Condition"
@@ -344,19 +353,19 @@ Description: """
   for use with the SCDGenotypeExtension on the patient's primary SCD
   Condition resource.
 """
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // SNOMED CT SCD genotype concepts
 * $sct#127040003  "Sickle cell-hemoglobin SS disease (disorder)"          // HbSS
-* $sct#416180004  "Sickle cell-hemoglobin C disease (disorder)"           // HbSC
-* $sct#417571000  "Sickle cell-beta-zero-thalassemia (disorder)"          // HbS-Beta0
-* $sct#417425009  "Sickle cell-beta-plus-thalassemia (disorder)"          // HbS-Beta+
-* $sct#417748003  "Sickle cell-hemoglobin D disease (disorder)"           // HbSD
-* $sct#417279003  "Sickle cell-hemoglobin E disease (disorder)"           // HbSE
-* $sct#444751005  "Hemoglobin S-O Arab disease (disorder)"                // HbSOArab
-* $sct#35434009   "Sickle cell disorder (disorder)"                        // unspecified
+* $sct#35434009  "Sickle cell-hemoglobin C disease"           // HbSC
+* $sct#127043001  "Sickle cell-beta^0^-thalassemia"          // HbS-Beta0
+* $sct#127042006  "Sickle cell beta plus thalassemia"          // HbS-Beta+
+* $sct#25472008  "Sickle cell-hemoglobin D disease"           // HbSD
+* $sct#47024008  "Sickle cell-hemoglobin E disease"           // HbSE
+* $sct#127048005  "Sickle cell-Hemoglobin O Arab disease"                // HbSOArab
+* $sct#417357006   "Sickling disorder due to hemoglobin S"                        // unspecified
 
 
 // ==============================================================================
@@ -374,30 +383,30 @@ Description: """
   TODO: Map to ISBT 128 antigen codes (primary coding system for blood banking).
   SNOMED CT codes used as placeholder pending ISBT 128 integration.
 """
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Rh System
-* $sct#16951006   "C antigen (Rh2) (substance)"
-* $sct#6411008    "c antigen (Rh4) (substance)"
-* $sct#73817003   "E antigen (Rh3) (substance)"
-* $sct#35095006   "e antigen (Rh5) (substance)"
+* $sct#84538003   "Blood group antigen C"
+* $sct#6411008    "c antigen (Rh4) (substance)"  // TODO: code not found in SNOMED CT US Edition; terminologist to supply correct code
+* $sct#36744004   "Blood group antigen E"
+* $sct#35095006   "e antigen (Rh5) (substance)"  // TODO: code not found in SNOMED CT US Edition; terminologist to supply correct code
 
 // Kell System
-* $sct#90290005   "K antigen (Kell1) (substance)"
-* $sct#6532007    "k antigen (Kell2) (substance)"
+* $sct#90290005   "K antigen (Kell1) (substance)"  // TODO: code not found in SNOMED CT US Edition; terminologist to supply correct code
+* $sct#6532007    "k antigen (Kell2) (substance)"  // TODO: code not found in SNOMED CT US Edition; terminologist to supply correct code
 
 // Duffy System
-* $sct#57813001   "Fy(a) antigen (substance)"
-* $sct#57814007   "Fy(b) antigen (substance)"
+* $sct#11770009   "Blood group antigen Fy^a^"
+* $sct#24574004   "Blood group antigen Fy^b^"
 
 // Kidd System
-* $sct#36732006   "Jk(a) antigen (substance)"
-* $sct#36733001   "Jk(b) antigen (substance)"
+* $sct#65887005   "Blood group antigen Jk^a^"
+* $sct#33825006   "Blood group antigen Jk^b^"
 
 // MNS System
-* $sct#21974004   "M antigen (substance)"
-* $sct#21977006   "N antigen (substance)"
-* $sct#21976002   "S antigen (substance)"
-* $sct#21975003   "s antigen (substance)"
+* $sct#21974004   "M antigen (substance)"  // TODO: code not found in SNOMED CT US Edition; terminologist to supply correct code
+* $sct#21977006   "N antigen (substance)"  // TODO: code not found in SNOMED CT US Edition; terminologist to supply correct code
+* $sct#21976002   "S antigen (substance)"  // TODO: code not found in SNOMED CT US Edition; terminologist to supply correct code
+* $sct#21975003   "s antigen (substance)"  // TODO: code not found in SNOMED CT US Edition; terminologist to supply correct code

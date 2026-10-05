@@ -33,7 +33,7 @@ releaseLabel: draft         # ci-build | draft | qa-preview | ballot | trial-use
 publisher:
   name: HL7 International / Public Health
   url: https://www.hl7.org/Special/committees/pher
-  email: pher@lists.HL7.org
+  email: PHER@HL7.org
 
 contact:
   - name: HL7 Public Health Work Group
@@ -41,7 +41,7 @@ contact:
       - system: url
         value: http://www.hl7.org/Special/committees/pher
       - system: email
-        value: pher@lists.HL7.org
+        value: PHER@HL7.org
 
 # -----------------------------------------------------------------------
 # Jurisdiction
@@ -52,6 +52,15 @@ jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 # License
 # -----------------------------------------------------------------------
 license: CC0-1.0
+
+# -----------------------------------------------------------------------
+# HL7 Work Group and Standards Status
+# -----------------------------------------------------------------------
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: pher
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: draft
 
 # -----------------------------------------------------------------------
 # Package Dependencies
@@ -65,7 +74,7 @@ dependencies:
     uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
   us.nlm.vsac:
     version: 0.19.0
-    uri: https://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac
+    uri: http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac
 
 # -----------------------------------------------------------------------
 # Pages / Navigation Structure
@@ -86,12 +95,20 @@ pages:
     title: Audience
   conformance.md:
     title: Conformance Requirements
+  workflow.md:
+    title: Exchange Workflow
   profiles.md:
     title: Profiles
   extensions.md:
     title: Extensions
   terminology.md:
     title: Terminology
+  examples.md:
+    title: Examples
+  data-element-mapping.md:
+    title: Data Element Mapping
+  testing.md:
+    title: Test Data
   security.md:
     title: Security and Privacy
   downloads.md:
@@ -112,11 +129,16 @@ menu:
     Audience: audience.html
   Guidance:
     Conformance Requirements: conformance.html
+    Exchange Workflow: workflow.html
     Security and Privacy: security.html
   Artifacts:
     Profiles: profiles.html
     Extensions: extensions.html
     Terminology: terminology.html
+    Examples: examples.html
+    Data Element Mapping: data-element-mapping.html
+    Test Data: testing.html
+    Artifacts Summary: artifacts.html
   Downloads: downloads.html
   Change Log: changes.html
 

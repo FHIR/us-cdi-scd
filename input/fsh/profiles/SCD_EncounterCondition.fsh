@@ -45,10 +45,10 @@ Description: """
   BiologicallyDerivedProduct resources when a blood product transfusion occurs.
 """
 
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^date = "2025-01-01"
-* ^publisher = "HL7 International / Patient Care"
+* ^publisher = "HL7 International / Public Health"
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Inherited Must Support from US Core Encounter
@@ -102,12 +102,15 @@ Description: """
 
   Common acute SCD encounter diagnoses represented by this profile include:
   - Vaso-occlusive crisis (VOC) / Acute Pain Episode
-    (ICD-10-CM: D57.00, D57.01, D57.211–D57.219, D57.411–D57.419, D57.811–D57.819)
+    (ICD-10-CM "with crisis, unspecified": D57.00, D57.219, D57.419, D57.439,
+    D57.459, D57.819)
   - Acute Chest Syndrome (ACS)
-    (ICD-10-CM: D57.01, D57.211, D57.411, D57.811)
+    (ICD-10-CM: D57.01, D57.211, D57.411, D57.431, D57.451, D57.811)
   - Splenic sequestration
-    (ICD-10-CM: D57.02, D57.212, D57.412, D57.812)
+    (ICD-10-CM: D57.02, D57.212, D57.412, D57.432, D57.452, D57.812)
   - Stroke / Cerebrovascular accident in SCD
+    (ICD-10-CM "with cerebral vascular involvement": D57.03, D57.213, D57.413,
+    D57.433, D57.453, D57.813)
   - Priapism in SCD
   - Fever / Sepsis in SCD patient
   - Acute kidney injury in SCD
@@ -117,10 +120,10 @@ Description: """
   codes. Both code systems SHOULD be provided via `condition.code.coding`.
 """
 
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^date = "2025-01-01"
-* ^publisher = "HL7 International / Patient Care"
+* ^publisher = "HL7 International / Public Health"
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Inherited Must Support from US Core Condition Encounter Diagnosis
@@ -132,7 +135,8 @@ Description: """
 * code ^comment = """
   For SCD encounter diagnoses, code SHOULD use SNOMED CT or ICD-10-CM.
   Where both are available, both SHOULD be included as coding repetitions.
-  TODO: Bind to SCDAcuteComplicationVS (value set to be defined).
+  US Core's preferred binding applies. The SCD Acute Complication value set
+  lists common acute SCD complications, for reference.
 """
 * subject MS
 * subject only Reference(SCDPatient)
@@ -144,8 +148,6 @@ Description: """
 * evidence MS
 * evidence.id MS
 
-// TODO: Add value set binding when SCDAcuteComplicationVS is defined:
-// * code from SCDAcuteComplicationVS (extensible)
 
 
 // ==============================================================================
@@ -173,10 +175,10 @@ Description: """
   Key problem list entries for SCD patients represented by this profile:
 
   **SCD Diagnosis and Genotype:**
-  - Sickle cell anemia (HbSS): SNOMED 127040003; ICD-10-CM D57.1
-  - Sickle cell–hemoglobin C disease (HbSC): SNOMED 416180004; ICD-10-CM D57.2
-  - Sickle cell–beta-0-thalassemia: SNOMED 417571000; ICD-10-CM D57.40
-  - Sickle cell–beta-plus-thalassemia: SNOMED 417425009; ICD-10-CM D57.44
+  - Sickle cell anemia (HbSS): SNOMED 127040003; ICD-10-CM D57.1 (without crisis)
+  - Sickle cell–hemoglobin C disease (HbSC): SNOMED 35434009; ICD-10-CM D57.20 (without crisis)
+  - Sickle cell–beta-0-thalassemia: SNOMED 127043001; ICD-10-CM D57.42 (without crisis)
+  - Sickle cell–beta-plus-thalassemia: SNOMED 127042006; ICD-10-CM D57.44 (without crisis)
   - (Additional genotypes: see SCD Genotype value set)
 
   **Chronic Complications:**
@@ -198,10 +200,10 @@ Description: """
   for all patients within scope of this IG.
 """
 
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^date = "2025-01-01"
-* ^publisher = "HL7 International / Patient Care"
+* ^publisher = "HL7 International / Public Health"
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Inherited Must Support from US Core Condition Problems and Health Concerns
@@ -214,8 +216,9 @@ Description: """
   The code SHALL represent the patient's SCD diagnosis. For the primary SCD
   diagnosis, this SHOULD be the genotype-specific code (e.g., HbSS, HbSC).
   Use SNOMED CT or ICD-10-CM. Both SHOULD be included when available.
-  TODO: Bind to SCDDiagnosisVS (value set to be defined) for the primary
-  SCD diagnosis entry.
+  US Core's preferred binding applies. The SCD Diagnosis value set lists SCD
+  diagnosis codes, for reference. Any appropriate code may be used, including
+  for chronic complications and other problems the value set does not cover.
 """
 * subject MS
 * subject only Reference(SCDPatient)
@@ -227,10 +230,11 @@ Description: """
 * evidence MS
 * evidence.id MS
 
-// Extension slot for SCD genotype detail
-// TODO: Add extension reference once SCDGenotypeExtension is defined:
-// * extension[scd-genotype] MS
-
-// TODO: Add value set binding when SCDDiagnosisVS and SCDChronicComplicationVS
-// are defined. Primary SCD code should be required; complication codes extensible.
-// * code from SCDDiagnosisAndComplicationVS (extensible)
+// SCD-specific extensions for the primary SCD diagnosis entry
+* extension contains
+    SCDGenotypeExtension named scd-genotype 0..1 MS and
+    SCDVOCFrequencyExtension named scd-voc-frequency 0..1 MS and
+    SCDNewbornScreenReferenceExtension named scd-newborn-screen-reference 0..1
+* extension[scd-genotype] ^short = "Confirmed SCD genotype (HbSS, HbSC, HbS-beta thalassemia, etc.)"
+* extension[scd-voc-frequency] ^short = "Frequency of vaso-occlusive crisis episodes"
+* extension[scd-newborn-screen-reference] ^short = "Newborn screening result that identified SCD"

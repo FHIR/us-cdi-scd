@@ -50,15 +50,19 @@ Description: """
 //   - Preferred SCD treatment center (reference to Organization)
 // ----------------------------------------------------------------------------
 
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^date = "2025-01-01"
-* ^publisher = "HL7 International / Patient Care"
+* ^publisher = "HL7 International / Public Health"
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Race and ethnicity from US Core — surfaced as Must Support for SCD equity
 * extension[us-core-race] MS
 * extension[us-core-ethnicity] MS
+
+// SCD-specific: link to the newborn screening result that identified SCD
+* extension contains SCDNewbornScreenReferenceExtension named scd-newborn-screen-reference 0..1
+* extension[scd-newborn-screen-reference] ^short = "Newborn screening result that identified SCD"
 
 // Core demographics — inherited Must Support from US Core, stated explicitly
 * identifier MS
@@ -93,10 +97,10 @@ Description: """
   and patient care coordinators.
 """
 
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^date = "2025-01-01"
-* ^publisher = "HL7 International / Patient Care"
+* ^publisher = "HL7 International / Public Health"
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Inherited Must Support from US Core Practitioner
@@ -134,10 +138,10 @@ Description: """
   - 261QF0400X — Federally Qualified Health Center
 """
 
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^date = "2025-01-01"
-* ^publisher = "HL7 International / Patient Care"
+* ^publisher = "HL7 International / Public Health"
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Inherited Must Support from US Core PractitionerRole
@@ -169,7 +173,8 @@ Description: """
   without additional constraints.
 
   Relevant organization types in SCD care include:
-  - Comprehensive Sickle Cell Disease Treatment Centers (HRSA-funded)
+  - Sickle Cell Disease treatment centers, including those participating in the
+    HRSA Sickle Cell Disease Treatment Demonstration Program
   - Hematology and Oncology practices
   - Federally Qualified Health Centers (FQHCs)
   - Academic Medical Centers with SCD programs
@@ -177,10 +182,10 @@ Description: """
   - Community health organizations and patient advocacy groups
 """
 
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^date = "2025-01-01"
-* ^publisher = "HL7 International / Patient Care"
+* ^publisher = "HL7 International / Public Health"
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Inherited Must Support from US Core Organization
@@ -215,10 +220,10 @@ Description: """
   stroke, and hematopoietic stem cell transplantation).
 """
 
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^date = "2025-01-01"
-* ^publisher = "HL7 International / Patient Care"
+* ^publisher = "HL7 International / Public Health"
 * ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 
 // Inherited Must Support from US Core Location
