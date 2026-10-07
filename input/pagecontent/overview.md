@@ -1,6 +1,6 @@
 ### Overview
 
-This Implementation Guide (IG) for the US Core Data for Interoperability Plus Sickle Cell Disease (USCDI+SCD) is the first FHIR product of the Assistant Secretary for Technology Policy/Office of the National Coordinator for Health IT (ASTP/ONC) USCDI+ Sickle Cell Disease (SCD) project, which supports interoperability for SCD patient care-related data exchanges. The project has also produced a landscape analysis and a data element list. Two related Use Cases are addressed by this guide.
+This Implementation Guide (IG) for the US Core Data for Interoperability Plus Sickle Cell Disease (USCDI+SCD) is the first FHIR product of the Office of the National Coordinator for Health IT (ONC) USCDI+ Sickle Cell Disease (SCD) project, which supports interoperability for SCD patient care-related data exchanges. The project has also produced a landscape analysis and a data element list. Two related Use Cases are addressed by this guide.
 ### USCDI+ SCD Data Element Mapping
 
 The Information Model below represents the information to be included in exchanges supporting the 2 Use Cases addressed by this IG. 
