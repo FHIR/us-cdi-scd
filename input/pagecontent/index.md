@@ -45,7 +45,7 @@ Sickle Cell Disease (SCD). This guide extends and aligns with
 
 This Implementation Guide was developed as part of the USCDI+ Sickle Cell Disease (SCD) initiative with funding from the HHS Office of the Secretary Patient-Centered Outcomes Research Trust Fund (OS-PCORTF), administered by the Office of the Assistant Secretary for Planning and Evaluation (ASPE), through sustained collaboration across the warrior, clinical, research, regulatory, public health, and health IT communities.
 
-<!-- TODO: Confirm the funding and lead-agency wording (ASPE/OS-PCORTF and ASTP/ONC) with the project officer. -->
+<!-- TODO: Confirm the funding and lead-agency wording (ASPE/OS-PCORTF and ONC) with the project officer. -->
 
 ---
 
