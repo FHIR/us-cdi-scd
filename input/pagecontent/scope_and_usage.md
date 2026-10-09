@@ -8,15 +8,21 @@ SCOPE AND USAGE PAGE — scope_and_usage.md
 
 ### In Scope
 
-The following use cases are **in scope** for this Implementation Guide:
+This guide supports the two use cases defined by the USCDI+ Sickle Cell Disease (SCD) project:
 
-- **Transfer of Care:** An SCD patient transitions their care from one provider to another. The new provider creates or updates the SCD diagnosis of the patient.
-- **Emergency Department:** An SCD patient presents at an Emergency Department (ED) for immediate, critical care. The new provider retrieves the clinical information needed in order to provide appropriate care to the patient.
+**Use Case A: SCD Diagnosis.** The SCD Diagnosis use case aims to ensure that all individuals living with SCD are consistently and accurately identified across various care settings using structured data. The [USCDI+ SCD Diagnosis](https://uscdiplus.healthit.gov/uscdiplus?id=uscdi_record&table=x_g_sshh_uscdi_sub_domain&sys_id=84d4c4a23bdd03503cb59d0864e45a2a&view=sp) core minimum data element list will facilitate data exchange to meet these two goals:
 
-| # | Use Case | Key Profiles |
-|---|---|---|
-| 1 | Transfer of Care | Patient, Condition (Problems), Laboratory Result, Practitioner, PractitionerRole, Organization |
-| 2 | Emergency Department | Encounter, Condition (Encounter Diagnosis), Laboratory Result, Vital Signs, MedicationRequest, CarePlan |
+- All individuals living with SCD have a recorded SCD diagnosis that includes SCD subtype in patient records.
+- Improve the identification of individuals living with SCD by accurately sharing documented SCD diagnoses and SCD subtype between systems.
+
+**Use Case B: SCD Emergency Care.** The SCD Emergency Care use case aims to ensure the treatment or interventions received by individuals living with SCD during an acute episode are consistent with care previously received and are adequately captured. The [USCDI+ SCD Emergency Care](https://uscdiplus.healthit.gov/uscdiplus?id=uscdi_record&table=x_g_sshh_uscdi_sub_domain&sys_id=a7e444623bdd03503cb59d0864e45a96&view=sp) core minimum data element list will facilitate data exchange to meet this goal:
+
+- All individuals living with SCD receive high-quality care from providers informed by patients' medical histories during acute episodes.
+
+| Use Case | Key Profiles |
+|---|---|
+| A: SCD Diagnosis | Patient, Condition (Problems), Laboratory Result, Practitioner, PractitionerRole, Organization |
+| B: SCD Emergency Care | Encounter, Condition (Encounter Diagnosis), Laboratory Result, Vital Signs, MedicationRequest, CarePlan |
 
 This diagram illustrates the data exchange process flow for these use cases, as tested at a connectathon.
 <!-- TODO: Name the connectathon and its date. --> When the SCD patient presents to a new provider for care, a query is initiated to locate the patient's EMR.  Once located, the necessary medical record data is queried for and returned by the identified EHR.
@@ -24,8 +30,11 @@ This diagram illustrates the data exchange process flow for these use cases, as 
 
 <figure>
   <img src="uscdi-scd-exchange-process.jpg" alt="USCDI-SCD Exchange Process Data Flow" style="max-width:100%"/>
-  <figcaption><b>Figure 1: USCDI-SCD Exchange Process Data Flow</b></figcaption>
+  <figcaption><b>Figure 1: USCDI-SCD Exchange Process Data Flow</b><sup>1</sup></figcaption>
 </figure>
+
+<p><em><sup>1</sup> The link in the middle of the diagram represents a data intermediary.</em></p>
+<!-- TODO: Label the data intermediary in the diagram source (Visio) and remove this footnote. -->
 
 The [Exchange Workflow](workflow.html) page describes each step of this flow in more detail.
 
@@ -34,7 +43,7 @@ The [Exchange Workflow](workflow.html) page describes each step of this flow in 
 ### Out of Scope
 
 The following items are explicitly **out of scope** for this first version of the
-USCDI-SCD IG: All registry and research use cases.  
+USCDI-SCD IG: any use cases not described.
 
 
 ---
