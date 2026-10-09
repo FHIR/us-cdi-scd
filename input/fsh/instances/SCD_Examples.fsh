@@ -133,14 +133,11 @@ Title: "Example Condition — HbSS Sickle Cell Disease (Problem List)"
 Description: """
   Example SCDConditionProblemsAndHealthConcerns instance representing Maya Johnson's
   primary HbSS sickle cell disease diagnosis on her active problem list.
-  Demonstrates SCD genotype extension and dual coding (SNOMED CT + ICD-10-CM).
+  Demonstrates the subtype-specific diagnosis code with dual coding (SNOMED CT + ICD-10-CM), and the VOC frequency and newborn screen reference extensions.
 """
 Usage: #example
 
 * id = "maya-johnson-scd-diagnosis"
-
-// SCD Genotype Extension
-* extension[scd-genotype].valueCodeableConcept = $sct#127040003 "Sickle cell-hemoglobin SS disease (disorder)"
 
 // Problem list category (required by US Core)
 * category[+] = $condition-category#problem-list-item "Problem List Item"

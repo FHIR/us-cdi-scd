@@ -29,17 +29,17 @@ const CANON = 'http://hl7.org/fhir/us/uscdi-scd/';
 
 // Use cases from the Scope and Usage page (key profiles per use case).
 const USE_CASES = {
-  'uscdi-scd-patient': ['Transfer of Care', 'Emergency Department'],
-  'uscdi-scd-condition-problems': ['Transfer of Care'],
-  'uscdi-scd-laboratory-result': ['Transfer of Care', 'Emergency Department'],
-  'uscdi-scd-practitioner': ['Transfer of Care'],
-  'uscdi-scd-practitionerrole': ['Transfer of Care'],
-  'uscdi-scd-organization': ['Transfer of Care'],
-  'uscdi-scd-encounter': ['Emergency Department'],
-  'uscdi-scd-condition-encounter-diagnosis': ['Emergency Department'],
-  'uscdi-scd-vital-signs': ['Emergency Department'],
-  'uscdi-scd-medicationrequest': ['Emergency Department'],
-  'uscdi-scd-careplan': ['Emergency Department'],
+  'uscdi-scd-patient': ['SCD Diagnosis', 'SCD Emergency Care'],
+  'uscdi-scd-condition-problems': ['SCD Diagnosis'],
+  'uscdi-scd-laboratory-result': ['SCD Diagnosis', 'SCD Emergency Care'],
+  'uscdi-scd-practitioner': ['SCD Diagnosis'],
+  'uscdi-scd-practitionerrole': ['SCD Diagnosis'],
+  'uscdi-scd-organization': ['SCD Diagnosis'],
+  'uscdi-scd-encounter': ['SCD Emergency Care'],
+  'uscdi-scd-condition-encounter-diagnosis': ['SCD Emergency Care'],
+  'uscdi-scd-vital-signs': ['SCD Emergency Care'],
+  'uscdi-scd-medicationrequest': ['SCD Emergency Care'],
+  'uscdi-scd-careplan': ['SCD Emergency Care'],
 };
 
 // Display order (matches the Profiles page).
@@ -183,7 +183,7 @@ This page maps the data elements in this guide to their FHIR profiles and elemen
 
 | Column | Meaning |
 |---|---|
-| Element | The FHIR element path. A name after a colon (for example, \`extension:scd-genotype\`) is a named slice. |
+| Element | The FHIR element path. A name after a colon (for example, \`extension:scd-voc-frequency\`) is a named slice. |
 | Card. | Cardinality: minimum..maximum occurrences. A minimum of 1 means the element is required. |
 | MS | **Y** means the element is Must Support. See [Must Support](conformance.html#must-support). |
 | Type | The data type. For references, the profiles the reference must conform to. |

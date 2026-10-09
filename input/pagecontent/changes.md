@@ -26,7 +26,7 @@ CHANGE LOG PAGE — changes.md
   - USCDI-SCD Laboratory Result
   - USCDI-SCD Vital Signs
 - Initial profile for FHIR 4.0.1 BiologicallyDerivedProduct
-- Initial extensions for SCD genotype, VOC frequency, newborn screening,
+- Initial extensions for VOC frequency, newborn screening,
   hydroxyurea adherence, iron chelation, transfusion antigen matching and
   blood product age
 - Initial value sets and code systems for SCD diagnoses, medications,

@@ -1,12 +1,11 @@
 ### Extensions
 
-This guide defines seven extensions for SCD-specific information that neither FHIR R4 nor US Core can represent. Each heading links to the formal extension definition. All extensions are included in the FHIR package on the [Downloads](downloads.html) page.
+This guide defines six extensions for SCD-specific information that neither FHIR R4 nor US Core can represent. Each heading links to the formal extension definition. All extensions are included in the FHIR package on the [Downloads](downloads.html) page.
 
 #### Summary
 
 | Extension | Part of profile | Type | Purpose |
 |---|---|---|---|
-| [SCD Genotype](StructureDefinition-scd-genotype.html) | [Condition Problems](StructureDefinition-uscdi-scd-condition-problems.html) (MS) | CodeableConcept | The patient's confirmed SCD genotype |
 | [SCD Vaso-Occlusive Crisis Frequency](StructureDefinition-scd-voc-frequency.html) | [Condition Problems](StructureDefinition-uscdi-scd-condition-problems.html) (MS) | Complex | How often VOC episodes occur |
 | [SCD Newborn Screen Reference](StructureDefinition-scd-newborn-screen-reference.html) | [Condition Problems](StructureDefinition-uscdi-scd-condition-problems.html), [Patient](StructureDefinition-uscdi-scd-patient.html) | Reference | The newborn screening result that identified SCD |
 | [SCD Hydroxyurea Adherence](StructureDefinition-scd-hydroxyurea-adherence.html) | None yet (may be used on an Observation) | Complex | How consistently the patient takes hydroxyurea |
@@ -20,12 +19,9 @@ This guide defines seven extensions for SCD-specific information that neither FH
 
 ### Diagnosis and Disease History
 
-#### [SCD Genotype](StructureDefinition-scd-genotype.html)
-Records the patient's confirmed SCD genotype, such as HbSS, HbSC, HbS-β⁰-thalassemia or HbS-β⁺-thalassemia, on the Condition representing the primary SCD diagnosis. The [SCD Genotype Value Set](ValueSet-scd-genotype-vs.html) lists codes for the major genotypes (example binding).
+The SCD subtype (for example, HbSS, HbSC, HbS-β⁰-thalassemia or HbS-β⁺-thalassemia) does not need an extension. It is recorded in the diagnosis code itself (`Condition.code`), because each subtype has its own SNOMED CT and ICD-10-CM codes; see the [SCD Diagnosis Value Set](ValueSet-scd-diagnosis-vs.html). Laboratory results that the diagnosis is based on, such as a hemoglobin fractionation, can be linked to the diagnosis by referencing them in `Condition.evidence.detail`. See [USCDI-SCD Condition Problems and Health Concerns](StructureDefinition-uscdi-scd-condition-problems.html).
 
-Genotype matters because it affects treatment and transfusion decisions. For example, genotype determines which patients NHLBI 2014 recommends for hydroxyurea (HbSS and HbS-β⁰), and patients with HbSC have higher baseline hemoglobin, which affects the choice between simple and exchange transfusion. It also supports quality measurement and population health reporting. Genotype is confirmed by hemoglobin fractionation or genetic testing, and the Condition's `verificationStatus` should reflect whether it has been confirmed.
-
-*Example:* [Condition — HbSS Sickle Cell Disease](Condition-maya-johnson-scd-diagnosis.html)
+*Example:* [Condition — HbSS Sickle Cell Disease](Condition-maya-johnson-scd-diagnosis.html), which also uses the two extensions below.
 
 #### [SCD Vaso-Occlusive Crisis Frequency](StructureDefinition-scd-voc-frequency.html)
 Records how many vaso-occlusive crisis (VOC) episodes the patient had over a period of time. It is used on the Condition for the primary SCD diagnosis. VOC frequency is a key measure of disease severity and informs treatment decisions. For example, NHLBI 2014 recommends hydroxyurea for adults with sickle cell anemia who have 3 or more moderate to severe pain crises in 12 months, and ASH 2021 conditionally suggests stem cell transplant evaluation for patients with frequent pain episodes.
