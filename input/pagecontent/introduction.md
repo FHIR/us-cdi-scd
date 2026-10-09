@@ -7,7 +7,7 @@ INTRODUCTION PAGE — introduction.md
 
 ### Introduction
 
-Responding to interoperability challenges expressed by federal and non-federal partners, the Assistant Secretary for Technology Policy/Office of the National Coordinator for Health Information Technology (ASTP/ONC) is leveraging the United States Core Data for Interoperability Plus (USCDI+) service to develop a minimum core dataset for SCD data exchange. USCDI+ extends core data elements in USCDI to meet specific use cases that will benefit from harmonized data elements and help align many related but disparate efforts to collect and exchange SCD-relevant data. By publishing and maintaining a minimum core dataset informed by stakeholder needs, ASTP/ONC envisions greater data exchange to improve care coordination, research comparability, and national surveillance, maximizing health outcomes for SCD warriors.
+Responding to interoperability challenges expressed by federal and non-federal partners, the Office of the National Coordinator for Health Information Technology (ONC) is leveraging the United States Core Data for Interoperability Plus (USCDI+) service to develop a minimum core dataset for SCD data exchange. USCDI+ extends core data elements in USCDI to meet specific use cases that will benefit from harmonized data elements and help align many related but disparate efforts to collect and exchange SCD-relevant data. By publishing and maintaining a minimum core dataset informed by stakeholder needs, ONC envisions greater data exchange to improve care coordination, research comparability, and national surveillance, maximizing health outcomes for SCD warriors.
 
 ### Relationship to Other Standards and Guides
 

@@ -1,6 +1,6 @@
 ### Overview
 
-This Implementation Guide (IG) for the US Core Data for Interoperability Plus Sickle Cell Disease (USCDI+SCD) is the first FHIR product of the Assistant Secretary for Technology Policy/Office of the National Coordinator for Health IT (ASTP/ONC) USCDI+ Sickle Cell Disease (SCD) project, which supports interoperability for SCD patient care-related data exchanges. The project has also produced a landscape analysis and a data element list. Two related Use Cases are addressed by this guide.
+This Implementation Guide (IG) for the US Core Data for Interoperability Plus Sickle Cell Disease (USCDI+SCD) is the first FHIR product of the Office of the National Coordinator for Health IT (ONC) USCDI+ Sickle Cell Disease (SCD) project, which supports interoperability for SCD patient care-related data exchanges. The project has also produced a landscape analysis and a data element list. Two related Use Cases are addressed by this guide.
 ### USCDI+ SCD Data Element Mapping
 
 The Information Model below represents the information to be included in exchanges supporting the 2 Use Cases addressed by this IG. 
@@ -50,7 +50,7 @@ The following profiles are defined or used in this IG:
 
 The following conventions apply throughout this guide.
 
-- **Naming.** Profiles are titled "USCDI-SCD [Resource]" (for example, USCDI-SCD Patient) and extensions are titled "SCD [Concept]" (for example, SCD Genotype). All artifacts defined by this guide have canonical URLs beginning with `http://hl7.org/fhir/us/uscdi-scd/`.
+- **Naming.** Profiles are titled "USCDI-SCD [Resource]" (for example, USCDI-SCD Patient) and extensions are titled "SCD [Concept]" (for example, SCD Newborn Screen Reference). All artifacts defined by this guide have canonical URLs beginning with `http://hl7.org/fhir/us/uscdi-scd/`.
 - **Profile basis.** Every profile extends a [US Core 8.0.1](http://hl7.org/fhir/us/core/STU8.0.1/) profile except USCDI-SCD BiologicallyDerivedProduct, which is based on the FHIR R4 resource. Where a reference points to a resource that has a USCDI-SCD profile, it is constrained to that profile (for example, a diagnosis references a USCDI-SCD Patient).
 - **Must Support.** Elements marked with an **S** in a profile are Must Support. See [Must Support](conformance.html#must-support).
 - **Conformance verbs.** SHALL, SHOULD and MAY have the meanings defined in [Conformance Verbs](conformance.html#conformance-verbs).

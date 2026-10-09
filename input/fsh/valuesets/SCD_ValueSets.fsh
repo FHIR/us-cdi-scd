@@ -5,16 +5,13 @@
 // Value sets defined in this file:
 //   - SCDDiagnosisVS
 //   - SCDAcuteComplicationVS
-//   - SCDChronicComplicationVS
-//   - SCDGenotypeVS
 //   - SCDMedicationVS
 //   - SCDLaboratoryPanelVS
 //   - SCDProcedureVS
 //   - SCDBloodProductTypeVS
-//   - SCDBloodProductProcessingVS
-//   - SCDEncounterReasonVS
 //   - SCDVitalSignsVS
-//   - SCDCareTeamRoleVS
+//   - SCDBloodProductProcessingVS
+// (SCDRedCellAntigenVS is defined in SCD_Extensions.fsh.)
 //
 // NOTE: VSAC-hosted value sets (OID-referenced) should be defined in VSAC
 //       and referenced here by canonical URI. Value sets listed here are
