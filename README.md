@@ -98,6 +98,7 @@ to address SCD-specific data exchange needs.
 
 | Extension | Context | Purpose |
 |---|---|---|
+| `scd-genotype` | Condition | SCD genotype/subtype (HbSS, HbSC, etc.) |
 | `scd-transfusion-antigen-match` | BiologicallyDerivedProduct, Procedure | Red cell antigen matching criteria |
 | `scd-hydroxyurea-adherence` | MedicationStatement, Observation | Hydroxyurea adherence level and method |
 | `scd-voc-frequency` | Condition | VOC episode frequency over a defined period |
