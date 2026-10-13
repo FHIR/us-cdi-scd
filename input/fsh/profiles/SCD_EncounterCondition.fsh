@@ -146,6 +146,11 @@ Description: """
 * abatement[x] MS
 * recordedDate MS
 * evidence MS
+* evidence ^comment = """
+  To link the diagnosis to the laboratory results it is based on (for example,
+  a hemoglobin fractionation that confirms the SCD subtype), reference the
+  USCDI-SCD Laboratory Result Observation in evidence.detail.
+"""
 * evidence.id MS
 
 
@@ -155,7 +160,7 @@ Description: """
 // ==============================================================================
 // Extends: US Core Condition Problems and Health Concerns Profile
 // Purpose: Represents the chronic SCD problem list, including:
-//   - SCD diagnosis and genotype/subtype
+//   - SCD diagnosis and subtype
 //   - Chronic organ complications (avascular necrosis, CKD, retinopathy,
 //     pulmonary hypertension, silent cerebral infarcts, iron overload)
 //   - Psychosocial health concerns (depression, anxiety, chronic pain)
@@ -174,12 +179,12 @@ Description: """
 
   Key problem list entries for SCD patients represented by this profile:
 
-  **SCD Diagnosis and Genotype:**
+  **SCD Diagnosis and Subtype:**
   - Sickle cell anemia (HbSS): SNOMED 127040003; ICD-10-CM D57.1 (without crisis)
   - Sickle cell–hemoglobin C disease (HbSC): SNOMED 35434009; ICD-10-CM D57.20 (without crisis)
   - Sickle cell–beta-0-thalassemia: SNOMED 127043001; ICD-10-CM D57.42 (without crisis)
   - Sickle cell–beta-plus-thalassemia: SNOMED 127042006; ICD-10-CM D57.44 (without crisis)
-  - (Additional genotypes: see SCD Genotype value set)
+  - (Additional subtypes: see the SCD Diagnosis value set)
 
   **Chronic Complications:**
   - Avascular necrosis of femoral head in SCD
@@ -196,7 +201,7 @@ Description: """
   - Depression complicating SCD
   - Anxiety disorder in SCD patient
 
-  The primary SCD diagnosis (genotype) SHALL be included on the problem list
+  The primary SCD diagnosis, including the SCD subtype, SHALL be included on the problem list
   for all patients within scope of this IG.
 """
 
@@ -211,10 +216,10 @@ Description: """
 * verificationStatus MS
 * category MS
 * code MS
-* code ^short = "SCD diagnosis, genotype, or chronic complication code"
+* code ^short = "SCD diagnosis (with subtype) or chronic complication code"
 * code ^comment = """
   The code SHALL represent the patient's SCD diagnosis. For the primary SCD
-  diagnosis, this SHOULD be the genotype-specific code (e.g., HbSS, HbSC).
+  diagnosis, this SHOULD be the subtype-specific code (e.g., HbSS, HbSC).
   Use SNOMED CT or ICD-10-CM. Both SHOULD be included when available.
   US Core's preferred binding applies. The SCD Diagnosis value set lists SCD
   diagnosis codes, for reference. Any appropriate code may be used, including
@@ -228,13 +233,16 @@ Description: """
 * recorder MS
 * asserter MS
 * evidence MS
+* evidence ^comment = """
+  To link the diagnosis to the laboratory results it is based on (for example,
+  a hemoglobin fractionation that confirms the SCD subtype), reference the
+  USCDI-SCD Laboratory Result Observation in evidence.detail.
+"""
 * evidence.id MS
 
 // SCD-specific extensions for the primary SCD diagnosis entry
 * extension contains
-    SCDGenotypeExtension named scd-genotype 0..1 MS and
     SCDVOCFrequencyExtension named scd-voc-frequency 0..1 MS and
     SCDNewbornScreenReferenceExtension named scd-newborn-screen-reference 0..1
-* extension[scd-genotype] ^short = "Confirmed SCD genotype (HbSS, HbSC, HbS-beta thalassemia, etc.)"
 * extension[scd-voc-frequency] ^short = "Frequency of vaso-occlusive crisis episodes"
 * extension[scd-newborn-screen-reference] ^short = "Newborn screening result that identified SCD"

@@ -24,11 +24,10 @@ Please refer to:
 ### Sensitive Data Considerations for SCD
 
 
-1. **Genetic information.** Genotype and genetic test results are protected health information under HIPAA. The Genetic Information Nondiscrimination Act (GINA) prohibits the use of genetic information in health insurance and employment decisions; it does not cover life, disability or long-term care insurance. Implementers should consider additional access controls for genetic data.
-2. **Substance use and pain medication history.** There is heightened sensitivity around opioid prescribing records for SCD patients. Substance use disorder treatment records from programs covered by 42 CFR Part 2 have additional restrictions.
-3. **Mental health.** Mental health conditions are often documented alongside SCD.
-4. **Race and ethnicity.** Race and ethnicity are not among the HIPAA Safe Harbor identifiers, but combined with an SCD diagnosis they can increase re-identification risk in small populations. Consider this when de-identifying data.
-5. **Minors.** Access to minors' records is governed by HIPAA personal-representative rules and state minor-consent laws.
+1. **Substance use and pain medication history.** There is heightened sensitivity around opioid prescribing records for SCD patients. Substance use disorder treatment records from programs covered by 42 CFR Part 2 have additional restrictions.
+2. **Mental health.** Mental health conditions are often documented alongside SCD.
+3. **Race and ethnicity.** Race and ethnicity are not among the HIPAA Safe Harbor identifiers, but combined with an SCD diagnosis they can increase re-identification risk in small populations. Consider this when de-identifying data.
+4. **Minors.** Access to minors' records is governed by HIPAA personal-representative rules and state minor-consent laws.
 
 
 
@@ -37,8 +36,7 @@ Please refer to:
 ### Recommendations for Implementers
 
 - Implement role-based access control (RBAC) for SCD records
-- Apply data segmentation for sensitive elements (genetic, substance use)
-- Obtain patient consent before sharing genotype data
+- Apply data segmentation for sensitive elements (such as substance use)
 - Log all access to SCD patient records via FHIR AuditEvent
 - Implement break-glass procedures for emergency access
 - Follow NIST SP 800-53 security controls for health data systems

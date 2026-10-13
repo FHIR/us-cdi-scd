@@ -27,9 +27,9 @@ The sections below the table give more detail for four key groups.
 
 Clinical informaticists bridge clinical practice and health IT, so this guide's design choices matter most to them. The most useful parts are:
 
-- **The use cases** in [Scope and Usage](scope_and_usage.html): transfer of care and emergency department care for people living with SCD.
-- **The information model** in [Overview](overview.html): how the clinical concepts (diagnosis, genotype, labs, transfusions, medications) relate to each other and to FHIR resources.
-- **The profiles** in [Profiles](profiles.html): which data elements are required or Must Support, and how SCD-specific information such as genotype and transfusion antigen matching is captured.
+- **The use cases** in [Scope and Usage](scope_and_usage.html): SCD Diagnosis and SCD Emergency Care, the two USCDI+ SCD use cases.
+- **The information model** in [Overview](overview.html): how the clinical concepts (diagnosis and subtype, labs, transfusions, medications) relate to each other and to FHIR resources.
+- **The profiles** in [Profiles](profiles.html): which data elements are required or Must Support, and how SCD-specific information such as the SCD subtype and transfusion antigen matching is captured.
 - **The value sets** in [Terminology](terminology.html): the SNOMED CT, LOINC, RxNorm and ICD-10-CM codes chosen to represent SCD diagnoses, complications, lab tests and treatments.
 
 Feedback on whether the profiles and value sets reflect real clinical workflows is especially valuable. See [For Developers and Implementers](#for-developers-and-implementers) for how to submit comments.
@@ -66,7 +66,7 @@ Developers building systems that send or receive SCD data should start with [Con
 
 ### For Hematologists and Clinical Subject Matter Experts
 
-You don't need technical knowledge to help make this guide clinically accurate. In plain terms, this guide defines a set of standard electronic "forms" (called **profiles**) for SCD information, such as a patient's diagnosis and genotype, a vaso-occlusive crisis visit, lab results like hemoglobin S percentage, and blood transfusions. It also defines the standard **codes** used to fill in those forms, so that every computer system means the same thing by "HbSS disease" or "acute chest syndrome".
+You don't need technical knowledge to help make this guide clinically accurate. In plain terms, this guide defines a set of standard electronic "forms" (called **profiles**) for SCD information, such as a patient's diagnosis and SCD type, a vaso-occlusive crisis visit, lab results like hemoglobin S percentage, and blood transfusions. It also defines the standard **codes** used to fill in those forms, so that every computer system means the same thing by "HbSS disease" or "acute chest syndrome".
 
 How you can help:
 
@@ -82,7 +82,7 @@ Clinical input shapes future versions of this guide, including which data elemen
 
 This guide is a technical rulebook that helps different health care computer systems share medical information about people living with sickle cell disease, accurately and securely.
 
-Today, when a person with SCD sees a new doctor or goes to an emergency department, important information such as their genotype, past pain crises, transfusion history and medications may not be available. This guide aims to make that information available to the care team when it's needed. That can mean:
+Today, when a person with SCD sees a new doctor or goes to an emergency department, important information such as their type of SCD, past pain crises, transfusion history and medications may not be available. This guide aims to make that information available to the care team when it's needed. That can mean:
 
 - **Faster, better-informed care in the emergency department,** because the care team can see the patient's SCD history right away.
 - **Smoother transitions** when changing doctors or care settings.
