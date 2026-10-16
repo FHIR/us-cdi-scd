@@ -1,8 +1,6 @@
-### Extensions
-
 This guide defines six extensions for SCD-specific information that neither FHIR R4 nor US Core can represent. Each heading links to the formal extension definition. All extensions are included in the FHIR package on the [Downloads](downloads.html) page.
 
-#### Summary
+### Summary
 
 | Extension | Part of profile | Type | Purpose |
 |---|---|---|---|
@@ -20,6 +18,12 @@ This guide defines six extensions for SCD-specific information that neither FHIR
 ### Diagnosis and Disease History
 
 The SCD subtype (for example, HbSS, HbSC, HbS-β⁰-thalassemia or HbS-β⁺-thalassemia) does not need an extension. It is recorded in the diagnosis code itself (`Condition.code`), because each subtype has its own SNOMED CT and ICD-10-CM codes; see the [SCD Diagnosis Value Set](ValueSet-scd-diagnosis-vs.html). Laboratory results that the diagnosis is based on, such as a hemoglobin fractionation, can be linked to the diagnosis by referencing them in `Condition.evidence.detail`. See [USCDI-SCD Condition Problems and Health Concerns](StructureDefinition-uscdi-scd-condition-problems.html).
+
+<!-- TODO: Terminologist to review after the terminology meeting: (1) the removal of the
+     SCD Genotype extension and value set, with the SCD subtype carried in the diagnosis
+     code (Condition.code); and (2) the guidance on linking supporting laboratory results
+     through Condition.evidence.detail (see also the open question on whether
+     evidence.detail, rather than evidence.id, should be Must Support). -->
 
 *Example:* [Condition — HbSS Sickle Cell Disease](Condition-maya-johnson-scd-diagnosis.html), which also uses the two extensions below.
 

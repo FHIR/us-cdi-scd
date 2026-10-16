@@ -3,8 +3,6 @@
 SCOPE AND USAGE PAGE — scope_and_usage.md
 {%- endcomment -%}
 
-### Scope and Usage
-
 
 ### In Scope
 

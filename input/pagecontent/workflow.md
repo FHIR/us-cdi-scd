@@ -1,5 +1,3 @@
-### Exchange Workflow
-
 This page describes how a USCDI-SCD exchange works, based on what this guide currently defines. The workflow shown in the [exchange process diagram](scope_and_usage.html#in-scope) was tested at a connectathon, where several query patterns were tried. Parts of the workflow that have not yet been defined are marked as open items within each step; a future project pilot or workshop may help resolve them. Comments on them are especially welcome.
 
 ---
@@ -106,8 +104,9 @@ Worked examples of these searches and their expected responses, using the fictio
 <!-- TODO: Define how BiologicallyDerivedProduct (blood product) records are
      retrieved; FHIR R4 does not define a patient search parameter for this
      resource. -->
-<!-- TODO: Add SCD-specific search parameter requirements to the server
-     CapabilityStatement (its documentation lists candidates). -->
+<!-- TODO: Add any SCD-specific search parameter requirements beyond US Core to the
+     server CapabilityStatement. The search parameters it previously listed are all
+     already required by the imported US Core Server CapabilityStatement. -->
 
 **Open items:** the definition of an "SCD-focused query" and of "task-based", how blood product records are retrieved, and any SCD-specific search requirements beyond US Core.
 

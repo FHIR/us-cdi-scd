@@ -1,5 +1,3 @@
-### Test Data
-
 This page provides test data for implementers and testers, built from the fictional Maya Johnson scenario described on the [Examples](examples.html) page. All test data is fictional and contains no real patient information.
 
 The test Bundles reuse the example records, so they always match the examples, and they are validated against the profiles every time this guide is built.
@@ -31,7 +29,7 @@ Each entry uses `PUT` with the record's id (for example, `PUT Patient/maya-johns
 
 ### Expected Search Results
 
-After loading the test data, a conformant USCDI-SCD server should return the results below for these searches, which are listed in the [USCDI-SCD Server CapabilityStatement](CapabilityStatement-uscdi-scd-server.html). Each searchset Bundle shows the expected response.
+After loading the test data, a conformant USCDI-SCD server should return the results below for these searches, which the [USCDI-SCD Server CapabilityStatement](CapabilityStatement-uscdi-scd-server.html) requires through the [US Core 8.0.1 Server CapabilityStatement](http://hl7.org/fhir/us/core/STU8.0.1/CapabilityStatement-us-core-server.html) it imports. Each searchset Bundle shows the expected response.
 
 | Search | Expected results | Expected response |
 |---|---|---|

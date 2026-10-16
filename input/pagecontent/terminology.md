@@ -1,5 +1,3 @@
-### Terminology
-
 This page describes the code systems, value sets and local codes used in this guide. Using standard codes lets every system interpret SCD information the same way. For example, "HbSS disease" or "hemoglobin S percentage" means the same thing in every system.
 
 All terminology requirements of [US Core 8.0.1](http://hl7.org/fhir/us/core/STU8.0.1/terminology.html) apply. The value sets below add SCD-specific codes on top of them.
@@ -25,6 +23,12 @@ In line with the project's approach of not constraining the exchanged data, thes
 | [SCD Red Cell Antigen](ValueSet-scd-red-cell-antigen-vs.html) | SNOMED CT | The [SCD Transfusion Red Cell Antigen Match Profile](StructureDefinition-scd-transfusion-antigen-match.html) extension: Rh, Kell, Duffy, Kidd and MNS antigens used for matching | Example |
 
 These value sets are drafts. Some codes are still under terminology review. The value sets are intended for future submission to the [Value Set Authority Center (VSAC)](https://vsac.nlm.nih.gov/).
+
+<!-- TODO: Terminologist to review after the terminology meeting: (1) the removal of the
+     SCD Genotype extension and value set, with the SCD subtype carried in the diagnosis
+     code (Condition.code); and (2) the guidance on linking supporting laboratory results
+     through Condition.evidence.detail (see also the open question on whether
+     evidence.detail, rather than evidence.id, should be Must Support). -->
 
 ---
 

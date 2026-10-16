@@ -4,8 +4,6 @@ AUDIENCE PAGE — audience.md
 ================================================================================
 {%- endcomment -%}
 
-### Audience
-
 This Implementation Guide is intended for multiple audiences. The table below
 identifies primary reader groups and points each to the most relevant sections.
 The sections below the table give more detail for four key groups.

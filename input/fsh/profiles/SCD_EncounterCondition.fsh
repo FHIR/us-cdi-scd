@@ -146,6 +146,9 @@ Description: """
 * abatement[x] MS
 * recordedDate MS
 * evidence MS
+// TODO: Terminologist to review after the terminology meeting: this guidance on
+// linking supporting lab results through evidence.detail, and whether evidence.detail
+// (rather than evidence.id) should be Must Support.
 * evidence ^comment = """
   To link the diagnosis to the laboratory results it is based on (for example,
   a hemoglobin fractionation that confirms the SCD subtype), reference the
@@ -233,6 +236,9 @@ Description: """
 * recorder MS
 * asserter MS
 * evidence MS
+// TODO: Terminologist to review after the terminology meeting: this guidance on
+// linking supporting lab results through evidence.detail, and whether evidence.detail
+// (rather than evidence.id) should be Must Support.
 * evidence ^comment = """
   To link the diagnosis to the laboratory results it is based on (for example,
   a hemoglobin fractionation that confirms the SCD subtype), reference the

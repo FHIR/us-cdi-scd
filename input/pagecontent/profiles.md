@@ -1,5 +1,3 @@
-### Profiles
-
 This page describes the profiles defined in this Implementation Guide. Each heading links to the formal profile definition, which lists every element, its cardinality, Must Support flags and terminology bindings. For help reading a profile page, see [How to Read This Guide](introduction.html#how-to-read-this-guide).
 
 All profiles except one extend a [US Core 8.0.1](http://hl7.org/fhir/us/core/STU8.0.1/) profile and inherit its requirements. The exception is the USCDI-SCD BiologicallyDerivedProduct profile, which is based directly on the FHIR R4 resource because US Core has no equivalent profile. Across the guide, references between resources are constrained to the USCDI-SCD profiles, so that a diagnosis, encounter or lab result always points to a USCDI-SCD Patient.
@@ -44,6 +42,12 @@ SCD diagnoses are split into two profiles, following the US Core pattern: one fo
 
 #### [USCDI-SCD Condition Problems and Health Concerns](StructureDefinition-uscdi-scd-condition-problems.html)
 Represents entries on the patient's problem list, most importantly the primary SCD diagnosis, including the SCD subtype (for example HbSS, HbSC or HbS-β⁰-thalassemia), along with chronic complications. The subtype is recorded in the diagnosis code itself; the [SCD Diagnosis Value Set](ValueSet-scd-diagnosis-vs.html) lists codes for each subtype. Who recorded and who asserted the condition, and the supporting evidence, are Must Support. Laboratory results that the diagnosis is based on, such as a hemoglobin fractionation, can be linked by referencing them in `Condition.evidence.detail`.
+
+<!-- TODO: Terminologist to review after the terminology meeting: (1) the removal of the
+     SCD Genotype extension and value set, with the SCD subtype carried in the diagnosis
+     code (Condition.code); and (2) the guidance on linking supporting laboratory results
+     through Condition.evidence.detail (see also the open question on whether
+     evidence.detail, rather than evidence.id, should be Must Support). -->
 
 #### [USCDI-SCD Condition Encounter Diagnosis](StructureDefinition-uscdi-scd-condition-encounter-diagnosis.html)
 Represents an acute diagnosis made during a visit, such as a vaso-occlusive crisis, acute chest syndrome, splenic sequestration or stroke. Clinical and verification status, onset, resolution (`abatement`) and evidence are Must Support. Codes for acute complications are listed in the [SCD Acute Complication Value Set](ValueSet-scd-acute-complication-vs.html).

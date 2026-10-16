@@ -2,8 +2,6 @@
 SECURITY AND PRIVACY PAGE — security.md
 {%- endcomment -%}
 
-### Security and Privacy
-
 SCD data is highly sensitive. SCD disproportionately affects marginalized communities,
 and data breaches could lead to discrimination in employment, insurance, or social contexts. Implementers SHALL comply with HIPAA and all other applicable federal and state privacy laws. Where exchanged data includes substance use disorder treatment records from programs covered by 42 CFR Part 2, those records are also subject to Part 2.
 

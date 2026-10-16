@@ -2,9 +2,7 @@
 CHANGE LOG PAGE — changes.md
 {%- endcomment -%}
 
-### Change Log
-
-#### Version 0.1.0 (DRAFT)
+### Version 0.1.0 (DRAFT)
 
 **Initial draft.** This guide is being developed under the FHIR Community Process and is not intended for ballot.
 
@@ -35,7 +33,7 @@ CHANGE LOG PAGE — changes.md
 
 ---
 
-#### Planned Future Versions
+### Planned Future Versions
 
 To be determined.
 <!-- TODO: Document roadmap items for future STU or normative versions:

@@ -5,8 +5,6 @@ BACKGROUND PAGE — background.md
 
 {%- endcomment -%}
 
-### Background
-
 ---
 Sickle cell disease (SCD) is the most common inherited blood disorder in the United States, affecting about 100,000 people ([CDC](https://www.cdc.gov/sickle-cell/data/index.html)). SCD affects African Americans at disproportionate rates, and many people with SCD face difficulties in accessing and receiving high-quality care. From birth to death, patients living with SCD interact with healthcare and public health systems. Limited interoperability across these systems, however, contributes to fragmented care and hampers efforts to estimate the disease burden and the quality of care patients receive.
 
