@@ -43,9 +43,9 @@ Sickle Cell Disease (SCD). This guide extends and aligns with
 
 ### Acknowledgements
 
-This Implementation Guide was developed as part of the USCDI+ Sickle Cell Disease (SCD) initiative with funding from the HHS Office of the Secretary Patient-Centered Outcomes Research Trust Fund (OS-PCORTF), administered by the Office of the Assistant Secretary for Planning and Evaluation (ASPE), through sustained collaboration across the warrior, clinical, research, regulatory, public health, and health IT communities.
+This Implementation Guide was developed as part of the Office of the National Coordinator's (ONC) USCDI+ Sickle Cell Disease (SCD) initiative with funding from the HHS Office of the Secretary Patient-Centered Outcomes Research Trust Fund (OS-PCORTF), administered by the Office of the Assistant Secretary for Planning and Evaluation (ASPE), through sustained collaboration across the warrior, clinical, research, regulatory, public health, and health IT communities.
 
-<!-- TODO: Confirm the funding and lead-agency wording (ASPE/OS-PCORTF and ASTP/ONC) with the project officer. -->
+This IG references a 2026 landscape analysis compiled by the USCDI+ SCD project team and informed by a Technical Expert Panel. ONC published Version 1 of the USCDI+ SCD data element lists for the [Diagnosis](https://uscdiplus.healthit.gov/uscdiplus?id=uscdi_record&table=x_g_sshh_uscdi_sub_domain&sys_id=84d4c4a23bdd03503cb59d0864e45a2a&view=sp) and [Emergency Care](https://uscdiplus.healthit.gov/uscdiplus?id=uscdi_record&table=x_g_sshh_uscdi_sub_domain&sys_id=a7e444623bdd03503cb59d0864e45a96&view=sp) use cases in October 2026.
 
 ---
 

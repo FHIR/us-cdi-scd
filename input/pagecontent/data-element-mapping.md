@@ -1,5 +1,3 @@
-### Data Element Mapping
-
 This page maps the data elements in this guide to their FHIR profiles and elements. It lists every Must Support element and every required element for each profile, with its cardinality, data type and terminology binding. It is generated from the profile definitions, so it always matches them.
 
 **Download:** [uscdi-scd-data-element-mapping.csv](uscdi-scd-data-element-mapping.csv) (opens in Excel)
@@ -7,11 +5,11 @@ This page maps the data elements in this guide to their FHIR profiles and elemen
 <!-- TODO: Add the data element names from the USCDI+ SCD project's data element
      list to this chart (the "USCDI+ SCD Data Element" column in the CSV). -->
 
-#### How to read this chart
+### How to read this chart
 
 | Column | Meaning |
 |---|---|
-| Element | The FHIR element path. A name after a colon (for example, `extension:scd-genotype`) is a named slice. |
+| Element | The FHIR element path. A name after a colon (for example, `extension:scd-voc-frequency`) is a named slice. |
 | Card. | Cardinality: minimum..maximum occurrences. A minimum of 1 means the element is required. |
 | MS | **Y** means the element is Must Support. See [Must Support](conformance.html#must-support). |
 | Type | The data type. For references, the profiles the reference must conform to. |
@@ -22,9 +20,9 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD Patient](StructureDefinition-uscdi-scd-patient.html)
+### [USCDI-SCD Patient](StructureDefinition-uscdi-scd-patient.html)
 
-**Parent:** US Core Patient Profile &nbsp;·&nbsp; **Use case:** Transfer of Care, Emergency Department &nbsp;·&nbsp; **Examples:** [maya-johnson-patient](Patient-maya-johnson-patient.html)
+**Parent:** US Core Patient Profile &nbsp;·&nbsp; **Use case:** SCD Diagnosis, SCD Emergency Care &nbsp;·&nbsp; **Examples:** [maya-johnson-patient](Patient-maya-johnson-patient.html)
 
 <div style="overflow-x:auto" markdown="1">
 
@@ -55,9 +53,9 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD Practitioner](StructureDefinition-uscdi-scd-practitioner.html)
+### [USCDI-SCD Practitioner](StructureDefinition-uscdi-scd-practitioner.html)
 
-**Parent:** US Core Practitioner Profile &nbsp;·&nbsp; **Use case:** Transfer of Care &nbsp;·&nbsp; **Examples:** [dr-sarah-chen-practitioner](Practitioner-dr-sarah-chen-practitioner.html)
+**Parent:** US Core Practitioner Profile &nbsp;·&nbsp; **Use case:** SCD Diagnosis &nbsp;·&nbsp; **Examples:** [dr-sarah-chen-practitioner](Practitioner-dr-sarah-chen-practitioner.html)
 
 <div style="overflow-x:auto" markdown="1">
 
@@ -85,9 +83,9 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD PractitionerRole](StructureDefinition-uscdi-scd-practitionerrole.html)
+### [USCDI-SCD PractitionerRole](StructureDefinition-uscdi-scd-practitionerrole.html)
 
-**Parent:** US Core PractitionerRole Profile &nbsp;·&nbsp; **Use case:** Transfer of Care &nbsp;·&nbsp; **Examples:** [dr-sarah-chen-hematology-role](PractitionerRole-dr-sarah-chen-hematology-role.html)
+**Parent:** US Core PractitionerRole Profile &nbsp;·&nbsp; **Use case:** SCD Diagnosis &nbsp;·&nbsp; **Examples:** [dr-sarah-chen-hematology-role](PractitionerRole-dr-sarah-chen-hematology-role.html)
 
 <div style="overflow-x:auto" markdown="1">
 
@@ -107,9 +105,9 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD Organization](StructureDefinition-uscdi-scd-organization.html)
+### [USCDI-SCD Organization](StructureDefinition-uscdi-scd-organization.html)
 
-**Parent:** US Core Organization Profile &nbsp;·&nbsp; **Use case:** Transfer of Care &nbsp;·&nbsp; **Examples:** [metro-scd-center-org](Organization-metro-scd-center-org.html)
+**Parent:** US Core Organization Profile &nbsp;·&nbsp; **Use case:** SCD Diagnosis &nbsp;·&nbsp; **Examples:** [metro-scd-center-org](Organization-metro-scd-center-org.html)
 
 <div style="overflow-x:auto" markdown="1">
 
@@ -141,7 +139,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD Location](StructureDefinition-uscdi-scd-location.html)
+### [USCDI-SCD Location](StructureDefinition-uscdi-scd-location.html)
 
 **Parent:** US Core Location Profile &nbsp;·&nbsp; **Use case:** Supporting &nbsp;·&nbsp; **Examples:** [metro-scd-center-hematology-clinic](Location-metro-scd-center-hematology-clinic.html)
 
@@ -168,9 +166,9 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD Encounter](StructureDefinition-uscdi-scd-encounter.html)
+### [USCDI-SCD Encounter](StructureDefinition-uscdi-scd-encounter.html)
 
-**Parent:** US Core Encounter Profile &nbsp;·&nbsp; **Use case:** Emergency Department &nbsp;·&nbsp; **Examples:** [maya-johnson-ed-encounter](Encounter-maya-johnson-ed-encounter.html)
+**Parent:** US Core Encounter Profile &nbsp;·&nbsp; **Use case:** SCD Emergency Care &nbsp;·&nbsp; **Examples:** [maya-johnson-ed-encounter](Encounter-maya-johnson-ed-encounter.html)
 
 <div style="overflow-x:auto" markdown="1">
 
@@ -204,9 +202,9 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD Condition Problems and Health Concerns](StructureDefinition-uscdi-scd-condition-problems.html)
+### [USCDI-SCD Condition Problems and Health Concerns](StructureDefinition-uscdi-scd-condition-problems.html)
 
-**Parent:** US Core Condition Problems and Health Concerns Profile &nbsp;·&nbsp; **Use case:** Transfer of Care &nbsp;·&nbsp; **Examples:** [maya-johnson-scd-diagnosis](Condition-maya-johnson-scd-diagnosis.html)
+**Parent:** US Core Condition Problems and Health Concerns Profile &nbsp;·&nbsp; **Use case:** SCD Diagnosis &nbsp;·&nbsp; **Examples:** [maya-johnson-scd-diagnosis](Condition-maya-johnson-scd-diagnosis.html)
 
 <div style="overflow-x:auto" markdown="1">
 
@@ -214,14 +212,13 @@ Elements inherited from US Core are included so testers can see every requiremen
 |---|---|---|---|---|---|---|
 | `Condition.meta.lastUpdated` | 0..1 | Y | instant |  | Inherited | When the resource last changed |
 | `Condition.extension:assertedDate` | 0..1 | Y | Extension(assertedDate) |  | Inherited | Date the condition was first asserted |
-| `Condition.extension:scd-genotype` | 0..1 | Y | Extension(SCD Genotype) |  | USCDI-SCD | Confirmed SCD genotype (HbSS, HbSC, HbS-beta thalassemia, etc.) |
 | `Condition.extension:scd-voc-frequency` | 0..1 | Y | Extension(SCD Vaso-Occlusive Crisis Frequency) |  | USCDI-SCD | Frequency of vaso-occlusive crisis episodes |
 | `Condition.extension:scd-newborn-screen-reference` | 0..1 |  | Extension(SCD Newborn Screen Reference) |  | USCDI-SCD | Newborn screening result that identified SCD |
 | `Condition.clinicalStatus` | 0..1 | Y | CodeableConcept | condition-clinical (required) | Inherited | active \| recurrence \| relapse \| inactive \| remission \| resolved |
 | `Condition.verificationStatus` | 0..1 | Y | CodeableConcept | condition-ver-status (required) | Inherited | unconfirmed \| provisional \| differential \| confirmed \| refuted \| entered-in-error |
 | `Condition.category` | 1..* | Y | CodeableConcept | condition-category (extensible) | Inherited | category codes |
 | `Condition.category:us-core` | 1..* | Y | CodeableConcept | us-core-problem-or-health-concern (required) | Inherited | problem-list-item \| health-concern |
-| `Condition.code` | 1..1 | Y | CodeableConcept | us-core-condition-code (preferred) | Inherited | SCD diagnosis, genotype, or chronic complication code |
+| `Condition.code` | 1..1 | Y | CodeableConcept | us-core-condition-code (preferred) | Inherited | SCD diagnosis (with subtype) or chronic complication code |
 | `Condition.subject` | 1..1 | Y | Reference(USCDI-SCD Patient) |  | USCDI-SCD | Who has the condition? |
 | `Condition.onset[x]` | 0..1 | Y | dateTime \| Age \| Period \| Range \| string |  | Inherited | Estimated or actual date,  date-time, or age |
 | `Condition.abatement[x]` | 0..1 | Y | dateTime \| Age \| Period \| Range \| string |  | Inherited | When in resolution/remission |
@@ -234,9 +231,9 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD Condition Encounter Diagnosis](StructureDefinition-uscdi-scd-condition-encounter-diagnosis.html)
+### [USCDI-SCD Condition Encounter Diagnosis](StructureDefinition-uscdi-scd-condition-encounter-diagnosis.html)
 
-**Parent:** US Core Condition Encounter Diagnosis Profile &nbsp;·&nbsp; **Use case:** Emergency Department &nbsp;·&nbsp; **Examples:** [maya-johnson-voc-encounter-dx](Condition-maya-johnson-voc-encounter-dx.html)
+**Parent:** US Core Condition Encounter Diagnosis Profile &nbsp;·&nbsp; **Use case:** SCD Emergency Care &nbsp;·&nbsp; **Examples:** [maya-johnson-voc-encounter-dx](Condition-maya-johnson-voc-encounter-dx.html)
 
 <div style="overflow-x:auto" markdown="1">
 
@@ -258,7 +255,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD Medication](StructureDefinition-uscdi-scd-medication.html)
+### [USCDI-SCD Medication](StructureDefinition-uscdi-scd-medication.html)
 
 **Parent:** US Core Medication Profile &nbsp;·&nbsp; **Use case:** Supporting &nbsp;·&nbsp; **Examples:** [hydroxyurea-medication-example](Medication-hydroxyurea-medication-example.html)
 
@@ -272,9 +269,9 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD MedicationRequest](StructureDefinition-uscdi-scd-medicationrequest.html)
+### [USCDI-SCD MedicationRequest](StructureDefinition-uscdi-scd-medicationrequest.html)
 
-**Parent:** US Core MedicationRequest Profile &nbsp;·&nbsp; **Use case:** Emergency Department &nbsp;·&nbsp; **Examples:** [maya-johnson-deferasirox-request](MedicationRequest-maya-johnson-deferasirox-request.html), [maya-johnson-hydroxyurea-request](MedicationRequest-maya-johnson-hydroxyurea-request.html)
+**Parent:** US Core MedicationRequest Profile &nbsp;·&nbsp; **Use case:** SCD Emergency Care &nbsp;·&nbsp; **Examples:** [maya-johnson-deferasirox-request](MedicationRequest-maya-johnson-deferasirox-request.html), [maya-johnson-hydroxyurea-request](MedicationRequest-maya-johnson-hydroxyurea-request.html)
 
 <div style="overflow-x:auto" markdown="1">
 
@@ -307,7 +304,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD AllergyIntolerance](StructureDefinition-uscdi-scd-allergyintolerance.html)
+### [USCDI-SCD AllergyIntolerance](StructureDefinition-uscdi-scd-allergyintolerance.html)
 
 **Parent:** US Core AllergyIntolerance Profile &nbsp;·&nbsp; **Use case:** Supporting &nbsp;·&nbsp; **Examples:** [maya-johnson-nsaid-allergy](AllergyIntolerance-maya-johnson-nsaid-allergy.html)
 
@@ -332,9 +329,9 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD CarePlan](StructureDefinition-uscdi-scd-careplan.html)
+### [USCDI-SCD CarePlan](StructureDefinition-uscdi-scd-careplan.html)
 
-**Parent:** US Core CarePlan Profile &nbsp;·&nbsp; **Use case:** Emergency Department &nbsp;·&nbsp; **Examples:** [maya-johnson-chronic-transfusion-plan](CarePlan-maya-johnson-chronic-transfusion-plan.html)
+**Parent:** US Core CarePlan Profile &nbsp;·&nbsp; **Use case:** SCD Emergency Care &nbsp;·&nbsp; **Examples:** [maya-johnson-chronic-transfusion-plan](CarePlan-maya-johnson-chronic-transfusion-plan.html)
 
 <div style="overflow-x:auto" markdown="1">
 
@@ -362,7 +359,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD ServiceRequest](StructureDefinition-uscdi-scd-servicerequest.html)
+### [USCDI-SCD ServiceRequest](StructureDefinition-uscdi-scd-servicerequest.html)
 
 **Parent:** US Core ServiceRequest Profile &nbsp;·&nbsp; **Use case:** Supporting &nbsp;·&nbsp; **Examples:** [exchange-transfusion-order-example](ServiceRequest-exchange-transfusion-order-example.html)
 
@@ -388,7 +385,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD Procedure](StructureDefinition-uscdi-scd-procedure.html)
+### [USCDI-SCD Procedure](StructureDefinition-uscdi-scd-procedure.html)
 
 **Parent:** US Core Procedure Profile &nbsp;·&nbsp; **Use case:** Supporting &nbsp;·&nbsp; **Examples:** [maya-johnson-exchange-transfusion](Procedure-maya-johnson-exchange-transfusion.html)
 
@@ -412,9 +409,9 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD Laboratory Result](StructureDefinition-uscdi-scd-laboratory-result.html)
+### [USCDI-SCD Laboratory Result](StructureDefinition-uscdi-scd-laboratory-result.html)
 
-**Parent:** US Core Laboratory Result Observation Profile &nbsp;·&nbsp; **Use case:** Transfer of Care, Emergency Department &nbsp;·&nbsp; **Examples:** [maya-johnson-hgb-fractionation](Observation-maya-johnson-hgb-fractionation.html)
+**Parent:** US Core Laboratory Result Observation Profile &nbsp;·&nbsp; **Use case:** SCD Diagnosis, SCD Emergency Care &nbsp;·&nbsp; **Examples:** [maya-johnson-hgb-fractionation](Observation-maya-johnson-hgb-fractionation.html)
 
 <div style="overflow-x:auto" markdown="1">
 
@@ -444,9 +441,9 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD Vital Signs](StructureDefinition-uscdi-scd-vital-signs.html)
+### [USCDI-SCD Vital Signs](StructureDefinition-uscdi-scd-vital-signs.html)
 
-**Parent:** US Core Vital Signs Profile &nbsp;·&nbsp; **Use case:** Emergency Department &nbsp;·&nbsp; **Examples:** [maya-johnson-pain-score](Observation-maya-johnson-pain-score.html), [maya-johnson-spo2](Observation-maya-johnson-spo2.html)
+**Parent:** US Core Vital Signs Profile &nbsp;·&nbsp; **Use case:** SCD Emergency Care &nbsp;·&nbsp; **Examples:** [maya-johnson-pain-score](Observation-maya-johnson-pain-score.html), [maya-johnson-spo2](Observation-maya-johnson-spo2.html)
 
 <div style="overflow-x:auto" markdown="1">
 
@@ -473,7 +470,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### [USCDI-SCD BiologicallyDerivedProduct](StructureDefinition-uscdi-scd-biologicallyderivedproduct.html)
+### [USCDI-SCD BiologicallyDerivedProduct](StructureDefinition-uscdi-scd-biologicallyderivedproduct.html)
 
 **Parent:** BiologicallyDerivedProduct &nbsp;·&nbsp; **Use case:** Supporting &nbsp;·&nbsp; **Examples:** [prbcs-antigen-matched-example](BiologicallyDerivedProduct-prbcs-antigen-matched-example.html)
 
@@ -501,7 +498,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 ---
 
-#### Extension Details
+### Extension Details
 
 The parts of each SCD extension used in the profiles above.
 
@@ -510,7 +507,6 @@ The parts of each SCD extension used in the profiles above.
 | Extension | Part | Card. | Type | Binding | Description |
 |---|---|---|---|---|---|
 | [SCD Blood Product Age at Transfusion](StructureDefinition-scd-blood-product-age.html) | (value) | 0..* | Quantity |  | Extension |
-| [SCD Genotype](StructureDefinition-scd-genotype.html) | (value) | 0..* | CodeableConcept | SCD Genotype Value Set (example) | Extension |
 | [SCD Iron Chelation Indication](StructureDefinition-scd-iron-chelation-indication.html) | indicationCode | 0..1 | CodeableConcept |  | Reason for initiating iron chelation |
 | [SCD Iron Chelation Indication](StructureDefinition-scd-iron-chelation-indication.html) | triggerMeasurement | 0..1 | CodeableConcept |  | Laboratory or imaging measure that triggered chelation |
 | [SCD Iron Chelation Indication](StructureDefinition-scd-iron-chelation-indication.html) | triggerValue | 0..1 | Quantity |  | The value at which chelation was initiated |

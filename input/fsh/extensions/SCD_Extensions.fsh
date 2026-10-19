@@ -19,52 +19,6 @@
 
 
 // ==============================================================================
-// Extension: SCD Genotype
-// ==============================================================================
-// Context: Condition (SCDConditionProblemsAndHealthConcerns)
-// Purpose: Captures the specific SCD genotype/subtype in structured form,
-//          complementing the Condition.code with a formal genotype code.
-//          While genotype is often captured via the Condition.code (ICD-10-CM
-//          D57.x or SNOMED CT subtype codes), this extension provides an
-//          explicit, searchable genotype field for clinical decision support
-//          and population health queries.
-// ==============================================================================
-
-Extension: SCDGenotypeExtension
-Id: scd-genotype
-Title: "SCD Genotype"
-Description: """
-  Captures the confirmed Sickle Cell Disease genotype or subtype of the
-  patient in a structured, coded format. This extension is intended for use
-  on the Condition resource representing the patient's primary SCD diagnosis.
-
-  The SCDGenotypeVS value set (example binding) lists SNOMED CT codes for the
-  major SCD subtypes (HbSS, HbSC, HbS-Beta0-thalassemia, HbS-Beta+-thalassemia,
-  etc.).
-
-  This extension supports:
-  - Clinical decision support (e.g., genotype determines eligibility for
-    hydroxyurea under NHLBI 2014 recommendations for HbSS and HbS-Beta0)
-  - Population health stratification by SCD subtype
-  - Research and quality measure calculations
-  - Transfusion planning (e.g., patients with HbSC have higher baseline
-    hemoglobin, which affects the choice between simple and exchange transfusion)
-
-  Note: Confirmation of genotype requires hemoglobin fractionation (HPLC or
-  electrophoresis) and/or molecular genetic testing. The verificationStatus
-  of the parent Condition SHALL reflect the confirmation status.
-"""
-* ^status = #draft
-* ^experimental = false
-* ^context[+].type = #element
-* ^context[=].expression = "Condition"
-
-* value[x] only CodeableConcept
-* valueCodeableConcept from SCDGenotypeVS (example)
-* valueCodeableConcept ^short = "SCD genotype code (HbSS, HbSC, HbS-Beta0, etc.)"
-
-
-// ==============================================================================
 // Extension: Transfusion Antigen Match Profile
 // ==============================================================================
 // Context: BiologicallyDerivedProduct (SCDBiologicallyDerivedProduct)
@@ -336,36 +290,6 @@ Description: """
 
 * value[x] only Reference(Observation or DiagnosticReport)
 * valueReference ^short = "Reference to the original newborn screening Observation or DiagnosticReport"
-
-
-// ==============================================================================
-// Value Set: SCD Genotype (referenced by SCDGenotypeExtension)
-// ==============================================================================
-// NOTE: Defined here for proximity to the extension that uses it.
-// This VS could also reside in SCD_ValueSets.fsh.
-// ==============================================================================
-
-ValueSet: SCDGenotypeVS
-Id: scd-genotype-vs
-Title: "SCD Genotype Value Set"
-Description: """
-  Value set of codes representing confirmed Sickle Cell Disease genotypes
-  for use with the SCDGenotypeExtension on the patient's primary SCD
-  Condition resource.
-"""
-* ^status = #draft
-* ^experimental = false
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-
-// SNOMED CT SCD genotype concepts
-* $sct#127040003  "Sickle cell-hemoglobin SS disease (disorder)"          // HbSS
-* $sct#35434009  "Sickle cell-hemoglobin C disease"           // HbSC
-* $sct#127043001  "Sickle cell-beta^0^-thalassemia"          // HbS-Beta0
-* $sct#127042006  "Sickle cell beta plus thalassemia"          // HbS-Beta+
-* $sct#25472008  "Sickle cell-hemoglobin D disease"           // HbSD
-* $sct#47024008  "Sickle cell-hemoglobin E disease"           // HbSE
-* $sct#127048005  "Sickle cell-Hemoglobin O Arab disease"                // HbSOArab
-* $sct#417357006   "Sickling disorder due to hemoglobin S"                        // unspecified
 
 
 // ==============================================================================

@@ -1,5 +1,3 @@
-### Terminology
-
 This page describes the code systems, value sets and local codes used in this guide. Using standard codes lets every system interpret SCD information the same way. For example, "HbSS disease" or "hemoglobin S percentage" means the same thing in every system.
 
 All terminology requirements of [US Core 8.0.1](http://hl7.org/fhir/us/core/STU8.0.1/terminology.html) apply. The value sets below add SCD-specific codes on top of them.
@@ -8,14 +6,13 @@ All terminology requirements of [US Core 8.0.1](http://hl7.org/fhir/us/core/STU8
 
 ### Value Sets
 
-This guide defines ten value sets. Each name links to the full list of codes.
+This guide defines nine value sets. Each name links to the full list of codes.
 
 In line with the project's approach of not constraining the exchanged data, these value sets do not add any requirement beyond US Core. Most are **reference lists** of the codes commonly used in SCD care, which can help with tasks such as prioritizing what to display. Where a profile element already has a US Core binding (for example, LOINC for laboratory tests or RxNorm for medications), the US Core binding applies. Where this guide binds a value set, the binding strength is **example**: it shows the kinds of codes expected without requiring them.
 
 | Value Set | Code systems | Used with | Binding |
 |---|---|---|---|
-| [SCD Diagnosis](ValueSet-scd-diagnosis-vs.html) | ICD-10-CM, SNOMED CT | `Condition.code` in [Condition Problems and Health Concerns](StructureDefinition-uscdi-scd-condition-problems.html): SCD diagnoses, covering all major genotypes | Reference list (US Core preferred binding applies) |
-| [SCD Genotype](ValueSet-scd-genotype-vs.html) | SNOMED CT | The [SCD Genotype](StructureDefinition-scd-genotype.html) extension: the patient's confirmed genotype | Example |
+| [SCD Diagnosis](ValueSet-scd-diagnosis-vs.html) | ICD-10-CM, SNOMED CT | `Condition.code` in [Condition Problems and Health Concerns](StructureDefinition-uscdi-scd-condition-problems.html): SCD diagnoses, covering all major SCD subtypes | Reference list (US Core preferred binding applies) |
 | [SCD Acute Complication](ValueSet-scd-acute-complication-vs.html) | SNOMED CT, ICD-10-CM | `Condition.code` in [Condition Encounter Diagnosis](StructureDefinition-uscdi-scd-condition-encounter-diagnosis.html): acute complications such as VOC, acute chest syndrome, splenic sequestration and aplastic crisis | Reference list (US Core preferred binding applies) |
 | [SCD Laboratory Panel](ValueSet-scd-laboratory-panel-vs.html) | LOINC | `Observation.code` in [Laboratory Result](StructureDefinition-uscdi-scd-laboratory-result.html): CBC, hemoglobin fractionation, hemolysis markers, iron studies, kidney and liver function, immunohematology | Reference list (US Core extensible binding applies) |
 | [SCD Vital Signs](ValueSet-scd-vital-signs-vs.html) | LOINC | `Observation.code` in [Vital Signs](StructureDefinition-uscdi-scd-vital-signs.html): US Core vital signs plus the pain severity score used to assess VOC | Reference list (US Core extensible binding applies) |
@@ -26,6 +23,12 @@ In line with the project's approach of not constraining the exchanged data, thes
 | [SCD Red Cell Antigen](ValueSet-scd-red-cell-antigen-vs.html) | SNOMED CT | The [SCD Transfusion Red Cell Antigen Match Profile](StructureDefinition-scd-transfusion-antigen-match.html) extension: Rh, Kell, Duffy, Kidd and MNS antigens used for matching | Example |
 
 These value sets are drafts. Some codes are still under terminology review. The value sets are intended for future submission to the [Value Set Authority Center (VSAC)](https://vsac.nlm.nih.gov/).
+
+<!-- TODO: Terminologist to review after the terminology meeting: (1) the removal of the
+     SCD Genotype extension and value set, with the SCD subtype carried in the diagnosis
+     code (Condition.code); and (2) the guidance on linking supporting laboratory results
+     through Condition.evidence.detail (see also the open question on whether
+     evidence.detail, rather than evidence.id, should be Must Support). -->
 
 ---
 

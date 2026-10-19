@@ -29,17 +29,17 @@ const CANON = 'http://hl7.org/fhir/us/uscdi-scd/';
 
 // Use cases from the Scope and Usage page (key profiles per use case).
 const USE_CASES = {
-  'uscdi-scd-patient': ['Transfer of Care', 'Emergency Department'],
-  'uscdi-scd-condition-problems': ['Transfer of Care'],
-  'uscdi-scd-laboratory-result': ['Transfer of Care', 'Emergency Department'],
-  'uscdi-scd-practitioner': ['Transfer of Care'],
-  'uscdi-scd-practitionerrole': ['Transfer of Care'],
-  'uscdi-scd-organization': ['Transfer of Care'],
-  'uscdi-scd-encounter': ['Emergency Department'],
-  'uscdi-scd-condition-encounter-diagnosis': ['Emergency Department'],
-  'uscdi-scd-vital-signs': ['Emergency Department'],
-  'uscdi-scd-medicationrequest': ['Emergency Department'],
-  'uscdi-scd-careplan': ['Emergency Department'],
+  'uscdi-scd-patient': ['SCD Diagnosis', 'SCD Emergency Care'],
+  'uscdi-scd-condition-problems': ['SCD Diagnosis'],
+  'uscdi-scd-laboratory-result': ['SCD Diagnosis', 'SCD Emergency Care'],
+  'uscdi-scd-practitioner': ['SCD Diagnosis'],
+  'uscdi-scd-practitionerrole': ['SCD Diagnosis'],
+  'uscdi-scd-organization': ['SCD Diagnosis'],
+  'uscdi-scd-encounter': ['SCD Emergency Care'],
+  'uscdi-scd-condition-encounter-diagnosis': ['SCD Emergency Care'],
+  'uscdi-scd-vital-signs': ['SCD Emergency Care'],
+  'uscdi-scd-medicationrequest': ['SCD Emergency Care'],
+  'uscdi-scd-careplan': ['SCD Emergency Care'],
 };
 
 // Display order (matches the Profiles page).
@@ -170,20 +170,18 @@ const csvRows = [[
   'Must Support', 'Type', 'Binding', 'Source', 'Description',
 ]];
 
-let md = `### Data Element Mapping
-
-This page maps the data elements in this guide to their FHIR profiles and elements. It lists every Must Support element and every required element for each profile, with its cardinality, data type and terminology binding. It is generated from the profile definitions, so it always matches them.
+let md = `This page maps the data elements in this guide to their FHIR profiles and elements. It lists every Must Support element and every required element for each profile, with its cardinality, data type and terminology binding. It is generated from the profile definitions, so it always matches them.
 
 **Download:** [uscdi-scd-data-element-mapping.csv](uscdi-scd-data-element-mapping.csv) (opens in Excel)
 
 <!-- TODO: Add the data element names from the USCDI+ SCD project's data element
      list to this chart (the "USCDI+ SCD Data Element" column in the CSV). -->
 
-#### How to read this chart
+### How to read this chart
 
 | Column | Meaning |
 |---|---|
-| Element | The FHIR element path. A name after a colon (for example, \`extension:scd-genotype\`) is a named slice. |
+| Element | The FHIR element path. A name after a colon (for example, \`extension:scd-voc-frequency\`) is a named slice. |
 | Card. | Cardinality: minimum..maximum occurrences. A minimum of 1 means the element is required. |
 | MS | **Y** means the element is Must Support. See [Must Support](conformance.html#must-support). |
 | Type | The data type. For references, the profiles the reference must conform to. |
@@ -206,7 +204,7 @@ for (const id of profileIds) {
   const useCases = (USE_CASES[id] || []).join(', ') || 'Supporting';
   const examples = (examplesByProfile[sd.url] || []).map((x) => `[${x.id}](${x.type}-${x.id}.html)`).join(', ');
 
-  md += `---\n\n#### [${sd.title}](StructureDefinition-${id}.html)\n\n`;
+  md += `---\n\n### [${sd.title}](StructureDefinition-${id}.html)\n\n`;
   md += `**Parent:** ${parent} &nbsp;·&nbsp; **Use case:** ${useCases}${examples ? ` &nbsp;·&nbsp; **Examples:** ${examples}` : ''}\n\n`;
   md += '<div style="overflow-x:auto" markdown="1">\n\n';
   md += '| Element | Card. | MS | Type | Binding | Source | Description |\n|---|---|---|---|---|---|---|\n';
@@ -223,7 +221,7 @@ for (const id of profileIds) {
 }
 
 // Extension detail: sub-elements of the SCD extensions used by the profiles.
-md += `---\n\n#### Extension Details\n\nThe parts of each SCD extension used in the profiles above.\n\n`;
+md += `---\n\n### Extension Details\n\nThe parts of each SCD extension used in the profiles above.\n\n`;
 md += '<div style="overflow-x:auto" markdown="1">\n\n';
 md += '| Extension | Part | Card. | Type | Binding | Description |\n|---|---|---|---|---|---|\n';
 for (const url of [...usedExtensions].filter((u) => extensions[u]).sort()) {

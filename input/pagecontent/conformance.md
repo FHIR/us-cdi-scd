@@ -1,5 +1,3 @@
-### Conformance Requirements
-
 This Implementation Guide builds on [US Core 8.0.1](http://hl7.org/fhir/us/core/STU8.0.1/). Systems claiming conformance to USCDI-SCD SHALL also conform to US Core 8.0.1. All US Core conformance requirements apply unless this guide explicitly overrides them.
 
 Actors and systems claiming conformance to this guide SHALL implement the requirements in the corresponding [Capability Statements](#capability-statements).
@@ -43,8 +41,8 @@ This guide defines two Capability Statements:
 
 | Capability Statement | Actor | Description |
 |---|---|---|
-| [USCDI-SCD Server](CapabilityStatement-uscdi-scd-server.html) | Responder / Server | Requirements for systems that expose SCD data, such as EHRs and health information exchanges |
 | [USCDI-SCD Client](CapabilityStatement-uscdi-scd-client.html) | Requestor / Client | Requirements for systems that query for and use SCD data |
+| [USCDI-SCD Server](CapabilityStatement-uscdi-scd-server.html) | Responder / Server | Requirements for systems that expose SCD data, such as EHRs and health information exchanges |
 
 **USCDI-SCD Servers SHALL:**
 
@@ -59,7 +57,7 @@ This guide defines two Capability Statements:
 1. Support all US Core 8.0.1 Client requirements.
 2. Be capable of requesting and processing the USCDI-SCD profiles marked SHALL below, and SHOULD support those marked SHOULD.
 3. Process all Must Support elements in USCDI-SCD profiles without error.
-4. Handle missing data as described in [Missing Data](#missing-data).
+4. Handle missing data. See Missing Data above.
 5. Display SCD-relevant clinical data in human-readable form.
 
 ### Profile Conformance Summary

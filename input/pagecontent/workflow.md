@@ -1,5 +1,3 @@
-### Exchange Workflow
-
 This page describes how a USCDI-SCD exchange works, based on what this guide currently defines. The workflow shown in the [exchange process diagram](scope_and_usage.html#in-scope) was tested at a connectathon, where several query patterns were tried. Parts of the workflow that have not yet been defined are marked as open items within each step; a future project pilot or workshop may help resolve them. Comments on them are especially welcome.
 
 ---
@@ -9,13 +7,13 @@ This page describes how a USCDI-SCD exchange works, based on what this guide cur
 | Actor | Role | Requirements |
 |---|---|---|
 | **USCDI-SCD Server** (Responder) | A system that holds SCD patient data and returns it in response to queries, such as an EHR or health information exchange | [USCDI-SCD Server CapabilityStatement](CapabilityStatement-uscdi-scd-server.html) |
-| **USCDI-SCD Client** (Requestor) | A system used by the provider who needs the patient's SCD information, such as the new provider in a transfer of care or an emergency department | [USCDI-SCD Client CapabilityStatement](CapabilityStatement-uscdi-scd-client.html) |
+| **USCDI-SCD Client** (Requestor) | A system used by the provider who needs the patient's SCD information, such as a provider seeing the patient for the first time or an emergency department | [USCDI-SCD Client CapabilityStatement](CapabilityStatement-uscdi-scd-client.html) |
 
 ---
 
 ### Workflow Overview
 
-Both [use cases](scope_and_usage.html#in-scope), Transfer of Care and Emergency Department, follow the same pattern, shown in the [exchange process diagram](scope_and_usage.html#in-scope):
+Both [use cases](scope_and_usage.html#in-scope), SCD Diagnosis and SCD Emergency Care, follow the same pattern, shown in the [exchange process diagram](scope_and_usage.html#in-scope):
 
 1. **Locate the patient.** When the patient presents to a new provider, a query is initiated to locate the patient's record. This may identify more than one EHR system that holds relevant information.
 2. **Authorize access.** The client connects to the server using the security requirements in the CapabilityStatements.
@@ -76,8 +74,8 @@ After locating the patient, the client retrieves the resources needed for its us
 
 | Use Case | Key profiles |
 |---|---|
-| Transfer of Care | Patient, Condition (Problems), Laboratory Result, Practitioner, PractitionerRole, Organization |
-| Emergency Department | Encounter, Condition (Encounter Diagnosis), Laboratory Result, Vital Signs, MedicationRequest, CarePlan |
+| A: SCD Diagnosis | Patient, Condition (Problems), Laboratory Result, Practitioner, PractitionerRole, Organization |
+| B: SCD Emergency Care | Encounter, Condition (Encounter Diagnosis), Laboratory Result, Vital Signs, MedicationRequest, CarePlan |
 
 The table below lists searches a client can use to retrieve these resources by patient. These are the searches that the US Core 8.0.1 Server CapabilityStatement requires servers to support (SHALL), which the USCDI-SCD Server CapabilityStatement adopts, plus the additional `_include` declared in the USCDI-SCD Server CapabilityStatement.
 
@@ -106,8 +104,9 @@ Worked examples of these searches and their expected responses, using the fictio
 <!-- TODO: Define how BiologicallyDerivedProduct (blood product) records are
      retrieved; FHIR R4 does not define a patient search parameter for this
      resource. -->
-<!-- TODO: Add SCD-specific search parameter requirements to the server
-     CapabilityStatement (its documentation lists candidates). -->
+<!-- TODO: Add any SCD-specific search parameter requirements beyond US Core to the
+     server CapabilityStatement. The search parameters it previously listed are all
+     already required by the imported US Core Server CapabilityStatement. -->
 
 **Open items:** the definition of an "SCD-focused query" and of "task-based", how blood product records are retrieved, and any SCD-specific search requirements beyond US Core.
 
@@ -123,10 +122,10 @@ The client CapabilityStatement requires clients to:
 
 See [Must Support](conformance.html#must-support) and [Missing Data](conformance.html#missing-data) for the detailed rules.
 
-In the Transfer of Care use case, the new provider creates or updates the patient's SCD diagnosis.
+In the SCD Diagnosis use case, documented SCD diagnoses and SCD subtype are shared between systems, so that the patient's record includes an SCD diagnosis with subtype.
 
-<!-- TODO: Define whether the updated SCD diagnosis in the Transfer of Care use
-     case is only recorded in the new provider's system, or is also sent back
-     to (written to) another system. -->
+<!-- TODO: Define whether, in the SCD Diagnosis use case, a shared SCD diagnosis
+     is only recorded in the receiving system, or is also sent back to
+     (written to) another system. -->
 
-**Open item:** whether the Transfer of Care use case includes writing data back to another system.
+**Open item:** whether the SCD Diagnosis use case includes writing data back to another system.

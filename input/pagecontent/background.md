@@ -5,8 +5,6 @@ BACKGROUND PAGE — background.md
 
 {%- endcomment -%}
 
-### Background
-
 ---
 Sickle cell disease (SCD) is the most common inherited blood disorder in the United States, affecting about 100,000 people ([CDC](https://www.cdc.gov/sickle-cell/data/index.html)). SCD affects African Americans at disproportionate rates, and many people with SCD face difficulties in accessing and receiving high-quality care. From birth to death, patients living with SCD interact with healthcare and public health systems. Limited interoperability across these systems, however, contributes to fragmented care and hampers efforts to estimate the disease burden and the quality of care patients receive.
 
@@ -14,8 +12,6 @@ Patients’ access to care is often fragmented. The rarity of SCD results in a l
 
 The current state of SCD data exchange does not satisfy the information needs of patients, providers, researchers, and public health agencies to improve health outcomes at a national scale effectively. Though broad interoperability standards to promote care coordination and multiple systems exist to collect SCD patient data, a lack of standardized data elements to identify SCD patients and describe their care limits insights into patients’ experiences and therapy effectiveness. Standardizing a list of minimum core data elements for SCD data exchange can benefit an array of patient interactions, like diagnosis, treatment management, surveillance, and research.
 
-<!-- TODO: Cite the USCDI+ SCD project's landscape analysis and literature review,
-     which is the source of the statements above, and add a link if it is
-     publicly available. -->
+The statements above are drawn from the 2026 landscape analysis compiled by the USCDI+ SCD project team and informed by a Technical Expert Panel (see [Acknowledgements](index.html#acknowledgements)).
 
 

@@ -1,5 +1,3 @@
-### Examples
-
 The example instances below illustrate a single fictional clinical scenario:
 Maya Johnson, a 28-year-old woman with HbSS sickle cell disease, presents to
 the emergency department with an uncomplicated vaso-occlusive pain crisis, which is treated without transfusion. She is followed by
@@ -7,7 +5,7 @@ Dr. Sarah Chen, a hematologist at Metro Sickle Cell Center.
 
 All examples are entirely fictional and contain no real patient data.
 
-#### Administrative
+### Administrative
 
 | Example | Profile |
 |---|---|
@@ -17,7 +15,7 @@ All examples are entirely fictional and contain no real patient data.
 | [PractitionerRole — Dr. Sarah Chen, Hematologist](PractitionerRole-dr-sarah-chen-hematology-role.html) | [USCDI-SCD PractitionerRole](StructureDefinition-uscdi-scd-practitionerrole.html) |
 | [Location — Metro Sickle Cell Center Hematology Clinic](Location-metro-scd-center-hematology-clinic.html) | [USCDI-SCD Location](StructureDefinition-uscdi-scd-location.html) |
 
-#### Encounter and Conditions
+### Encounter and Conditions
 
 | Example | Profile |
 |---|---|
@@ -26,7 +24,7 @@ All examples are entirely fictional and contain no real patient data.
 | [Condition — Acute Vaso-Occlusive Crisis (Encounter Diagnosis)](Condition-maya-johnson-voc-encounter-dx.html) | [USCDI-SCD Condition Encounter Diagnosis](StructureDefinition-uscdi-scd-condition-encounter-diagnosis.html) |
 | [AllergyIntolerance — NSAID Hypersensitivity](AllergyIntolerance-maya-johnson-nsaid-allergy.html) | [USCDI-SCD AllergyIntolerance](StructureDefinition-uscdi-scd-allergyintolerance.html) |
 
-#### Observations
+### Observations
 
 | Example | Profile |
 |---|---|
@@ -34,7 +32,7 @@ All examples are entirely fictional and contain no real patient data.
 | [Vital Sign — Oxygen Saturation (SpO2)](Observation-maya-johnson-spo2.html) | [USCDI-SCD Vital Signs](StructureDefinition-uscdi-scd-vital-signs.html) |
 | [Vital Sign — Pain Severity Score (NRS)](Observation-maya-johnson-pain-score.html) | [USCDI-SCD Vital Signs](StructureDefinition-uscdi-scd-vital-signs.html) |
 
-#### Medications, Orders and Blood Products
+### Medications, Orders and Blood Products
 
 | Example | Profile |
 |---|---|
