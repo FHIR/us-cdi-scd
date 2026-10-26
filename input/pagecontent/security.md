@@ -8,13 +8,14 @@ and data breaches could lead to discrimination in employment, insurance, or soci
 ---
 
 ### General Security Guidance
-Please refer to:
 
-- FHIR Security (http://hl7.org/fhir/R4/security.html)
-- US Core Security Guidance (http://hl7.org/fhir/us/core/security.html)
-- SMART on FHIR for authentication and authorization
-- TLS 1.2+ for transport security
-- Audit logging (AuditEvent resource)
+Implementers should follow:
+
+- [FHIR R4 Security](http://hl7.org/fhir/R4/security.html)
+- [US Core 8.0.1 Security](http://hl7.org/fhir/us/core/STU8.0.1/security.html)
+- [SMART App Launch](http://hl7.org/fhir/smart-app-launch/) for authentication and authorization
+- TLS 1.2 or higher for transport security
+- Audit logging with the FHIR [AuditEvent](http://hl7.org/fhir/R4/auditevent.html) resource
 
 
 ---

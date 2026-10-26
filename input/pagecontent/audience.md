@@ -6,18 +6,19 @@ AUDIENCE PAGE — audience.md
 
 This Implementation Guide is intended for multiple audiences. The table below
 identifies primary reader groups and points each to the most relevant sections.
-The sections below the table give more detail for four key groups.
+The sections below the table give more detail for five key groups. The [Home](index.html#who-this-guide-is-for) page gives a step-by-step reading path for developers and business analysts.
 
 | Audience | Relevant Sections | Prerequisites |
 |---|---|---|
-| **Clinical Informaticists** | Background, Scope, Overview, Profiles | Familiarity with FHIR R4 concepts; SCD clinical knowledge |
-| **EHR / Health IT Developers** | Conformance, Profiles, Extensions, Terminology, Downloads | FHIR R4 implementation experience; FSH/SUSHI knowledge helpful |
-| **Healthcare Organizations / Implementers** | Conformance, Security, Scope | Understanding of US Core and SMART on FHIR |
-| **Hematologists / Clinical SMEs** | Background, Scope, Overview | Basic health IT literacy; FHIR knowledge not required |
-| **Payers / Care Management Programs** | Scope, Profiles, CarePlan, ServiceRequest | FHIR R4 data model familiarity |
-| **Public Health / Registry Programs** | Background, Scope, Laboratory, Condition | FHIR R4 familiarity; epidemiology background |
-| **Policy Makers / Program Officers** | Introduction, Background, Scope, Audience | General health IT policy awareness |
-| **Patients and Advocates** | Introduction, Background, Security | None |
+| **Clinical Informaticists** | [Background](background.html), [Scope](scope_and_usage.html), [Overview](overview.html), [Profiles](profiles.html) | Familiarity with FHIR R4 concepts; SCD clinical knowledge |
+| **EHR / Health IT Developers** | [Conformance](conformance.html), [Profiles](profiles.html), [Extensions](extensions.html), [Terminology](terminology.html), [Downloads](downloads.html) | FHIR R4 implementation experience; FSH/SUSHI knowledge helpful |
+| **Business Analysts** | [Scope and Usage](scope_and_usage.html), [Exchange Workflow](workflow.html), [USCDI+ SCD Data Elements](uscdi-plus.html), [Data Element Mapping](data-element-mapping.html), [Terminology](terminology.html), [Known Issues and Open Questions](issues.html) | Knowledge of the organization's clinical data sources and workflows; FHIR knowledge helpful but not required |
+| **Healthcare Organizations / Implementers** | [Conformance](conformance.html), [Security](security.html), [Scope](scope_and_usage.html) | Understanding of US Core and SMART on FHIR |
+| **Hematologists / Clinical SMEs** | [Background](background.html), [Scope](scope_and_usage.html), [Overview](overview.html) | Basic health IT literacy; FHIR knowledge not required |
+| **Payers / Care Management Programs** | [Scope](scope_and_usage.html), [Profiles](profiles.html), [CarePlan](StructureDefinition-uscdi-scd-careplan.html), [ServiceRequest](StructureDefinition-uscdi-scd-servicerequest.html) | FHIR R4 data model familiarity |
+| **Public Health / Registry Programs** | [Background](background.html), [Scope](scope_and_usage.html), [Laboratory](StructureDefinition-uscdi-scd-laboratory-result.html), [Condition](StructureDefinition-uscdi-scd-condition-problems.html) | FHIR R4 familiarity; epidemiology background |
+| **Policy Makers / Program Officers** | [Introduction](introduction.html), [Background](background.html), [Scope](scope_and_usage.html), [Audience](audience.html) | General health IT policy awareness |
+| **Patients and Advocates** | [Introduction](introduction.html), [Background](background.html), [Security](security.html) | None |
 
 ---
 
@@ -59,6 +60,22 @@ Developers building systems that send or receive SCD data should start with [Con
 - To propose a change to this guide, use the **Propose a change** link at the bottom of any page, which opens an HL7 Jira ticket.
 - For implementation questions, use the [chat.fhir.org](https://chat.fhir.org) community forum.
 - Issues with the source files can be reported on the [GitHub repository](https://github.com/FHIR/us-cdi-scd/issues).
+
+---
+
+### For Business Analysts
+
+Business analysts help an organization decide what it takes to implement this guide: which source systems hold the data, how the data is coded today, and which workflows change. No FHIR programming knowledge is needed.
+
+- **Confirm the scope.** [Scope and Usage](scope_and_usage.html) describes the two use cases and the profiles each one needs. Start with the use case your organization is implementing.
+- **Start from the USCDI+ data elements.** The [USCDI+ SCD Data Elements](uscdi-plus.html) page shows where each of ONC's USCDI+ SCD data elements is represented, and which are not yet covered.
+- **Map the data.** The [Data Element Mapping](data-element-mapping.html) page lists every required and Must Support element. Its CSV download can be used as a gap analysis worksheet: for each element, record the source system, the field, and whether the data is available.
+- **Check the codes.** [Terminology](terminology.html) lists the code systems the data must use. Diagnoses use SNOMED CT (ICD-10-CM may also be sent), laboratory results and vital signs use LOINC, and medications use RxNorm. Locally coded data needs to be mapped to these code systems.
+- **Understand the workflow.** [Exchange Workflow](workflow.html) describes who requests data from whom, and at which step.
+- **Review privacy requirements.** [Security and Privacy](security.html) covers rules, such as 42 CFR Part 2 and minors' records, that can affect what data may be shared.
+- **Plan for open items.** [Known Issues and Open Questions](issues.html) lists limitations and undecided questions that may affect scope or timelines.
+
+The [Glossary](glossary.html) defines the FHIR and clinical terms used in this guide.
 
 ---
 

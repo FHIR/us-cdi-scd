@@ -29,7 +29,13 @@ CHANGE LOG PAGE — changes.md
   blood product age
 - Initial value sets and code systems for SCD diagnoses, medications,
   laboratory tests, procedures, and blood products
-- Initial CapabilityStatements for server and client actors
+- Initial CapabilityStatements for server and client actors, importing the
+  US Core 8.0.1 Server and Client CapabilityStatements
+- Narrative guidance, including the Exchange Workflow, Data Element Mapping,
+  Test Data, Glossary, and Known Issues and Open Questions pages
+- Mapping of ONC's Version 1 USCDI+ SCD data elements to the profiles in
+  this guide (USCDI+ SCD Data Elements page)
+- Developer and Business Analyst reading paths on the Home page
 
 ---
 
@@ -38,7 +44,7 @@ CHANGE LOG PAGE — changes.md
 To be determined.
 <!-- TODO: Document roadmap items for future STU or normative versions:
        - Addition of patient-reported outcome (PRO) profiles
-       - Expansion of genomics profiles beyond genotype classification
+       - Genomics profiles (the SCD subtype is currently carried in the diagnosis code)
        - Integration with Da Vinci prior authorization workflows
        - Alignment with FHIR R5 BiologicallyDerivedProduct improvements
        - International extensions (non-US SCD populations)

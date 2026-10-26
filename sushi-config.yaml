@@ -61,6 +61,8 @@ extension:
     valueCode: pher
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     valueCode: draft
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 0
 
 # -----------------------------------------------------------------------
 # Package Dependencies
@@ -93,10 +95,16 @@ pages:
     title: Overview
   audience.md:
     title: Audience
+  glossary.md:
+    title: Glossary
   conformance.md:
     title: Conformance Requirements
   workflow.md:
     title: Exchange Workflow
+  security.md:
+    title: Security and Privacy
+  issues.md:
+    title: Known Issues and Open Questions
   profiles.md:
     title: Profiles
   extensions.md:
@@ -107,10 +115,10 @@ pages:
     title: Examples
   data-element-mapping.md:
     title: Data Element Mapping
+  uscdi-plus.md:
+    title: USCDI+ SCD Data Elements
   testing.md:
     title: Test Data
-  security.md:
-    title: Security and Privacy
   downloads.md:
     title: Downloads
   changes.md:
@@ -127,16 +135,19 @@ menu:
     Scope and Usage: scope_and_usage.html
     Overview: overview.html
     Audience: audience.html
+    Glossary: glossary.html
   Guidance:
     Conformance Requirements: conformance.html
     Exchange Workflow: workflow.html
     Security and Privacy: security.html
+    Known Issues and Open Questions: issues.html
   Artifacts:
     Profiles: profiles.html
     Extensions: extensions.html
     Terminology: terminology.html
     Examples: examples.html
     Data Element Mapping: data-element-mapping.html
+    USCDI+ SCD Data Elements: uscdi-plus.html
     Test Data: testing.html
     Artifacts Summary: artifacts.html
   Downloads: downloads.html

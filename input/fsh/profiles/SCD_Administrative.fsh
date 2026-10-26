@@ -41,13 +41,12 @@ Description: """
 """
 
 // ----------------------------------------------------------------------------
-// No additional constraints beyond US Core Patient at this time.
-// The profile is defined to serve as a canonical reference point for the
-// USCDI-SCD IG and to enable future SCD-specific extensions.
+// Adds Must Support on race, ethnicity, telecom and communication, and allows
+// the SCD Newborn Screen Reference extension.
 //
-// TODO: Consider adding these extensions in a future version:
-//   - SCD newborn screening result reference
-//   - Preferred SCD treatment center (reference to Organization)
+// The SCD Newborn Screen Reference extension is allowed on this profile (below).
+// TODO: Consider adding a preferred SCD treatment center extension
+//   (reference to Organization) in a future version.
 // ----------------------------------------------------------------------------
 
 * ^status = #draft

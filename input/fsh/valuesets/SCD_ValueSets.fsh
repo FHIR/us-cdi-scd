@@ -39,7 +39,7 @@ Description: """
 
   Includes ICD-10-CM D57.x codes and equivalent SNOMED CT codes.
 
-  TODO: Expand with complete SNOMED CT concept set and confirm ICD-10-CM
+  Open item: Expand with complete SNOMED CT concept set and confirm ICD-10-CM
   code coverage. Submit to VSAC for OID assignment.
 """
 * ^status = #draft
@@ -122,7 +122,7 @@ Description: """
   that may be documented as encounter diagnoses. Includes vaso-occlusive crisis,
   acute chest syndrome, splenic sequestration, stroke, and other acute events.
 
-  TODO: Expand SNOMED CT concept coverage. Submit to VSAC.
+  Open item: Expand SNOMED CT concept coverage. Submit to VSAC.
 """
 * ^status = #draft
 * ^experimental = false
@@ -171,7 +171,7 @@ Description: """
   and prophylactic antibiotics.
 
   RxNorm ingredient codes verified against RxNav (October 2026).
-  TODO: Submit to VSAC for OID assignment and curated maintenance.
+  Open item: Submit to VSAC for OID assignment and curated maintenance.
 """
 * ^status = #draft
 * ^experimental = false
@@ -220,7 +220,7 @@ Description: """
   hemoglobin fractionation, hemolysis markers, iron studies, renal function,
   hepatic function, and immunohematology tests.
 
-  TODO: Expand with complete LOINC coverage. Submit to VSAC.
+  Open item: Expand with complete LOINC coverage. Submit to VSAC.
 """
 * ^status = #draft
 * ^experimental = false
@@ -298,7 +298,7 @@ Description: """
   management of Sickle Cell Disease, including transfusion, exchange
   transfusion, stem cell transplantation, and diagnostic monitoring procedures.
 
-  TODO: Add complete CPT code coverage. Submit to VSAC.
+  Open item: Add complete CPT code coverage. Submit to VSAC.
 """
 * ^status = #draft
 * ^experimental = false
@@ -345,8 +345,8 @@ Description: """
   patients with Sickle Cell Disease, including red blood cell products and
   hematopoietic progenitor cell products for transplantation.
 
-  Codes sourced from SNOMED CT. ISBT 128 codes SHOULD also be included
-  where available; TODO: add ISBT 128 code system and concepts.
+  Codes sourced from SNOMED CT. ISBT 128 codes are planned for a future
+  version.
 """
 * ^status = #draft
 * ^experimental = false

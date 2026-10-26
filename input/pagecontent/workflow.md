@@ -32,6 +32,7 @@ The server CapabilityStatement requires servers to support the US Core 8.0.1 Ser
 |---|---|
 | `GET [base]/Patient?_id=[id]` | SHALL |
 | `GET [base]/Patient?identifier=[system]\|[value]` | SHALL |
+| `GET [base]/Patient?name=[name]` | SHALL |
 | `GET [base]/Patient?name=[name]&birthdate=[date]` | SHALL |
 
 The [Test Data](testing.html) page includes an example search by identifier and its expected response.
@@ -51,13 +52,7 @@ The [Test Data](testing.html) page includes an example search by identifier and 
 
 ### Step 2: Authorize Access
 
-The server CapabilityStatement requires servers to:
-
-- Support SMART on FHIR (standalone launch and EHR launch)
-- Support TLS 1.2 or higher for all connections
-- Support FHIR AuditEvent for access logging
-
-See [Security and Privacy](security.html) for guidance on protecting SCD data.
+Servers must support SMART on FHIR authorization, TLS 1.2 or higher, and AuditEvent logging. The full list is in [Conformance Requirements](conformance.html#capabilitystatements). See [Security and Privacy](security.html) for guidance on protecting SCD data.
 
 <!-- TODO: Confirm whether SMART App Launch (standalone and EHR launch) fits
      the exchange pattern in the use cases, or whether system-to-system
@@ -70,25 +65,20 @@ See [Security and Privacy](security.html) for guidance on protecting SCD data.
 
 ### Step 3: Retrieve SCD-Relevant Data
 
-After locating the patient, the client retrieves the resources needed for its use case. The [Scope and Usage](scope_and_usage.html#in-scope) page identifies the key profiles for each use case:
+After locating the patient, the client retrieves the resources needed for its use case. The key profiles for each use case are listed on the [Scope and Usage](scope_and_usage.html#in-scope) page.
 
-| Use Case | Key profiles |
-|---|---|
-| A: SCD Diagnosis | Patient, Condition (Problems), Laboratory Result, Practitioner, PractitionerRole, Organization |
-| B: SCD Emergency Care | Encounter, Condition (Encounter Diagnosis), Laboratory Result, Vital Signs, MedicationRequest, CarePlan |
-
-The table below lists searches a client can use to retrieve these resources by patient. These are the searches that the US Core 8.0.1 Server CapabilityStatement requires servers to support (SHALL), which the USCDI-SCD Server CapabilityStatement adopts, plus the additional `_include` declared in the USCDI-SCD Server CapabilityStatement.
+The table below lists searches a client can use to retrieve these resources by patient. These are the searches that the US Core 8.0.1 Server CapabilityStatement requires servers to support (SHALL). The USCDI-SCD Server CapabilityStatement imports the US Core Server CapabilityStatement, so the same requirements apply.
 
 | Resource | Searches servers SHALL support | Notes |
 |---|---|---|
 | Condition | `patient`; `patient` + `category` | Category `problem-list-item` or `encounter-diagnosis` distinguishes the two Condition profiles |
 | Observation | `patient` + `category`; `patient` + `category` + `date`; `patient` + `code` | Category `laboratory` for Laboratory Result; `vital-signs` for Vital Signs |
 | Encounter | `patient`; `patient` + `date`; `_id` | |
-| MedicationRequest | `patient` + `intent`; `patient` + `intent` + `status` | The USCDI-SCD Server CapabilityStatement also declares `_include=MedicationRequest:medication` |
+| MedicationRequest | `patient` + `intent`; `patient` + `intent` + `status` | Servers SHOULD also support `_include=MedicationRequest:medication` (US Core) |
 | AllergyIntolerance | `patient` | |
 | CarePlan | `patient` + `category` | |
 | Procedure | `patient`; `patient` + `date` | |
-| ServiceRequest | `patient`; `patient` + `category`; `patient` + `code`; `patient` + `category` + `authored` | |
+| ServiceRequest | `_id`; `patient`; `patient` + `category`; `patient` + `code`; `patient` + `category` + `authored` | |
 | Practitioner | `identifier`; `name` | Referenced from the clinical resources above |
 | PractitionerRole | `practitioner`; `specialty` | |
 | Organization | `name`; `address` | |
@@ -114,13 +104,7 @@ Worked examples of these searches and their expected responses, using the fictio
 
 ### Step 4: Use the Data
 
-The client CapabilityStatement requires clients to:
-
-- Process all Must Support elements in USCDI-SCD profiles without error
-- Handle missing data using Data Absent Reason where applicable
-- Display SCD-relevant clinical data in human-readable form
-
-See [Must Support](conformance.html#must-support) and [Missing Data](conformance.html#missing-data) for the detailed rules.
+Clients must process all Must Support elements without error, handle missing data, and display SCD-relevant data in human-readable form. The full list is in [Conformance Requirements](conformance.html#capabilitystatements), with the detailed rules under [Must Support](conformance.html#must-support) and [Missing Data](conformance.html#missing-data).
 
 In the SCD Diagnosis use case, documented SCD diagnoses and SCD subtype are shared between systems, so that the patient's record includes an SCD diagnosis with subtype.
 

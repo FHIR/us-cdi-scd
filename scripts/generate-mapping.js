@@ -174,8 +174,10 @@ let md = `This page maps the data elements in this guide to their FHIR profiles 
 
 **Download:** [uscdi-scd-data-element-mapping.csv](uscdi-scd-data-element-mapping.csv) (opens in Excel)
 
-<!-- TODO: Add the data element names from the USCDI+ SCD project's data element
-     list to this chart (the "USCDI+ SCD Data Element" column in the CSV). -->
+**Source data elements:** ONC publishes the USCDI+ Sickle Cell Disease data element lists on the USCDI+ site: [SCD Diagnosis](https://uscdiplus.healthit.gov/uscdiplus?id=uscdi_record&table=x_g_sshh_uscdi_sub_domain&sys_id=84d4c4a23bdd03503cb59d0864e45a2a&view=sp) and [SCD Emergency Care](https://uscdiplus.healthit.gov/uscdiplus?id=uscdi_record&table=x_g_sshh_uscdi_sub_domain&sys_id=a7e444623bdd03503cb59d0864e45a96&view=sp). For where each of those data elements is represented in this guide, see [USCDI+ SCD Data Elements](uscdi-plus.html).
+
+<!-- TODO: Fill the "USCDI+ SCD Data Element" column in the CSV from the mapping
+     on the USCDI+ SCD Data Elements page. -->
 
 ### How to read this chart
 

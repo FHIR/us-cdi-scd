@@ -391,11 +391,13 @@ Description: """
   already formed alloantibodies. This profile supports documentation of
   antigen matching via extension or the processing element.
 
-  **ISBT 128 Coding:**
+  **Product Coding:**
 
-  Blood products SHOULD be coded using ISBT 128, the international standard
-  for blood product labeling. SNOMED CT codes MAY also be included.
-  TODO: add ISBT 128 codes to the SCD Blood Product Type value set.
+  In this version, blood product types are coded with SNOMED CT (see the SCD
+  Blood Product Type value set, example binding). ISBT 128, the international
+  standard for blood product labeling, MAY be sent as an additional coding.
+  Requirements for ISBT 128 coding are planned for a future version, once the
+  FHIR code system URI for ISBT 128 is confirmed.
 
   **Limitations in FHIR R4:**
 
@@ -421,20 +423,19 @@ Description: """
 
 // Product identification
 * productCode MS
-* productCode ^short = "Blood product type code (ISBT 128 or SNOMED CT)"
+* productCode ^short = "Blood product type code (SNOMED CT; ISBT 128 optional)"
 * productCode ^comment = """
-  SHOULD use ISBT 128 product codes where available. SNOMED CT codes MAY
-  be included as an additional coding.
+  Use SNOMED CT product codes. ISBT 128 product codes MAY be included as an
+  additional coding; ISBT 128 requirements are planned for a future version.
 
   Common SCD blood product codes (SNOMED CT):
   - 431069006 — Packed red blood cells
   - 126251004 — Leukocyte reduced red blood cells, human
   - 126256009 — Red blood cells, human, irradiated
-  TODO: add codes for hematopoietic progenitor cell products (HPC-A, HPC-M,
+  Open item: add codes for hematopoietic progenitor cell products (HPC-A, HPC-M,
   cord blood); no SNOMED CT equivalents were found.
 
   The SCD Blood Product Type value set lists common products (example binding).
-  TODO: Add ISBT 128 codes to SCDBloodProductTypeVS.
 """
 * productCode from SCDBloodProductTypeVS (example)
 
@@ -492,12 +493,7 @@ Description: """
 * storage ^short = "Storage conditions and duration"
 * storage.duration MS
 
-// Extension placeholders for SCD-specific blood product attributes
-// TODO: Define and add these extensions to the extensions FSH file:
-//   - scd-antigen-match-profile: documents which red cell antigens were matched
-//     (e.g., C-neg, E-neg, K-neg, Fya-neg, Jkb-neg)
-//   - scd-leukoreduced: boolean indicating leukoreduction status
-//   - scd-irradiated: boolean indicating gamma/X-ray irradiation
-//   - scd-cmv-negative: boolean indicating CMV-negative selection
-//   - scd-age-of-blood: days from collection to transfusion (fresh blood
-//     preferred for SCD exchange transfusion)
+// SCD-specific blood product attributes: antigen matching and product age use the
+// scd-transfusion-antigen-match and scd-blood-product-age extensions (above);
+// leukoreduction, irradiation and CMV-negative selection are processing codes
+// in the SCD Blood Product Processing code system.

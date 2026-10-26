@@ -2,8 +2,10 @@ This page maps the data elements in this guide to their FHIR profiles and elemen
 
 **Download:** [uscdi-scd-data-element-mapping.csv](uscdi-scd-data-element-mapping.csv) (opens in Excel)
 
-<!-- TODO: Add the data element names from the USCDI+ SCD project's data element
-     list to this chart (the "USCDI+ SCD Data Element" column in the CSV). -->
+**Source data elements:** ONC publishes the USCDI+ Sickle Cell Disease data element lists on the USCDI+ site: [SCD Diagnosis](https://uscdiplus.healthit.gov/uscdiplus?id=uscdi_record&table=x_g_sshh_uscdi_sub_domain&sys_id=84d4c4a23bdd03503cb59d0864e45a2a&view=sp) and [SCD Emergency Care](https://uscdiplus.healthit.gov/uscdiplus?id=uscdi_record&table=x_g_sshh_uscdi_sub_domain&sys_id=a7e444623bdd03503cb59d0864e45a96&view=sp). For where each of those data elements is represented in this guide, see [USCDI+ SCD Data Elements](uscdi-plus.html).
+
+<!-- TODO: Fill the "USCDI+ SCD Data Element" column in the CSV from the mapping
+     on the USCDI+ SCD Data Elements page. -->
 
 ### How to read this chart
 
@@ -285,6 +287,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 | `MedicationRequest.reported[x]` | 0..1 | Y | boolean \| Reference(US Core Practitioner Profile \| US Core Organization Profile \| US Core Patient Profile \| US Core PractitionerRole Profile \| US Core RelatedPerson Profile) |  | Inherited | Reported rather than primary record |
 | `MedicationRequest.medication[x]` | 1..1 | Y | CodeableConcept \| Reference(US Core Medication Profile) | 2.16.840.1.113762.1.4.1010.4 (extensible) | Inherited | SCD medication (RxNorm preferred) |
 | `MedicationRequest.medication[x]:medicationReference` | 0..1 | Y | Reference(USCDI-SCD Medication) |  | USCDI-SCD | Medication to be taken |
+| `MedicationRequest.medication[x]:medicationCodeableConcept` | 0..1 | Y | CodeableConcept | 2.16.840.1.113762.1.4.1010.4 (extensible) | USCDI-SCD | Medication to be taken |
 | `MedicationRequest.subject` | 1..1 | Y | Reference(USCDI-SCD Patient) |  | USCDI-SCD | Who or group medication request is for |
 | `MedicationRequest.encounter` | 0..1 | Y | Reference(USCDI-SCD Encounter) |  | USCDI-SCD | Encounter created as part of encounter/admission/stay |
 | `MedicationRequest.authoredOn` | 0..1 | Y | dateTime |  | Inherited | When request was initially authored |
@@ -393,7 +396,7 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 | Element | Card. | MS | Type | Binding | Source | Description |
 |---|---|---|---|---|---|---|
-| `Procedure.extension:scd-transfusion-antigen-match` | 0..1 |  | Extension(SCD Transfusion Red Cell Antigen Match Profile) |  | USCDI-SCD | Red cell antigen matching requested for the transfusion |
+| `Procedure.extension:scd-transfusion-antigen-match` | 0..1 |  | Extension(SCD Transfusion Red Cell Antigen Match) |  | USCDI-SCD | Red cell antigen matching requested for the transfusion |
 | `Procedure.status` | 1..1 | Y | code | event-status (required) | Inherited | preparation \| in-progress \| not-done \| on-hold \| stopped \| completed \| entered-in-error \| unknown |
 | `Procedure.code` | 1..1 | Y | CodeableConcept | us-core-procedure-code (preferred) | Inherited | SCD procedure code (SNOMED CT or CPT) |
 | `Procedure.subject` | 1..1 | Y | Reference(USCDI-SCD Patient) |  | USCDI-SCD | Who the procedure was performed on |
@@ -478,10 +481,10 @@ Elements inherited from US Core are included so testers can see every requiremen
 
 | Element | Card. | MS | Type | Binding | Source | Description |
 |---|---|---|---|---|---|---|
-| `BiologicallyDerivedProduct.extension:scd-transfusion-antigen-match` | 0..1 | Y | Extension(SCD Transfusion Red Cell Antigen Match Profile) |  | USCDI-SCD | Red cell antigens matched for this product |
+| `BiologicallyDerivedProduct.extension:scd-transfusion-antigen-match` | 0..1 | Y | Extension(SCD Transfusion Red Cell Antigen Match) |  | USCDI-SCD | Red cell antigens matched for this product |
 | `BiologicallyDerivedProduct.extension:scd-blood-product-age` | 0..1 | Y | Extension(SCD Blood Product Age at Transfusion) |  | USCDI-SCD | Age of the product in days at transfusion |
 | `BiologicallyDerivedProduct.productCategory` | 0..1 | Y | code | product-category (required) | USCDI-SCD | biologicalAgent \| cells \| fluid \| tissue \| organ |
-| `BiologicallyDerivedProduct.productCode` | 0..1 | Y | CodeableConcept | SCD Blood Product Type Value Set (example) | USCDI-SCD | Blood product type code (ISBT 128 or SNOMED CT) |
+| `BiologicallyDerivedProduct.productCode` | 0..1 | Y | CodeableConcept | SCD Blood Product Type Value Set (example) | USCDI-SCD | Blood product type code (SNOMED CT; ISBT 128 optional) |
 | `BiologicallyDerivedProduct.status` | 0..1 | Y | code | product-status (required) | USCDI-SCD | available \| unavailable \| unsatisfactory \| entered-in-error |
 | `BiologicallyDerivedProduct.request` | 0..* | Y | Reference(USCDI-SCD ServiceRequest) |  | USCDI-SCD | Reference to the transfusion order (SCDServiceRequest) |
 | `BiologicallyDerivedProduct.collection` | 0..1 | Y | BackboneElement |  | USCDI-SCD | Collection details (donor vs autologous, collection time) |
@@ -511,8 +514,8 @@ The parts of each SCD extension used in the profiles above.
 | [SCD Iron Chelation Indication](StructureDefinition-scd-iron-chelation-indication.html) | triggerMeasurement | 0..1 | CodeableConcept |  | Laboratory or imaging measure that triggered chelation |
 | [SCD Iron Chelation Indication](StructureDefinition-scd-iron-chelation-indication.html) | triggerValue | 0..1 | Quantity |  | The value at which chelation was initiated |
 | [SCD Newborn Screen Reference](StructureDefinition-scd-newborn-screen-reference.html) | (value) | 0..* | Reference(Observation \| DiagnosticReport) |  | Extension |
-| [SCD Transfusion Red Cell Antigen Match Profile](StructureDefinition-scd-transfusion-antigen-match.html) | matchedAntigen | 0..* | CodeableConcept | SCD Red Cell Antigen Value Set (example) | Specific antigen confirmed matched/negative |
-| [SCD Transfusion Red Cell Antigen Match Profile](StructureDefinition-scd-transfusion-antigen-match.html) | matchingProtocol | 0..1 | string |  | Antigen matching protocol used |
+| [SCD Transfusion Red Cell Antigen Match](StructureDefinition-scd-transfusion-antigen-match.html) | matchedAntigen | 0..* | CodeableConcept | SCD Red Cell Antigen Value Set (example) | Specific antigen confirmed matched/negative |
+| [SCD Transfusion Red Cell Antigen Match](StructureDefinition-scd-transfusion-antigen-match.html) | matchingProtocol | 0..1 | string |  | Antigen matching protocol used |
 | [SCD Vaso-Occlusive Crisis Frequency](StructureDefinition-scd-voc-frequency.html) | episodeCount | 1..1 | integer |  | Number of VOC episodes in the observation period |
 | [SCD Vaso-Occlusive Crisis Frequency](StructureDefinition-scd-voc-frequency.html) | observationPeriod | 1..1 | Period |  | Period over which VOC episodes were counted |
 | [SCD Vaso-Occlusive Crisis Frequency](StructureDefinition-scd-voc-frequency.html) | measurementMethod | 0..1 | CodeableConcept |  | How episodes were counted (self-report, chart review, hospitalization records) |

@@ -6,9 +6,9 @@ This guide defines six extensions for SCD-specific information that neither FHIR
 |---|---|---|---|
 | [SCD Vaso-Occlusive Crisis Frequency](StructureDefinition-scd-voc-frequency.html) | [Condition Problems](StructureDefinition-uscdi-scd-condition-problems.html) (MS) | Complex | How often VOC episodes occur |
 | [SCD Newborn Screen Reference](StructureDefinition-scd-newborn-screen-reference.html) | [Condition Problems](StructureDefinition-uscdi-scd-condition-problems.html), [Patient](StructureDefinition-uscdi-scd-patient.html) | Reference | The newborn screening result that identified SCD |
-| [SCD Hydroxyurea Adherence](StructureDefinition-scd-hydroxyurea-adherence.html) | None yet (may be used on an Observation) | Complex | How consistently the patient takes hydroxyurea |
+| [SCD Hydroxyurea Adherence](StructureDefinition-scd-hydroxyurea-adherence.html) | None yet (may be used on an Observation or MedicationStatement) | Complex | How consistently the patient takes hydroxyurea |
 | [SCD Iron Chelation Indication](StructureDefinition-scd-iron-chelation-indication.html) | [MedicationRequest](StructureDefinition-uscdi-scd-medicationrequest.html) (MS) | Complex | Why iron chelation therapy was started |
-| [SCD Transfusion Red Cell Antigen Match Profile](StructureDefinition-scd-transfusion-antigen-match.html) | [BiologicallyDerivedProduct](StructureDefinition-uscdi-scd-biologicallyderivedproduct.html) (MS), [Procedure](StructureDefinition-uscdi-scd-procedure.html) | Complex | Which red cell antigens were matched for a transfusion |
+| [SCD Transfusion Red Cell Antigen Match](StructureDefinition-scd-transfusion-antigen-match.html) | [BiologicallyDerivedProduct](StructureDefinition-uscdi-scd-biologicallyderivedproduct.html) (MS), [Procedure](StructureDefinition-uscdi-scd-procedure.html) | Complex | Which red cell antigens were matched for a transfusion |
 | [SCD Blood Product Age at Transfusion](StructureDefinition-scd-blood-product-age.html) | [BiologicallyDerivedProduct](StructureDefinition-uscdi-scd-biologicallyderivedproduct.html) (MS) | Quantity (days) | How old the blood product was when transfused |
 
 "Complex" extensions are made up of several named parts, described below. (MS) means the extension is Must Support in that profile.
@@ -44,7 +44,7 @@ Links a patient, or their SCD diagnosis, to the newborn screening result that fi
 ### Medications
 
 #### [SCD Hydroxyurea Adherence](StructureDefinition-scd-hydroxyurea-adherence.html)
-Records how consistently the patient takes hydroxyurea, a main disease-modifying therapy for SCD. Hydroxyurea reduces VOC, acute chest syndrome and mortality, but its benefit depends on consistent use; poor adherence is associated with more VOC episodes and hospitalizations. It can be used on an Observation that documents an adherence assessment.
+Records how consistently the patient takes hydroxyurea, a main disease-modifying therapy for SCD. Hydroxyurea reduces VOC, acute chest syndrome and mortality, but its benefit depends on consistent use; poor adherence is associated with more VOC episodes and hospitalizations. It can be used on an Observation that documents an adherence assessment, or on a MedicationStatement. No profile in this guide uses it yet.
 
 | Part | Type | Description |
 |---|---|---|
@@ -67,7 +67,7 @@ Records why iron chelation therapy was started for a patient with iron overload 
 
 ### Transfusion
 
-#### [SCD Transfusion Red Cell Antigen Match Profile](StructureDefinition-scd-transfusion-antigen-match.html)
+#### [SCD Transfusion Red Cell Antigen Match](StructureDefinition-scd-transfusion-antigen-match.html)
 Records which red cell antigens were matched when selecting blood for a transfusion. Many people with SCD receive frequent transfusions and are at high risk of developing antibodies to donor blood (alloimmunization). ASH 2020 recommends prophylactic matching for Rh (C, E or C/c, E/e) and K antigens, which reduces this risk. Matching for additional antigens, such as Fy<sup>a</sup>/Fy<sup>b</sup> (Duffy), Jk<sup>a</sup>/Jk<sup>b</sup> (Kidd) and S, is generally reserved for patients who have already formed antibodies.
 
 This extension SHALL be used on the blood product when extended antigen matching was performed. It MAY also be used on the transfusion Procedure to document the matching that was ordered.

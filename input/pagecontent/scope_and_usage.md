@@ -23,7 +23,7 @@ This guide supports the two use cases defined by the USCDI+ Sickle Cell Disease 
 | B: SCD Emergency Care | Encounter, Condition (Encounter Diagnosis), Laboratory Result, Vital Signs, MedicationRequest, CarePlan |
 
 This diagram illustrates the data exchange process flow for these use cases, as tested at a connectathon.
-<!-- TODO: Name the connectathon and its date. --> When the SCD patient presents to a new provider for care, a query is initiated to locate the patient's EMR.  Once located, the necessary medical record data is queried for and returned by the identified EHR.
+<!-- TODO: Name the connectathon and its date. --> When the SCD patient presents to a new provider for care, a query is initiated to locate the patient's EHR. Once located, the necessary medical record data is queried for and returned by the identified EHR.
 
 
 <figure>
@@ -40,14 +40,14 @@ The [Exchange Workflow](workflow.html) page describes each step of this flow in 
  
 ### Out of Scope
 
-The following items are explicitly **out of scope** for this first version of the
-USCDI-SCD IG: any use cases not described.
+Use cases other than the two described above are **out of scope** for this version of the guide.
 
 
 ---
 
 ### Clinical Use Cases
-Both Use Cases supported by this guide are Clinical Use Cases.
+
+Both use cases supported by this guide are clinical use cases.
 
 ---
 
@@ -61,7 +61,7 @@ USCDI-SCD builds on existing HL7 specifications instead of redefining them. Impl
 
 The exception is the USCDI-SCD BiologicallyDerivedProduct profile, which is based directly on the FHIR R4 BiologicallyDerivedProduct resource because US Core has no equivalent profile.
 
-Systems conforming to USCDI-SCD SHALL also conform to US Core 8.0.1, and the USCDI-SCD Capability Statements require support for the corresponding US Core Capability Statements. See [Conformance Requirements](conformance.html).
+Systems conforming to USCDI-SCD SHALL also conform to US Core 8.0.1, and the USCDI-SCD CapabilityStatements require support for the corresponding US Core CapabilityStatements. See [Conformance Requirements](conformance.html).
 
 #### USCDI and USCDI+
 
@@ -69,7 +69,7 @@ US Core implements the [United States Core Data for Interoperability (USCDI)](ht
 
 #### SMART App Launch
 
-The USCDI-SCD Server Capability Statement requires support for [SMART App Launch](http://hl7.org/fhir/smart-app-launch/) (standalone launch and EHR launch) for authorization, consistent with US Core. See [Security and Privacy](security.html).
+The USCDI-SCD Server CapabilityStatement requires support for [SMART App Launch](http://hl7.org/fhir/smart-app-launch/) (standalone launch and EHR launch) for authorization, consistent with US Core. See [Security and Privacy](security.html).
 
 #### FHIR Extensions Pack
 

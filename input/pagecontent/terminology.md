@@ -20,7 +20,7 @@ In line with the project's approach of not constraining the exchanged data, thes
 | [SCD Procedure](ValueSet-scd-procedure-vs.html) | SNOMED CT | `Procedure.code` in [Procedure](StructureDefinition-uscdi-scd-procedure.html): transfusion, exchange transfusion, stem cell transplantation and monitoring procedures | Reference list (US Core preferred binding applies) |
 | [SCD Blood Product Type](ValueSet-scd-blood-product-type-vs.html) | SNOMED CT | `productCode` in [BiologicallyDerivedProduct](StructureDefinition-uscdi-scd-biologicallyderivedproduct.html): red blood cell and hematopoietic progenitor cell products | Example |
 | [SCD Blood Product Processing](ValueSet-scd-blood-product-processing-vs.html) | SCD Blood Product Processing (local) | `processing.procedure` in [BiologicallyDerivedProduct](StructureDefinition-uscdi-scd-biologicallyderivedproduct.html): processing steps such as leukoreduction, irradiation and antigen matching | Example |
-| [SCD Red Cell Antigen](ValueSet-scd-red-cell-antigen-vs.html) | SNOMED CT | The [SCD Transfusion Red Cell Antigen Match Profile](StructureDefinition-scd-transfusion-antigen-match.html) extension: Rh, Kell, Duffy, Kidd and MNS antigens used for matching | Example |
+| [SCD Red Cell Antigen](ValueSet-scd-red-cell-antigen-vs.html) | SNOMED CT | The [SCD Transfusion Red Cell Antigen Match](StructureDefinition-scd-transfusion-antigen-match.html) extension: Rh, Kell, Duffy, Kidd and MNS antigens used for matching | Example |
 
 These value sets are drafts. Some codes are still under terminology review. The value sets are intended for future submission to the [Value Set Authority Center (VSAC)](https://vsac.nlm.nih.gov/).
 

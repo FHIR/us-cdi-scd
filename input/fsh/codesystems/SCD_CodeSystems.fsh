@@ -29,7 +29,7 @@ Description: """
   standard HL7 observation-category codes (laboratory, vital-signs, etc.)
   with SCD-specific sub-categories.
 
-  TODO: Review against LOINC Part codes and US Core observation categories
+  Open item: Review against LOINC Part codes and US Core observation categories
   before finalizing. Consider submitting concepts to HL7 THO or LOINC.
 """
 * ^status = #draft
@@ -85,7 +85,7 @@ Description: """
   antigen matching criteria, processing modifiers, and product selection
   requirements specific to SCD care.
 
-  TODO: Map to ISBT 128 processing codes and SNOMED CT where equivalents
+  Open item: Map to ISBT 128 processing codes and SNOMED CT where equivalents
   exist. Consider ISBT 128 as the primary coding system and use this only
   for concepts not yet covered.
 """

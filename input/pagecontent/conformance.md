@@ -1,6 +1,6 @@
 This Implementation Guide builds on [US Core 8.0.1](http://hl7.org/fhir/us/core/STU8.0.1/). Systems claiming conformance to USCDI-SCD SHALL also conform to US Core 8.0.1. All US Core conformance requirements apply unless this guide explicitly overrides them.
 
-Actors and systems claiming conformance to this guide SHALL implement the requirements in the corresponding [Capability Statements](#capability-statements).
+Actors and systems claiming conformance to this guide SHALL implement the requirements in the corresponding [CapabilityStatements](#capabilitystatements).
 
 ### Conformance Verbs
 
@@ -35,11 +35,11 @@ This guide follows the [US Core 8.0.1 Missing Data](http://hl7.org/fhir/us/core/
   - For coded elements with a required binding, systems SHALL use the appropriate "unknown" concept from the bound value set, where one exists.
   - For coded elements with an extensible or preferred binding, systems SHALL use the `unknown` code from the [DataAbsentReason code system](http://terminology.hl7.org/CodeSystem/data-absent-reason) or provide text only.
 
-### Capability Statements
+### CapabilityStatements
 
-This guide defines two Capability Statements:
+This guide defines two CapabilityStatements:
 
-| Capability Statement | Actor | Description |
+| CapabilityStatement | Actor | Description |
 |---|---|---|
 | [USCDI-SCD Client](CapabilityStatement-uscdi-scd-client.html) | Requestor / Client | Requirements for systems that query for and use SCD data |
 | [USCDI-SCD Server](CapabilityStatement-uscdi-scd-server.html) | Responder / Server | Requirements for systems that expose SCD data, such as EHRs and health information exchanges |
@@ -62,7 +62,7 @@ This guide defines two Capability Statements:
 
 ### Profile Conformance Summary
 
-The table below summarizes the expected level of support for each profile. These levels match the per-resource expectations in the Capability Statements. Clients SHALL support the profiles at the core of the SCD use cases (the patient, diagnoses, encounters, observations, procedures, allergies and prescriptions), and SHOULD support the supporting profiles.
+The table below summarizes the expected level of support for each profile. These levels match the per-resource expectations in the CapabilityStatements. Clients SHALL support the profiles at the core of the SCD use cases (the patient, diagnoses, encounters, observations, procedures, allergies and prescriptions), and SHOULD support the supporting profiles.
 
 | Profile | Server | Client |
 |---|---|---|

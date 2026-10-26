@@ -19,7 +19,7 @@
 
 
 // ==============================================================================
-// Extension: Transfusion Antigen Match Profile
+// Extension: Transfusion Red Cell Antigen Match
 // ==============================================================================
 // Context: BiologicallyDerivedProduct (SCDBiologicallyDerivedProduct)
 //          Procedure (SCDProcedure — transfusion)
@@ -30,7 +30,7 @@
 
 Extension: SCDTransfusionAntigenMatchExtension
 Id: scd-transfusion-antigen-match
-Title: "SCD Transfusion Red Cell Antigen Match Profile"
+Title: "SCD Transfusion Red Cell Antigen Match"
 Description: """
   Documents the red cell antigen matching criteria that were applied in
   selecting a blood product for transfusion in a patient with Sickle Cell Disease.
@@ -95,7 +95,7 @@ Description: """
   This extension is intended for use on MedicationStatement or as a component
   of an Observation (adherence monitoring encounter finding).
 
-  TODO: Align adherence coding with established adherence measurement frameworks
+  Open item: Align adherence coding with established adherence measurement frameworks
   (e.g., MMAS, ARMS, WHO adherence classification) and reference appropriate
   LOINC codes if available.
 """
@@ -304,7 +304,7 @@ Description: """
   extended antigen-matched transfusion for Sickle Cell Disease patients.
   Covers antigens in the Rh, Kell, Duffy, Kidd, and MNS blood group systems.
 
-  TODO: Map to ISBT 128 antigen codes (primary coding system for blood banking).
+  Open item: Map to ISBT 128 antigen codes (primary coding system for blood banking).
   SNOMED CT codes used as placeholder pending ISBT 128 integration.
 """
 * ^status = #draft

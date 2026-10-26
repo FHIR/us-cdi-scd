@@ -3,6 +3,8 @@ Maya Johnson, a 28-year-old woman with HbSS sickle cell disease, presents to
 the emergency department with an uncomplicated vaso-occlusive pain crisis, which is treated without transfusion. She is followed by
 Dr. Sarah Chen, a hematologist at Metro Sickle Cell Center.
 
+Separately from the emergency visit, Maya receives scheduled automated red cell exchange transfusions as chronic transfusion therapy, to prevent another stroke after an ischemic stroke in childhood. The examples include one of these transfusions, a week after the emergency visit, with its order, the blood product used and her care plan. She also takes hydroxyurea, and receives deferasirox for iron overload from her transfusions.
+
 All examples are entirely fictional and contain no real patient data.
 
 ### Administrative
@@ -32,12 +34,17 @@ All examples are entirely fictional and contain no real patient data.
 | [Vital Sign — Oxygen Saturation (SpO2)](Observation-maya-johnson-spo2.html) | [USCDI-SCD Vital Signs](StructureDefinition-uscdi-scd-vital-signs.html) |
 | [Vital Sign — Pain Severity Score (NRS)](Observation-maya-johnson-pain-score.html) | [USCDI-SCD Vital Signs](StructureDefinition-uscdi-scd-vital-signs.html) |
 
+### Care Plan
+
+| Example | Profile |
+|---|---|
+| [CarePlan — Chronic Transfusion Therapy](CarePlan-maya-johnson-chronic-transfusion-plan.html) | [USCDI-SCD CarePlan](StructureDefinition-uscdi-scd-careplan.html) |
+
 ### Medications, Orders and Blood Products
 
 | Example | Profile |
 |---|---|
 | [Medication — Hydroxyurea](Medication-hydroxyurea-medication-example.html) | [USCDI-SCD Medication](StructureDefinition-uscdi-scd-medication.html) |
-| [CarePlan — Chronic Transfusion Therapy](CarePlan-maya-johnson-chronic-transfusion-plan.html) | [USCDI-SCD CarePlan](StructureDefinition-uscdi-scd-careplan.html) |
 | [MedicationRequest — Hydroxyurea Prescription](MedicationRequest-maya-johnson-hydroxyurea-request.html) | [USCDI-SCD MedicationRequest](StructureDefinition-uscdi-scd-medicationrequest.html) |
 | [MedicationRequest — Deferasirox Iron Chelation](MedicationRequest-maya-johnson-deferasirox-request.html) | [USCDI-SCD MedicationRequest](StructureDefinition-uscdi-scd-medicationrequest.html) |
 | [ServiceRequest — Exchange Transfusion Order](ServiceRequest-exchange-transfusion-order-example.html) | [USCDI-SCD ServiceRequest](StructureDefinition-uscdi-scd-servicerequest.html) |

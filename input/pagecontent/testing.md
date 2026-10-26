@@ -29,7 +29,7 @@ Each entry uses `PUT` with the record's id (for example, `PUT Patient/maya-johns
 
 ### Expected Search Results
 
-After loading the test data, a conformant USCDI-SCD server should return the results below for these searches, which the [USCDI-SCD Server CapabilityStatement](CapabilityStatement-uscdi-scd-server.html) requires through the [US Core 8.0.1 Server CapabilityStatement](http://hl7.org/fhir/us/core/STU8.0.1/CapabilityStatement-us-core-server.html) it imports. Each searchset Bundle shows the expected response.
+After loading the test data, a conformant USCDI-SCD server should return the results below for these searches, which the [USCDI-SCD Server CapabilityStatement](CapabilityStatement-uscdi-scd-server.html) requires through the [US Core 8.0.1 Server CapabilityStatement](http://hl7.org/fhir/us/core/STU8.0.1/CapabilityStatement-us-core-server.html) it imports. Support for `_include=MedicationRequest:medication`, used in the last search, is recommended (SHOULD) rather than required. Each searchset Bundle shows the expected response.
 
 | Search | Expected results | Expected response |
 |---|---|---|

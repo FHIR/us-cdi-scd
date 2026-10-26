@@ -134,7 +134,8 @@ This guide is developed under the FHIR Community Process and is not intended for
 
 - [ ] Select codes for the remaining red cell antigens and blood products (ISBT 128 options)
 - [ ] Resolve the open items on the Exchange Workflow page and complete the CapabilityStatements (search parameters, SMART scopes)
-- [ ] Add data element names from the project's USCDI+ SCD data element list to the mapping chart
+- [x] Map ONC's Version 1 USCDI+ SCD data elements to the profiles (USCDI+ SCD Data Elements page)
+- [ ] Resolve the USCDI+ SCD coverage gaps listed on the Known Issues and Open Questions page
 - [ ] Add test data for additional patients, including a pediatric patient
 - [ ] Review extensions against hl7.fhir.uv.extensions.r4 for reuse opportunities
 - [ ] Clinical review of the example scenario
